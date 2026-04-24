@@ -1,15 +1,35 @@
 @import "tailwindcss";
 
+/* Project colors from AGENTS.md */
+@theme inline {
+  /* Primary: navy blue */
+  --color-primary: #0D3B66;
+  --color-primary-foreground: #ffffff;
+  
+  /* Secondary: teal */
+  --color-secondary: #0E7C5B;
+  --color-secondary-foreground: #ffffff;
+  
+  /* Background */
+  --color-background: #ffffff;
+  --color-background-secondary: #f8fafc;
+  
+  /* Foreground */
+  --color-foreground: #171717;
+  --color-foreground-muted: #64748b;
+  
+  /* UI colors */
+  --color-border: #e2e8f0;
+  --color-ring: #0D3B66;
+  
+  /* Fonts */
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,4 +43,29 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Utility classes for project colors */
+.bg-primary {
+  background-color: #0D3B66;
+}
+
+.bg-secondary {
+  background-color: #0E7C5B;
+}
+
+.text-primary {
+  color: #0D3B66;
+}
+
+.text-secondary {
+  color: #0E7C5B;
+}
+
+.border-primary {
+  border-color: #0D3B66;
+}
+
+.border-secondary {
+  border-color: #0E7C5B;
 }

@@ -1,0 +1,869 @@
+[
+  {
+    "code": "C00.9",
+    "preferredTerm": "Labio SAI",
+    "synonyms": [],
+    "organSystem": "Cavidad oral y faringe"
+  },
+  {
+    "code": "C01.9",
+    "preferredTerm": "Base de la lengua",
+    "synonyms": [],
+    "organSystem": "Cavidad oral y faringe"
+  },
+  {
+    "code": "C02.9",
+    "preferredTerm": "Lengua SAI",
+    "synonyms": [],
+    "organSystem": "Cavidad oral y faringe"
+  },
+  {
+    "code": "C03.9",
+    "preferredTerm": "Encía SAI",
+    "synonyms": [],
+    "organSystem": "Cavidad oral y faringe"
+  },
+  {
+    "code": "C04.9",
+    "preferredTerm": "Suelo de la boca SAI",
+    "synonyms": [],
+    "organSystem": "Cavidad oral y faringe"
+  },
+  {
+    "code": "C05.9",
+    "preferredTerm": "Paladar SAI",
+    "synonyms": [],
+    "organSystem": "Cavidad oral y faringe"
+  },
+  {
+    "code": "C06.9",
+    "preferredTerm": "Boca SAI",
+    "synonyms": [],
+    "organSystem": "Cavidad oral y faringe"
+  },
+  {
+    "code": "C07.9",
+    "preferredTerm": "Glándula parótida",
+    "synonyms": [],
+    "organSystem": "Cavidad oral y faringe"
+  },
+  {
+    "code": "C08.9",
+    "preferredTerm": "Glándula salival mayor SAI",
+    "synonyms": [],
+    "organSystem": "Cavidad oral y faringe"
+  },
+  {
+    "code": "C09.9",
+    "preferredTerm": "Amígdala SAI",
+    "synonyms": [],
+    "organSystem": "Cavidad oral y faringe"
+  },
+  {
+    "code": "C10.9",
+    "preferredTerm": "Orofaringe SAI",
+    "synonyms": [],
+    "organSystem": "Cavidad oral y faringe"
+  },
+  {
+    "code": "C11.9",
+    "preferredTerm": "Nasofaringe SAI",
+    "synonyms": [],
+    "organSystem": "Cavidad oral y faringe"
+  },
+  {
+    "code": "C12.9",
+    "preferredTerm": "Seno piriforme",
+    "synonyms": [],
+    "organSystem": "Cavidad oral y faringe"
+  },
+  {
+    "code": "C13.9",
+    "preferredTerm": "Hipofaringe SAI",
+    "synonyms": [],
+    "organSystem": "Cavidad oral y faringe"
+  },
+  {
+    "code": "C15.0",
+    "preferredTerm": "Esófago cervical",
+    "synonyms": [],
+    "organSystem": "Esófago y estómago"
+  },
+  {
+    "code": "C15.1",
+    "preferredTerm": "Esófago torácico",
+    "synonyms": [],
+    "organSystem": "Esófago y estómago"
+  },
+  {
+    "code": "C15.5",
+    "preferredTerm": "Tercio inferior / unión GE",
+    "synonyms": [],
+    "organSystem": "Esófago y estómago"
+  },
+  {
+    "code": "C15.8",
+    "preferredTerm": "Esófago — lesión que sobrepasa límites (Regla C)",
+    "synonyms": [],
+    "organSystem": "Esófago y estómago",
+    "notes": "(Regla C)"
+  },
+  {
+    "code": "C15.9",
+    "preferredTerm": "Esófago SAI",
+    "synonyms": [],
+    "organSystem": "Esófago y estómago"
+  },
+  {
+    "code": "C16.0",
+    "preferredTerm": "Cardias / unión gastroesofágica",
+    "synonyms": [],
+    "organSystem": "Esófago y estómago"
+  },
+  {
+    "code": "C16.1",
+    "preferredTerm": "Fundus gástrico",
+    "synonyms": [],
+    "organSystem": "Esófago y estómago"
+  },
+  {
+    "code": "C16.2",
+    "preferredTerm": "Cuerpo gástrico",
+    "synonyms": [],
+    "organSystem": "Esófago y estómago"
+  },
+  {
+    "code": "C16.3",
+    "preferredTerm": "Antro gástrico",
+    "synonyms": [],
+    "organSystem": "Esófago y estómago"
+  },
+  {
+    "code": "C16.4",
+    "preferredTerm": "Píloro",
+    "synonyms": [],
+    "organSystem": "Esófago y estómago"
+  },
+  {
+    "code": "C16.8",
+    "preferredTerm": "Estómago — lesión que sobrepasa límites (Regla C)",
+    "synonyms": [],
+    "organSystem": "Esófago y estómago",
+    "notes": "(Regla C)"
+  },
+  {
+    "code": "C16.9",
+    "preferredTerm": "Estómago SAI",
+    "synonyms": [],
+    "organSystem": "Esófago y estómago"
+  },
+  {
+    "code": "C18.0",
+    "preferredTerm": "Ciego",
+    "synonyms": [],
+    "organSystem": "Colon y recto"
+  },
+  {
+    "code": "C18.1",
+    "preferredTerm": "Apéndice",
+    "synonyms": [],
+    "organSystem": "Colon y recto"
+  },
+  {
+    "code": "C18.2",
+    "preferredTerm": "Colon ascendente",
+    "synonyms": [],
+    "organSystem": "Colon y recto"
+  },
+  {
+    "code": "C18.3",
+    "preferredTerm": "Ángulo hepático",
+    "synonyms": [],
+    "organSystem": "Colon y recto"
+  },
+  {
+    "code": "C18.4",
+    "preferredTerm": "Colon transverso",
+    "synonyms": [],
+    "organSystem": "Colon y recto"
+  },
+  {
+    "code": "C18.5",
+    "preferredTerm": "Ángulo esplénico",
+    "synonyms": [],
+    "organSystem": "Colon y recto"
+  },
+  {
+    "code": "C18.6",
+    "preferredTerm": "Colon descendente",
+    "synonyms": [],
+    "organSystem": "Colon y recto"
+  },
+  {
+    "code": "C18.7",
+    "preferredTerm": "Colon sigmoides",
+    "synonyms": [],
+    "organSystem": "Colon y recto"
+  },
+  {
+    "code": "C18.9",
+    "preferredTerm": "Colon SAI",
+    "synonyms": [],
+    "organSystem": "Colon y recto"
+  },
+  {
+    "code": "C19.9",
+    "preferredTerm": "Unión rectosigmoidea",
+    "synonyms": [],
+    "organSystem": "Colon y recto"
+  },
+  {
+    "code": "C20.9",
+    "preferredTerm": "Recto SAI",
+    "synonyms": [],
+    "organSystem": "Colon y recto"
+  },
+  {
+    "code": "C21.0",
+    "preferredTerm": "Ano SAI",
+    "synonyms": [],
+    "organSystem": "Colon y recto"
+  },
+  {
+    "code": "C21.1",
+    "preferredTerm": "Canal anal",
+    "synonyms": [],
+    "organSystem": "Colon y recto"
+  },
+  {
+    "code": "C22.0",
+    "preferredTerm": "Hígado",
+    "synonyms": [],
+    "organSystem": "Hígado, vía biliar y páncreas"
+  },
+  {
+    "code": "C22.1",
+    "preferredTerm": "Vías biliares intrahepáticas",
+    "synonyms": [],
+    "organSystem": "Hígado, vía biliar y páncreas"
+  },
+  {
+    "code": "C23.9",
+    "preferredTerm": "Vesícula biliar",
+    "synonyms": [],
+    "organSystem": "Hígado, vía biliar y páncreas"
+  },
+  {
+    "code": "C24.0",
+    "preferredTerm": "Vías biliares extrahepáticas",
+    "synonyms": [],
+    "organSystem": "Hígado, vía biliar y páncreas"
+  },
+  {
+    "code": "C24.1",
+    "preferredTerm": "Ampolla de Vater",
+    "synonyms": [],
+    "organSystem": "Hígado, vía biliar y páncreas"
+  },
+  {
+    "code": "C25.0",
+    "preferredTerm": "Cabeza del páncreas",
+    "synonyms": [],
+    "organSystem": "Hígado, vía biliar y páncreas"
+  },
+  {
+    "code": "C25.1",
+    "preferredTerm": "Cuerpo del páncreas",
+    "synonyms": [],
+    "organSystem": "Hígado, vía biliar y páncreas"
+  },
+  {
+    "code": "C25.2",
+    "preferredTerm": "Cola del páncreas",
+    "synonyms": [],
+    "organSystem": "Hígado, vía biliar y páncreas"
+  },
+  {
+    "code": "C25.9",
+    "preferredTerm": "Páncreas SAI",
+    "synonyms": [],
+    "organSystem": "Hígado, vía biliar y páncreas"
+  },
+  {
+    "code": "C30.0",
+    "preferredTerm": "Fosa nasal",
+    "synonyms": [],
+    "organSystem": "Aparato respiratorio"
+  },
+  {
+    "code": "C31.0",
+    "preferredTerm": "Seno maxilar",
+    "synonyms": [],
+    "organSystem": "Aparato respiratorio"
+  },
+  {
+    "code": "C31.9",
+    "preferredTerm": "Seno accesorio SAI",
+    "synonyms": [],
+    "organSystem": "Aparato respiratorio"
+  },
+  {
+    "code": "C32.0",
+    "preferredTerm": "Glotis",
+    "synonyms": [],
+    "organSystem": "Aparato respiratorio"
+  },
+  {
+    "code": "C32.1",
+    "preferredTerm": "Supraglotis",
+    "synonyms": [],
+    "organSystem": "Aparato respiratorio"
+  },
+  {
+    "code": "C32.9",
+    "preferredTerm": "Laringe SAI",
+    "synonyms": [],
+    "organSystem": "Aparato respiratorio"
+  },
+  {
+    "code": "C33.9",
+    "preferredTerm": "Tráquea",
+    "synonyms": [],
+    "organSystem": "Aparato respiratorio"
+  },
+  {
+    "code": "C34.0",
+    "preferredTerm": "Bronquio principal",
+    "synonyms": [],
+    "organSystem": "Aparato respiratorio"
+  },
+  {
+    "code": "C34.1",
+    "preferredTerm": "Lóbulo superior del pulmón",
+    "synonyms": [],
+    "organSystem": "Aparato respiratorio"
+  },
+  {
+    "code": "C34.2",
+    "preferredTerm": "Lóbulo medio del pulmón",
+    "synonyms": [],
+    "organSystem": "Aparato respiratorio"
+  },
+  {
+    "code": "C34.3",
+    "preferredTerm": "Lóbulo inferior del pulmón",
+    "synonyms": [],
+    "organSystem": "Aparato respiratorio"
+  },
+  {
+    "code": "C34.9",
+    "preferredTerm": "Pulmón SAI",
+    "synonyms": [],
+    "organSystem": "Aparato respiratorio"
+  },
+  {
+    "code": "C38.4",
+    "preferredTerm": "Pleura",
+    "synonyms": [],
+    "organSystem": "Aparato respiratorio"
+  },
+  {
+    "code": "C40.0",
+    "preferredTerm": "Huesos largos MMSS",
+    "synonyms": [],
+    "organSystem": "Huesos y tejidos blandos"
+  },
+  {
+    "code": "C40.2",
+    "preferredTerm": "Huesos largos MMII (fémur/tibia/peroné)",
+    "synonyms": [],
+    "organSystem": "Huesos y tejidos blandos"
+  },
+  {
+    "code": "C41.2",
+    "preferredTerm": "Columna vertebral",
+    "synonyms": [],
+    "organSystem": "Huesos y tejidos blandos"
+  },
+  {
+    "code": "C41.4",
+    "preferredTerm": "Pelvis ósea",
+    "synonyms": [],
+    "organSystem": "Huesos y tejidos blandos"
+  },
+  {
+    "code": "C49.0",
+    "preferredTerm": "Tejidos blandos cabeza/cuello",
+    "synonyms": [],
+    "organSystem": "Huesos y tejidos blandos"
+  },
+  {
+    "code": "C49.1",
+    "preferredTerm": "Tejidos blandos MMSS",
+    "synonyms": [],
+    "organSystem": "Huesos y tejidos blandos"
+  },
+  {
+    "code": "C49.2",
+    "preferredTerm": "Tejidos blandos MMII",
+    "synonyms": [],
+    "organSystem": "Huesos y tejidos blandos"
+  },
+  {
+    "code": "C49.3",
+    "preferredTerm": "Tejidos blandos tórax",
+    "synonyms": [],
+    "organSystem": "Huesos y tejidos blandos"
+  },
+  {
+    "code": "C49.4",
+    "preferredTerm": "Tejidos blandos abdomen",
+    "synonyms": [],
+    "organSystem": "Huesos y tejidos blandos"
+  },
+  {
+    "code": "C49.5",
+    "preferredTerm": "Tejidos blandos pelvis",
+    "synonyms": [],
+    "organSystem": "Huesos y tejidos blandos"
+  },
+  {
+    "code": "C49.9",
+    "preferredTerm": "Tejido conjuntivo y blando SAI",
+    "synonyms": [],
+    "organSystem": "Huesos y tejidos blandos"
+  },
+  {
+    "code": "C44.0",
+    "preferredTerm": "Piel del labio",
+    "synonyms": [],
+    "organSystem": "Piel"
+  },
+  {
+    "code": "C44.1",
+    "preferredTerm": "Piel del párpado",
+    "synonyms": [],
+    "organSystem": "Piel"
+  },
+  {
+    "code": "C44.2",
+    "preferredTerm": "Piel del oído externo",
+    "synonyms": [],
+    "organSystem": "Piel"
+  },
+  {
+    "code": "C44.3",
+    "preferredTerm": "Piel de la cara SAI",
+    "synonyms": [],
+    "organSystem": "Piel"
+  },
+  {
+    "code": "C44.4",
+    "preferredTerm": "Piel del cuero cabelludo y cuello",
+    "synonyms": [],
+    "organSystem": "Piel"
+  },
+  {
+    "code": "C44.5",
+    "preferredTerm": "Piel del tronco",
+    "synonyms": [],
+    "organSystem": "Piel"
+  },
+  {
+    "code": "C44.6",
+    "preferredTerm": "Piel extremidad superior",
+    "synonyms": [],
+    "organSystem": "Piel"
+  },
+  {
+    "code": "C44.7",
+    "preferredTerm": "Piel extremidad inferior",
+    "synonyms": [],
+    "organSystem": "Piel"
+  },
+  {
+    "code": "C44.9",
+    "preferredTerm": "Piel SAI",
+    "synonyms": [],
+    "organSystem": "Piel"
+  },
+  {
+    "code": "C50.0",
+    "preferredTerm": "Pezón y aréola",
+    "synonyms": [],
+    "organSystem": "Mama"
+  },
+  {
+    "code": "C50.1",
+    "preferredTerm": "Cuadrante superoexterno",
+    "synonyms": [],
+    "organSystem": "Mama"
+  },
+  {
+    "code": "C50.2",
+    "preferredTerm": "Cuadrante superointerno",
+    "synonyms": [],
+    "organSystem": "Mama"
+  },
+  {
+    "code": "C50.3",
+    "preferredTerm": "Cuadrante inferointerno",
+    "synonyms": [],
+    "organSystem": "Mama"
+  },
+  {
+    "code": "C50.4",
+    "preferredTerm": "Cuadrante inferoexterno",
+    "synonyms": [],
+    "organSystem": "Mama"
+  },
+  {
+    "code": "C50.5",
+    "preferredTerm": "Cola axilar",
+    "synonyms": [],
+    "organSystem": "Mama"
+  },
+  {
+    "code": "C50.6",
+    "preferredTerm": "Región central",
+    "synonyms": [],
+    "organSystem": "Mama"
+  },
+  {
+    "code": "C50.9",
+    "preferredTerm": "Mama SAI",
+    "synonyms": [],
+    "organSystem": "Mama"
+  },
+  {
+    "code": "C51.9",
+    "preferredTerm": "Vulva SAI",
+    "synonyms": [],
+    "organSystem": "Ginecológico"
+  },
+  {
+    "code": "C52.9",
+    "preferredTerm": "Vagina",
+    "synonyms": [],
+    "organSystem": "Ginecológico"
+  },
+  {
+    "code": "C53.0",
+    "preferredTerm": "Endocérvix",
+    "synonyms": [],
+    "organSystem": "Ginecológico"
+  },
+  {
+    "code": "C53.1",
+    "preferredTerm": "Exocérvix",
+    "synonyms": [],
+    "organSystem": "Ginecológico"
+  },
+  {
+    "code": "C53.9",
+    "preferredTerm": "Cérvix uteri SAI",
+    "synonyms": [],
+    "organSystem": "Ginecológico"
+  },
+  {
+    "code": "C54.1",
+    "preferredTerm": "Endometrio",
+    "synonyms": [],
+    "organSystem": "Ginecológico"
+  },
+  {
+    "code": "C54.2",
+    "preferredTerm": "Miometrio",
+    "synonyms": [],
+    "organSystem": "Ginecológico"
+  },
+  {
+    "code": "C54.9",
+    "preferredTerm": "Cuerpo uterino SAI",
+    "synonyms": [],
+    "organSystem": "Ginecológico"
+  },
+  {
+    "code": "C55.9",
+    "preferredTerm": "Útero SAI",
+    "synonyms": [],
+    "organSystem": "Ginecológico"
+  },
+  {
+    "code": "C56.9",
+    "preferredTerm": "Ovario",
+    "synonyms": [],
+    "organSystem": "Ginecológico"
+  },
+  {
+    "code": "C57.0",
+    "preferredTerm": "Trompa de Falopio",
+    "synonyms": [],
+    "organSystem": "Ginecológico"
+  },
+  {
+    "code": "C58.9",
+    "preferredTerm": "Placenta",
+    "synonyms": [],
+    "organSystem": "Ginecológico"
+  },
+  {
+    "code": "C60.9",
+    "preferredTerm": "Pene SAI",
+    "synonyms": [],
+    "organSystem": "Genitourinario masculino"
+  },
+  {
+    "code": "C61.9",
+    "preferredTerm": "Próstata",
+    "synonyms": [],
+    "organSystem": "Genitourinario masculino"
+  },
+  {
+    "code": "C62.9",
+    "preferredTerm": "Testículo SAI",
+    "synonyms": [],
+    "organSystem": "Genitourinario masculino"
+  },
+  {
+    "code": "C63.0",
+    "preferredTerm": "Epidídimo",
+    "synonyms": [],
+    "organSystem": "Genitourinario masculino"
+  },
+  {
+    "code": "C64.9",
+    "preferredTerm": "Riñón (parénquima)",
+    "synonyms": [],
+    "organSystem": "Genitourinario masculino"
+  },
+  {
+    "code": "C65.9",
+    "preferredTerm": "Pelvis renal",
+    "synonyms": [],
+    "organSystem": "Genitourinario masculino"
+  },
+  {
+    "code": "C66.9",
+    "preferredTerm": "Uréter",
+    "synonyms": [],
+    "organSystem": "Genitourinario masculino"
+  },
+  {
+    "code": "C67.9",
+    "preferredTerm": "Vejiga urinaria SAI",
+    "synonyms": [],
+    "organSystem": "Genitourinario masculino"
+  },
+  {
+    "code": "C68.0",
+    "preferredTerm": "Uretra",
+    "synonyms": [],
+    "organSystem": "Genitourinario masculino"
+  },
+  {
+    "code": "C69.2",
+    "preferredTerm": "Retina",
+    "synonyms": [],
+    "organSystem": "Ojo y SNC"
+  },
+  {
+    "code": "C69.3",
+    "preferredTerm": "Coroides",
+    "synonyms": [],
+    "organSystem": "Ojo y SNC"
+  },
+  {
+    "code": "C69.6",
+    "preferredTerm": "Órbita SAI",
+    "synonyms": [],
+    "organSystem": "Ojo y SNC"
+  },
+  {
+    "code": "C70.0",
+    "preferredTerm": "Meninges cerebrales",
+    "synonyms": [],
+    "organSystem": "Ojo y SNC"
+  },
+  {
+    "code": "C70.1",
+    "preferredTerm": "Meninges espinales",
+    "synonyms": [],
+    "organSystem": "Ojo y SNC"
+  },
+  {
+    "code": "C71.0",
+    "preferredTerm": "Cerebro SAI",
+    "synonyms": [],
+    "organSystem": "Ojo y SNC"
+  },
+  {
+    "code": "C71.1",
+    "preferredTerm": "Lóbulo frontal",
+    "synonyms": [],
+    "organSystem": "Ojo y SNC"
+  },
+  {
+    "code": "C71.2",
+    "preferredTerm": "Lóbulo temporal",
+    "synonyms": [],
+    "organSystem": "Ojo y SNC"
+  },
+  {
+    "code": "C71.4",
+    "preferredTerm": "Lóbulo occipital",
+    "synonyms": [],
+    "organSystem": "Ojo y SNC"
+  },
+  {
+    "code": "C71.6",
+    "preferredTerm": "Cerebelo",
+    "synonyms": [],
+    "organSystem": "Ojo y SNC"
+  },
+  {
+    "code": "C71.7",
+    "preferredTerm": "Tronco encefálico",
+    "synonyms": [],
+    "organSystem": "Ojo y SNC"
+  },
+  {
+    "code": "C71.9",
+    "preferredTerm": "Cerebro SAI",
+    "synonyms": [],
+    "organSystem": "Ojo y SNC"
+  },
+  {
+    "code": "C72.0",
+    "preferredTerm": "Médula espinal",
+    "synonyms": [],
+    "organSystem": "Ojo y SNC"
+  },
+  {
+    "code": "C73.9",
+    "preferredTerm": "Tiroides",
+    "synonyms": [],
+    "organSystem": "Glándulas endocrinas"
+  },
+  {
+    "code": "C74.0",
+    "preferredTerm": "Corteza suprarrenal",
+    "synonyms": [],
+    "organSystem": "Glándulas endocrinas"
+  },
+  {
+    "code": "C74.1",
+    "preferredTerm": "Médula suprarrenal",
+    "synonyms": [],
+    "organSystem": "Glándulas endocrinas"
+  },
+  {
+    "code": "C75.0",
+    "preferredTerm": "Glándula paratiroides",
+    "synonyms": [],
+    "organSystem": "Glándulas endocrinas"
+  },
+  {
+    "code": "C75.1",
+    "preferredTerm": "Hipófisis",
+    "synonyms": [],
+    "organSystem": "Glándulas endocrinas"
+  },
+  {
+    "code": "C75.3",
+    "preferredTerm": "Glándula pineal",
+    "synonyms": [],
+    "organSystem": "Glándulas endocrinas"
+  },
+  {
+    "code": "C42.0",
+    "preferredTerm": "Sangre periférica",
+    "synonyms": [],
+    "organSystem": "Hematopoyético (leucemias) — Regla E",
+    "notes": "Regla E: todas las leucemias y síndromes mieloproliferativos → C42.1 obligatorio."
+  },
+  {
+    "code": "C42.1",
+    "preferredTerm": "Médula ósea ★ (leucemias, SMD, SMP — Regla E)",
+    "synonyms": [],
+    "organSystem": "Hematopoyético (leucemias) — Regla E",
+    "notes": "Regla E: todas las leucemias y síndromes mieloproliferativos → C42.1 obligatorio."
+  },
+  {
+    "code": "C42.2",
+    "preferredTerm": "Bazo",
+    "synonyms": [],
+    "organSystem": "Hematopoyético (leucemias) — Regla E",
+    "notes": "Regla E: todas las leucemias y síndromes mieloproliferativos → C42.1 obligatorio."
+  },
+  {
+    "code": "C42.4",
+    "preferredTerm": "Sistema hematopoyético SAI",
+    "synonyms": [],
+    "organSystem": "Hematopoyético (leucemias) — Regla E",
+    "notes": "Regla E: todas las leucemias y síndromes mieloproliferativos → C42.1 obligatorio."
+  },
+  {
+    "code": "C77.0",
+    "preferredTerm": "Ganglio cabeza/cuello",
+    "synonyms": [],
+    "organSystem": "Ganglios linfáticos (linfomas) — Regla D",
+    "notes": "Regla D: linfomas ganglionares → C77._. Linfomas extraganglionares → sitio de origen."
+  },
+  {
+    "code": "C77.1",
+    "preferredTerm": "Ganglio mediastínico/intratorácico",
+    "synonyms": [],
+    "organSystem": "Ganglios linfáticos (linfomas) — Regla D",
+    "notes": "Regla D: linfomas ganglionares → C77._. Linfomas extraganglionares → sitio de origen."
+  },
+  {
+    "code": "C77.2",
+    "preferredTerm": "Ganglio intraabdominal",
+    "synonyms": [],
+    "organSystem": "Ganglios linfáticos (linfomas) — Regla D",
+    "notes": "Regla D: linfomas ganglionares → C77._. Linfomas extraganglionares → sitio de origen."
+  },
+  {
+    "code": "C77.3",
+    "preferredTerm": "Ganglio axilar / MMSS",
+    "synonyms": [],
+    "organSystem": "Ganglios linfáticos (linfomas) — Regla D",
+    "notes": "Regla D: linfomas ganglionares → C77._. Linfomas extraganglionares → sitio de origen."
+  },
+  {
+    "code": "C77.4",
+    "preferredTerm": "Ganglio inguinal / MMII",
+    "synonyms": [],
+    "organSystem": "Ganglios linfáticos (linfomas) — Regla D",
+    "notes": "Regla D: linfomas ganglionares → C77._. Linfomas extraganglionares → sitio de origen."
+  },
+  {
+    "code": "C77.5",
+    "preferredTerm": "Ganglio pélvico",
+    "synonyms": [],
+    "organSystem": "Ganglios linfáticos (linfomas) — Regla D",
+    "notes": "Regla D: linfomas ganglionares → C77._. Linfomas extraganglionares → sitio de origen."
+  },
+  {
+    "code": "C77.8",
+    "preferredTerm": "Ganglios — múltiples regiones (Regla D)",
+    "synonyms": [],
+    "organSystem": "Ganglios linfáticos (linfomas) — Regla D",
+    "notes": "Regla D: linfomas ganglionares → C77._. Linfomas extraganglionares → sitio de origen."
+  },
+  {
+    "code": "C77.9",
+    "preferredTerm": "Ganglio SAI",
+    "synonyms": [],
+    "organSystem": "Ganglios linfáticos (linfomas) — Regla D",
+    "notes": "Regla D: linfomas ganglionares → C77._. Linfomas extraganglionares → sitio de origen."
+  },
+  {
+    "code": "C80.9",
+    "preferredTerm": "Primario desconocido (linfoma sin localización)",
+    "synonyms": [],
+    "organSystem": "Ganglios linfáticos (linfomas) — Regla D",
+    "notes": "Regla D: linfomas ganglionares → C77._. Linfomas extraganglionares → sitio de origen."
+  }
+]

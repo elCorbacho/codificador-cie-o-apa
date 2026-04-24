@@ -1,0 +1,740 @@
+[
+  {
+    "code": "8000",
+    "preferredTerm": "Neoplasia SAI",
+    "synonyms": [],
+    "histologicGroup": "Neoplasias SAI"
+  },
+  {
+    "code": "8001",
+    "preferredTerm": "Células tumorales SAI",
+    "synonyms": [],
+    "histologicGroup": "Neoplasias SAI"
+  },
+  {
+    "code": "8002",
+    "preferredTerm": "Tumor maligno células pequeñas",
+    "synonyms": [],
+    "histologicGroup": "Neoplasias SAI"
+  },
+  {
+    "code": "8003",
+    "preferredTerm": "Tumor maligno células gigantes",
+    "synonyms": [],
+    "histologicGroup": "Neoplasias SAI"
+  },
+  {
+    "code": "8004",
+    "preferredTerm": "Tumor maligno células fusiformes",
+    "synonyms": [],
+    "histologicGroup": "Neoplasias SAI"
+  },
+  {
+    "code": "8005",
+    "preferredTerm": "Tumor maligno tipo células claras",
+    "synonyms": [],
+    "histologicGroup": "Neoplasias SAI"
+  },
+  {
+    "code": "8010",
+    "preferredTerm": "Carcinoma SAI",
+    "synonyms": [],
+    "histologicGroup": "Carcinomas epiteliales"
+  },
+  {
+    "code": "8020",
+    "preferredTerm": "Carcinoma indiferenciado SAI",
+    "synonyms": [],
+    "histologicGroup": "Carcinomas epiteliales"
+  },
+  {
+    "code": "8021",
+    "preferredTerm": "Carcinoma anaplásico SAI",
+    "synonyms": [],
+    "histologicGroup": "Carcinomas epiteliales"
+  },
+  {
+    "code": "8041",
+    "preferredTerm": "Carcinoma células pequeñas SAI",
+    "synonyms": [],
+    "histologicGroup": "Carcinomas epiteliales"
+  },
+  {
+    "code": "8046",
+    "preferredTerm": "Carcinoma no células pequeñas",
+    "synonyms": [],
+    "histologicGroup": "Carcinomas epiteliales"
+  },
+  {
+    "code": "8050",
+    "preferredTerm": "Carcinoma papilar SAI",
+    "synonyms": [],
+    "histologicGroup": "Carcinomas epiteliales"
+  },
+  {
+    "code": "8070",
+    "preferredTerm": "Carcinoma escamoso SAI",
+    "synonyms": [],
+    "histologicGroup": "Carcinomas epiteliales"
+  },
+  {
+    "code": "8071",
+    "preferredTerm": "Carcinoma escamoso queratinizante",
+    "synonyms": [],
+    "histologicGroup": "Carcinomas epiteliales"
+  },
+  {
+    "code": "8072",
+    "preferredTerm": "Carcinoma escamoso no queratinizante",
+    "synonyms": [],
+    "histologicGroup": "Carcinomas epiteliales"
+  },
+  {
+    "code": "8076",
+    "preferredTerm": "Carcinoma escamoso microinvasor",
+    "synonyms": [],
+    "histologicGroup": "Carcinomas epiteliales"
+  },
+  {
+    "code": "8077",
+    "preferredTerm": "NIC III / CIN III (in situ /2)",
+    "synonyms": [],
+    "histologicGroup": "Carcinomas epiteliales"
+  },
+  {
+    "code": "8090",
+    "preferredTerm": "Carcinoma basocelular SAI (C44._ — Regla H)",
+    "synonyms": [],
+    "histologicGroup": "Carcinomas epiteliales"
+  },
+  {
+    "code": "8120",
+    "preferredTerm": "Carcinoma urotelial SAI (C67._ — Regla H)",
+    "synonyms": [],
+    "histologicGroup": "Carcinomas epiteliales"
+  },
+  {
+    "code": "8140",
+    "preferredTerm": "Adenocarcinoma SAI",
+    "synonyms": [],
+    "histologicGroup": "Adenocarcinomas"
+  },
+  {
+    "code": "8142",
+    "preferredTerm": "Linitis plástica (C16._ — Regla H)",
+    "synonyms": [],
+    "histologicGroup": "Adenocarcinomas"
+  },
+  {
+    "code": "8160",
+    "preferredTerm": "Colangiocarcinoma (C22.1/C24.0 — Regla H)",
+    "synonyms": [],
+    "histologicGroup": "Adenocarcinomas"
+  },
+  {
+    "code": "8170",
+    "preferredTerm": "Hepatocarcinoma SAI (C22.0 — Regla H)",
+    "synonyms": [],
+    "histologicGroup": "Adenocarcinomas"
+  },
+  {
+    "code": "8200",
+    "preferredTerm": "Carcinoma adenoide quístico",
+    "synonyms": [],
+    "histologicGroup": "Adenocarcinomas"
+  },
+  {
+    "code": "8210",
+    "preferredTerm": "Adenocarcinoma en pólipo",
+    "synonyms": [],
+    "histologicGroup": "Adenocarcinomas"
+  },
+  {
+    "code": "8230",
+    "preferredTerm": "Adenocarcinoma sólido SAI",
+    "synonyms": [],
+    "histologicGroup": "Adenocarcinomas"
+  },
+  {
+    "code": "8260",
+    "preferredTerm": "Adenocarcinoma papilar SAI",
+    "synonyms": [],
+    "histologicGroup": "Adenocarcinomas"
+  },
+  {
+    "code": "8310",
+    "preferredTerm": "Adenocarcinoma células claras SAI",
+    "synonyms": [],
+    "histologicGroup": "Adenocarcinomas"
+  },
+  {
+    "code": "8330",
+    "preferredTerm": "Adenocarcinoma folicular (C73.9 — Regla H)",
+    "synonyms": [],
+    "histologicGroup": "Adenocarcinomas"
+  },
+  {
+    "code": "8340",
+    "preferredTerm": "Carcinoma papilar variante folicular (C73.9)",
+    "synonyms": [],
+    "histologicGroup": "Adenocarcinomas"
+  },
+  {
+    "code": "8380",
+    "preferredTerm": "Adenocarcinoma endometrioide SAI",
+    "synonyms": [],
+    "histologicGroup": "Adenocarcinomas"
+  },
+  {
+    "code": "8440",
+    "preferredTerm": "Cistadenocarcinoma SAI",
+    "synonyms": [],
+    "histologicGroup": "Adenocarcinomas"
+  },
+  {
+    "code": "8460",
+    "preferredTerm": "Cistoadenocarcinoma seroso bajo grado (C56.9)",
+    "synonyms": [],
+    "histologicGroup": "Adenocarcinomas"
+  },
+  {
+    "code": "8461",
+    "preferredTerm": "Cistoadenocarcinoma seroso alto grado (C56.9/C57.0)",
+    "synonyms": [],
+    "histologicGroup": "Adenocarcinomas"
+  },
+  {
+    "code": "8480",
+    "preferredTerm": "Adenocarcinoma mucinoso",
+    "synonyms": [],
+    "histologicGroup": "Adenocarcinomas"
+  },
+  {
+    "code": "8490",
+    "preferredTerm": "Carcinoma células en anillo de sello",
+    "synonyms": [],
+    "histologicGroup": "Adenocarcinomas"
+  },
+  {
+    "code": "8500",
+    "preferredTerm": "Carcinoma ductal infiltrante (C50._ — Regla H)",
+    "synonyms": [],
+    "histologicGroup": "Adenocarcinomas"
+  },
+  {
+    "code": "8510",
+    "preferredTerm": "Carcinoma medular SAI",
+    "synonyms": [],
+    "histologicGroup": "Adenocarcinomas"
+  },
+  {
+    "code": "8520",
+    "preferredTerm": "Carcinoma lobulillar SAI (C50._ — Regla H)",
+    "synonyms": [],
+    "histologicGroup": "Adenocarcinomas"
+  },
+  {
+    "code": "8240",
+    "preferredTerm": "Tumor carcinoide G1 / NET G1",
+    "synonyms": [],
+    "histologicGroup": "Tumores neuroendocrinos"
+  },
+  {
+    "code": "8249",
+    "preferredTerm": "Tumor neuroendocrino G2",
+    "synonyms": [],
+    "histologicGroup": "Tumores neuroendocrinos"
+  },
+  {
+    "code": "8246",
+    "preferredTerm": "Carcinoma neuroendocrino SAI",
+    "synonyms": [],
+    "histologicGroup": "Tumores neuroendocrinos"
+  },
+  {
+    "code": "8013",
+    "preferredTerm": "Carcinoma neuroendocrino células grandes",
+    "synonyms": [],
+    "histologicGroup": "Tumores neuroendocrinos"
+  },
+  {
+    "code": "8041",
+    "preferredTerm": "Carcinoma células pequeñas (neuroendocrino alto grado)",
+    "synonyms": [],
+    "histologicGroup": "Tumores neuroendocrinos"
+  },
+  {
+    "code": "8247",
+    "preferredTerm": "Carcinoma células de Merkel (C44._ — Regla H)",
+    "synonyms": [],
+    "histologicGroup": "Tumores neuroendocrinos"
+  },
+  {
+    "code": "8720",
+    "preferredTerm": "Melanoma maligno SAI",
+    "synonyms": [],
+    "histologicGroup": "Tumores melanocíticos"
+  },
+  {
+    "code": "8721",
+    "preferredTerm": "Melanoma nodular",
+    "synonyms": [],
+    "histologicGroup": "Tumores melanocíticos"
+  },
+  {
+    "code": "8742",
+    "preferredTerm": "Melanoma lentigo maligno",
+    "synonyms": [],
+    "histologicGroup": "Tumores melanocíticos"
+  },
+  {
+    "code": "8743",
+    "preferredTerm": "Melanoma extensión superficial",
+    "synonyms": [],
+    "histologicGroup": "Tumores melanocíticos"
+  },
+  {
+    "code": "8744",
+    "preferredTerm": "Melanoma lentiginoso acral",
+    "synonyms": [],
+    "histologicGroup": "Tumores melanocíticos"
+  },
+  {
+    "code": "8750",
+    "preferredTerm": "Nevo intradérmico",
+    "synonyms": [],
+    "histologicGroup": "Tumores melanocíticos"
+  },
+  {
+    "code": "8760",
+    "preferredTerm": "Nevo compuesto",
+    "synonyms": [],
+    "histologicGroup": "Tumores melanocíticos"
+  },
+  {
+    "code": "8800",
+    "preferredTerm": "Sarcoma SAI",
+    "synonyms": [],
+    "histologicGroup": "Tumores tejidos blandos y mesenquimáticos"
+  },
+  {
+    "code": "8810",
+    "preferredTerm": "Fibrosarcoma SAI",
+    "synonyms": [],
+    "histologicGroup": "Tumores tejidos blandos y mesenquimáticos"
+  },
+  {
+    "code": "8815",
+    "preferredTerm": "Tumor fibroso solitario",
+    "synonyms": [],
+    "histologicGroup": "Tumores tejidos blandos y mesenquimáticos"
+  },
+  {
+    "code": "8821",
+    "preferredTerm": "Fibromatosis agresiva / tumor desmoide",
+    "synonyms": [],
+    "histologicGroup": "Tumores tejidos blandos y mesenquimáticos"
+  },
+  {
+    "code": "8830",
+    "preferredTerm": "Histiocitoma fibroso SAI",
+    "synonyms": [],
+    "histologicGroup": "Tumores tejidos blandos y mesenquimáticos"
+  },
+  {
+    "code": "8850",
+    "preferredTerm": "Lipoma SAI",
+    "synonyms": [],
+    "histologicGroup": "Tumores tejidos blandos y mesenquimáticos"
+  },
+  {
+    "code": "8851",
+    "preferredTerm": "Liposarcoma bien diferenciado",
+    "synonyms": [],
+    "histologicGroup": "Tumores tejidos blandos y mesenquimáticos"
+  },
+  {
+    "code": "8852",
+    "preferredTerm": "Liposarcoma mixoide",
+    "synonyms": [],
+    "histologicGroup": "Tumores tejidos blandos y mesenquimáticos"
+  },
+  {
+    "code": "8890",
+    "preferredTerm": "Leiomioma SAI / leiomiosarcoma",
+    "synonyms": [],
+    "histologicGroup": "Tumores tejidos blandos y mesenquimáticos"
+  },
+  {
+    "code": "8900",
+    "preferredTerm": "Rabdomiosarcoma SAI",
+    "synonyms": [],
+    "histologicGroup": "Tumores tejidos blandos y mesenquimáticos"
+  },
+  {
+    "code": "8910",
+    "preferredTerm": "Rabdomiosarcoma embrionario",
+    "synonyms": [],
+    "histologicGroup": "Tumores tejidos blandos y mesenquimáticos"
+  },
+  {
+    "code": "8920",
+    "preferredTerm": "Rabdomiosarcoma alveolar",
+    "synonyms": [],
+    "histologicGroup": "Tumores tejidos blandos y mesenquimáticos"
+  },
+  {
+    "code": "8936",
+    "preferredTerm": "GIST SAI",
+    "synonyms": [],
+    "histologicGroup": "Tumores tejidos blandos y mesenquimáticos"
+  },
+  {
+    "code": "9180",
+    "preferredTerm": "Osteosarcoma SAI",
+    "synonyms": [],
+    "histologicGroup": "Tumores óseos y cartilaginosos"
+  },
+  {
+    "code": "9191",
+    "preferredTerm": "Osteoma osteoide",
+    "synonyms": [],
+    "histologicGroup": "Tumores óseos y cartilaginosos"
+  },
+  {
+    "code": "9220",
+    "preferredTerm": "Condrosarcoma SAI",
+    "synonyms": [],
+    "histologicGroup": "Tumores óseos y cartilaginosos"
+  },
+  {
+    "code": "9230",
+    "preferredTerm": "Condroblastoma SAI",
+    "synonyms": [],
+    "histologicGroup": "Tumores óseos y cartilaginosos"
+  },
+  {
+    "code": "9250",
+    "preferredTerm": "Tumor células gigantes hueso SAI",
+    "synonyms": [],
+    "histologicGroup": "Tumores óseos y cartilaginosos"
+  },
+  {
+    "code": "9260",
+    "preferredTerm": "Sarcoma de Ewing",
+    "synonyms": [],
+    "histologicGroup": "Tumores óseos y cartilaginosos"
+  },
+  {
+    "code": "9370",
+    "preferredTerm": "Cordoma SAI",
+    "synonyms": [],
+    "histologicGroup": "Tumores óseos y cartilaginosos"
+  },
+  {
+    "code": "9380",
+    "preferredTerm": "Glioma SAI (C71._ — Regla H)",
+    "synonyms": [],
+    "histologicGroup": "Tumores SNC y neurales"
+  },
+  {
+    "code": "9391",
+    "preferredTerm": "Ependimoma SAI (C71./C72.)",
+    "synonyms": [],
+    "histologicGroup": "Tumores SNC y neurales"
+  },
+  {
+    "code": "9400",
+    "preferredTerm": "Astrocitoma difuso IDH-mutado",
+    "synonyms": [],
+    "histologicGroup": "Tumores SNC y neurales"
+  },
+  {
+    "code": "9401",
+    "preferredTerm": "Astrocitoma anaplásico IDH-mutado",
+    "synonyms": [],
+    "histologicGroup": "Tumores SNC y neurales"
+  },
+  {
+    "code": "9421",
+    "preferredTerm": "Astrocitoma pilocítico (C71._ — Regla H)",
+    "synonyms": [],
+    "histologicGroup": "Tumores SNC y neurales"
+  },
+  {
+    "code": "9440",
+    "preferredTerm": "Glioblastoma SAI (C71._ — Regla H)",
+    "synonyms": [],
+    "histologicGroup": "Tumores SNC y neurales"
+  },
+  {
+    "code": "9450",
+    "preferredTerm": "Oligodendroglioma IDH-mutado 1p/19q",
+    "synonyms": [],
+    "histologicGroup": "Tumores SNC y neurales"
+  },
+  {
+    "code": "9470",
+    "preferredTerm": "Meduloblastoma SAI (C71.6)",
+    "synonyms": [],
+    "histologicGroup": "Tumores SNC y neurales"
+  },
+  {
+    "code": "9508",
+    "preferredTerm": "Tumor teratoide/rabdoide atípico",
+    "synonyms": [],
+    "histologicGroup": "Tumores SNC y neurales"
+  },
+  {
+    "code": "9530",
+    "preferredTerm": "Meningioma SAI (C70._ — Regla H)",
+    "synonyms": [],
+    "histologicGroup": "Tumores SNC y neurales"
+  },
+  {
+    "code": "9539",
+    "preferredTerm": "Meningioma atípico (C70._)",
+    "synonyms": [],
+    "histologicGroup": "Tumores SNC y neurales"
+  },
+  {
+    "code": "9540",
+    "preferredTerm": "Neurofibroma SAI",
+    "synonyms": [],
+    "histologicGroup": "Tumores SNC y neurales"
+  },
+  {
+    "code": "9560",
+    "preferredTerm": "Schwannoma / neurilemoma SAI",
+    "synonyms": [],
+    "histologicGroup": "Tumores SNC y neurales"
+  },
+  {
+    "code": "9510",
+    "preferredTerm": "Retinoblastoma (C69.2 — Regla H)",
+    "synonyms": [],
+    "histologicGroup": "Tumores SNC y neurales"
+  },
+  {
+    "code": "9060",
+    "preferredTerm": "Disgerminoma (C56.9)",
+    "synonyms": [],
+    "histologicGroup": "Tumores células germinales"
+  },
+  {
+    "code": "9061",
+    "preferredTerm": "Seminoma SAI (C62.9 — Regla H)",
+    "synonyms": [],
+    "histologicGroup": "Tumores células germinales"
+  },
+  {
+    "code": "9070",
+    "preferredTerm": "Carcinoma embrionario SAI",
+    "synonyms": [],
+    "histologicGroup": "Tumores células germinales"
+  },
+  {
+    "code": "9071",
+    "preferredTerm": "Tumor saco vitelino SAI",
+    "synonyms": [],
+    "histologicGroup": "Tumores células germinales"
+  },
+  {
+    "code": "9080",
+    "preferredTerm": "Teratoma SAI",
+    "synonyms": [],
+    "histologicGroup": "Tumores células germinales"
+  },
+  {
+    "code": "9100",
+    "preferredTerm": "Coriocarcinoma SAI",
+    "synonyms": [],
+    "histologicGroup": "Tumores células germinales"
+  },
+  {
+    "code": "9590",
+    "preferredTerm": "Linfoma maligno SAI",
+    "synonyms": [],
+    "histologicGroup": "Linfomas"
+  },
+  {
+    "code": "9650",
+    "preferredTerm": "Linfoma Hodgkin clásico SAI → C77._ (Regla D)",
+    "synonyms": [],
+    "histologicGroup": "Linfomas",
+    "notes": "(Regla D)"
+  },
+  {
+    "code": "9663",
+    "preferredTerm": "LH esclerosis nodular → C77._ (Regla D)",
+    "synonyms": [],
+    "histologicGroup": "Linfomas",
+    "notes": "(Regla D)"
+  },
+  {
+    "code": "9673",
+    "preferredTerm": "Linfoma células del manto → C77._ (Regla D)",
+    "synonyms": [],
+    "histologicGroup": "Linfomas",
+    "notes": "(Regla D)"
+  },
+  {
+    "code": "9680",
+    "preferredTerm": "Linfoma difuso células B grandes → C77._ (Regla D)",
+    "synonyms": [],
+    "histologicGroup": "Linfomas",
+    "notes": "(Regla D)"
+  },
+  {
+    "code": "9687",
+    "preferredTerm": "Linfoma de Burkitt",
+    "synonyms": [],
+    "histologicGroup": "Linfomas"
+  },
+  {
+    "code": "9690",
+    "preferredTerm": "Linfoma folicular SAI",
+    "synonyms": [],
+    "histologicGroup": "Linfomas"
+  },
+  {
+    "code": "9699",
+    "preferredTerm": "Linfoma MALT (extraganglionar — Regla D)",
+    "synonyms": [],
+    "histologicGroup": "Linfomas"
+  },
+  {
+    "code": "9700",
+    "preferredTerm": "Micosis fungoide (C44._ — linfoma cutáneo)",
+    "synonyms": [],
+    "histologicGroup": "Linfomas"
+  },
+  {
+    "code": "9702",
+    "preferredTerm": "Linfoma T periférico SAI",
+    "synonyms": [],
+    "histologicGroup": "Linfomas"
+  },
+  {
+    "code": "9714",
+    "preferredTerm": "Linfoma anaplásico células grandes ALK+",
+    "synonyms": [],
+    "histologicGroup": "Linfomas"
+  },
+  {
+    "code": "9719",
+    "preferredTerm": "Linfoma NK/T extranodal nasal",
+    "synonyms": [],
+    "histologicGroup": "Linfomas"
+  },
+  {
+    "code": "9823",
+    "preferredTerm": "LLC / linfoma células pequeñas B → C42.1 (Regla E)",
+    "synonyms": [],
+    "histologicGroup": "Leucemias y síndromes mieloproliferativos",
+    "notes": "(Regla E)"
+  },
+  {
+    "code": "9861",
+    "preferredTerm": "LMA SAI → C42.1 (Regla E)",
+    "synonyms": [],
+    "histologicGroup": "Leucemias y síndromes mieloproliferativos",
+    "notes": "(Regla E)"
+  },
+  {
+    "code": "9866",
+    "preferredTerm": "Leucemia promielocítica aguda → C42.1 (Regla E) ★URGENCIA",
+    "synonyms": [],
+    "histologicGroup": "Leucemias y síndromes mieloproliferativos",
+    "notes": "(Regla E) ★URGENCIA"
+  },
+  {
+    "code": "9875",
+    "preferredTerm": "LMC BCR-ABL1+ → C42.1 (Regla E)",
+    "synonyms": [],
+    "histologicGroup": "Leucemias y síndromes mieloproliferativos",
+    "notes": "(Regla E)"
+  },
+  {
+    "code": "9930",
+    "preferredTerm": "Sarcoma mieloide ★EXCEPCIÓN Regla E → NO C42.1",
+    "synonyms": [],
+    "histologicGroup": "Leucemias y síndromes mieloproliferativos",
+    "notes": "★EXCEPCIÓN"
+  },
+  {
+    "code": "9950",
+    "preferredTerm": "Policitemia vera → C42.1 (Regla E)",
+    "synonyms": [],
+    "histologicGroup": "Leucemias y síndromes mieloproliferativos",
+    "notes": "(Regla E)"
+  },
+  {
+    "code": "9961",
+    "preferredTerm": "Mielofibrosis primaria → C42.1 (Regla E)",
+    "synonyms": [],
+    "histologicGroup": "Leucemias y síndromes mieloproliferativos",
+    "notes": "(Regla E)"
+  },
+  {
+    "code": "9962",
+    "preferredTerm": "Trombocitemia esencial → C42.1 (Regla E)",
+    "synonyms": [],
+    "histologicGroup": "Leucemias y síndromes mieloproliferativos",
+    "notes": "(Regla E)"
+  },
+  {
+    "code": "9980",
+    "preferredTerm": "SMD con displasia unilinaje → C42.1",
+    "synonyms": [],
+    "histologicGroup": "Leucemias y síndromes mieloproliferativos"
+  },
+  {
+    "code": "9732",
+    "preferredTerm": "Mieloma múltiple → C42.1 (enfermedad sistémica)",
+    "synonyms": [],
+    "histologicGroup": "Leucemias y síndromes mieloproliferativos"
+  },
+  {
+    "code": "9732",
+    "preferredTerm": "Mieloma múltiple → C42.1",
+    "synonyms": [],
+    "histologicGroup": "Neoplasias de células plasmáticas"
+  },
+  {
+    "code": "9731",
+    "preferredTerm": "Plasmocitoma óseo solitario (hueso afectado)",
+    "synonyms": [],
+    "histologicGroup": "Neoplasias de células plasmáticas"
+  },
+  {
+    "code": "9734",
+    "preferredTerm": "Plasmocitoma extraóseo",
+    "synonyms": [],
+    "histologicGroup": "Neoplasias de células plasmáticas"
+  },
+  {
+    "code": "9765",
+    "preferredTerm": "MGUS (comportamiento /1)",
+    "synonyms": [],
+    "histologicGroup": "Neoplasias de células plasmáticas"
+  },
+  {
+    "code": "9010",
+    "preferredTerm": "Fibroadenoma SAI (C50._ — Regla H)",
+    "synonyms": [],
+    "histologicGroup": "Tumores fibroepiteliales (mama/ovario)"
+  },
+  {
+    "code": "9020",
+    "preferredTerm": "Tumor filoides SAI (C50._ — Regla H)",
+    "synonyms": [],
+    "histologicGroup": "Tumores fibroepiteliales (mama/ovario)"
+  },
+  {
+    "code": "9000",
+    "preferredTerm": "Tumor de Brenner SAI (C56.9 — Regla H)",
+    "synonyms": [],
+    "histologicGroup": "Tumores fibroepiteliales (mama/ovario)"
+  }
+]

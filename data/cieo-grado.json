@@ -1,0 +1,52 @@
+[
+  {
+    "code": "1",
+    "preferredTerm": "Grado I — bien diferenciado",
+    "gradeType": "differentiation"
+  },
+  {
+    "code": "2",
+    "preferredTerm": "Grado II — moderadamente diferenciado",
+    "gradeType": "differentiation"
+  },
+  {
+    "code": "3",
+    "preferredTerm": "Grado III — pobremente diferenciado",
+    "gradeType": "differentiation"
+  },
+  {
+    "code": "4",
+    "preferredTerm": "Grado IV — indiferenciado / anaplásico",
+    "gradeType": "differentiation"
+  },
+  {
+    "code": "9",
+    "preferredTerm": "No determinado / no señalado",
+    "gradeType": "differentiation"
+  },
+  {
+    "code": "5",
+    "preferredTerm": "Célula T",
+    "gradeType": "lineage"
+  },
+  {
+    "code": "6",
+    "preferredTerm": "Célula B / pre-B / precursor B",
+    "gradeType": "lineage"
+  },
+  {
+    "code": "7",
+    "preferredTerm": "Célula nula / no T y no B",
+    "gradeType": "lineage"
+  },
+  {
+    "code": "8",
+    "preferredTerm": "Célula NK / citolítica natural",
+    "gradeType": "lineage"
+  },
+  {
+    "code": "9",
+    "preferredTerm": "No determinado",
+    "gradeType": "lineage"
+  }
+]

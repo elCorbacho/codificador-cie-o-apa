@@ -1,0 +1,1779 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CIE-O-3 — Sistema de Codificación Anatomopatológica</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@400;600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --azul:     #0D3B66;
+  --azul-m:   #1A5C99;
+  --azul-l:   #D6E8F7;
+  --teal:     #0E7C5B;
+  --teal-l:   #D0EFE6;
+  --coral:    #C0392B;
+  --coral-l:  #FAE0DE;
+  --ambar:    #B8651A;
+  --ambar-l:  #FDF0DC;
+  --lila:     #4A3F8F;
+  --lila-l:   #ECEAF8;
+  --gris:     #F4F3F0;
+  --gris-m:   #888580;
+  --gris-d:   #2C2B28;
+  --linea:    #E0DDD8;
+  --blanco:   #FAFAF8;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background: var(--gris);
+  color: var(--gris-d);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+/* ─── HEADER ──────────────────────────────────────────── */
+.site-header {
+  background: var(--azul);
+  padding: 2.5rem 0 2rem;
+  position: relative;
+  overflow: hidden;
+}
+.site-header::before {
+  content: "";
+  position: absolute;
+  right: -60px; top: -60px;
+  width: 340px; height: 340px;
+  border-radius: 50%;
+  border: 60px solid rgba(255,255,255,.05);
+}
+.site-header::after {
+  content: "";
+  position: absolute;
+  left: 40%; bottom: -80px;
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  border: 40px solid rgba(255,255,255,.04);
+}
+.header-eyebrow {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  letter-spacing: .14em;
+  color: rgba(255,255,255,.5);
+  text-transform: uppercase;
+  margin-bottom: .4rem;
+}
+.header-title {
+  font-family: "DM Serif Display", serif;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  color: #fff;
+  line-height: 1.1;
+  margin-bottom: .5rem;
+}
+.header-title em { font-style: italic; color: #7EC8E3; }
+.header-sub {
+  color: rgba(255,255,255,.65);
+  font-size: 14px;
+  max-width: 540px;
+}
+.header-badge {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.2);
+  color: rgba(255,255,255,.8);
+  padding: 4px 12px;
+  border-radius: 100px;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+/* ─── NAV TABS ────────────────────────────────────────── */
+.main-nav {
+  background: var(--azul);
+  border-top: 1px solid rgba(255,255,255,.1);
+  position: sticky; top: 0; z-index: 100;
+}
+.nav-tabs-custom {
+  display: flex;
+  gap: 0;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.nav-tabs-custom::-webkit-scrollbar { display: none; }
+.nav-tab-btn {
+  background: transparent;
+  border: none;
+  color: rgba(255,255,255,.55);
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 14px 22px;
+  cursor: pointer;
+  white-space: nowrap;
+  border-bottom: 3px solid transparent;
+  transition: all .2s;
+}
+.nav-tab-btn:hover { color: rgba(255,255,255,.85); }
+.nav-tab-btn.active {
+  color: #fff;
+  border-bottom-color: #7EC8E3;
+}
+
+/* ─── SECCIONES ───────────────────────────────────────── */
+.section { display: none; padding: 2.5rem 0 4rem; }
+.section.active { display: block; }
+
+/* ─── CARDS ──────────────────────────────────────────── */
+.card-clean {
+  background: var(--blanco);
+  border: 1px solid var(--linea);
+  border-radius: 14px;
+  padding: 1.75rem;
+}
+.card-header-line {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  margin-bottom: 1.25rem;
+}
+.card-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.card-title {
+  font-family: "DM Serif Display", serif;
+  font-size: 1.15rem;
+  line-height: 1.2;
+}
+
+/* ─── CÓDIGO VISUAL ───────────────────────────────────── */
+.code-architecture {
+  background: var(--gris-d);
+  border-radius: 14px;
+  padding: 2rem;
+  color: #fff;
+  font-family: "IBM Plex Mono", monospace;
+}
+.code-arch-title {
+  font-size: 11px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.4);
+  margin-bottom: 1.5rem;
+}
+.code-boxes {
+  display: flex;
+  align-items: stretch;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+.code-box {
+  flex: 1;
+  min-width: 90px;
+  border-radius: 10px;
+  padding: 1rem .75rem;
+  text-align: center;
+}
+.code-box .digit {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1;
+  margin-bottom: .5rem;
+  display: block;
+}
+.code-box .label {
+  font-size: 10px;
+  letter-spacing: .06em;
+  opacity: .75;
+  display: block;
+  line-height: 1.3;
+}
+.code-sep {
+  display: flex;
+  align-items: center;
+  color: rgba(255,255,255,.3);
+  font-size: 1.5rem;
+  padding: 0 2px;
+  align-self: center;
+}
+.cb-topo  { background: #0D3B66; border: 1px solid #1A5C99; }
+.cb-hist  { background: #0E3B30; border: 1px solid #0E7C5B; }
+.cb-comp  { background: #4A1F1A; border: 1px solid #C0392B; }
+.cb-grado { background: #3D2A08; border: 1px solid #B8651A; }
+.code-example {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+.code-ex-label {
+  font-size: 11px;
+  color: rgba(255,255,255,.4);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  margin-bottom: .75rem;
+}
+.code-ex-result {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.code-ex-val {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #7EC8E3;
+}
+.code-ex-desc {
+  font-size: 12px;
+  color: rgba(255,255,255,.5);
+  font-family: "DM Sans", sans-serif;
+}
+
+/* ─── TABLA COMPORTAMIENTO ───────────────────────────── */
+.beh-table { width: 100%; border-collapse: collapse; }
+.beh-table th {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--gris-m);
+  font-weight: 500;
+  padding: 8px 12px;
+  text-align: left;
+  border-bottom: 2px solid var(--linea);
+}
+.beh-table td {
+  padding: 11px 12px;
+  border-bottom: 1px solid var(--linea);
+  font-size: 14px;
+}
+.beh-table tr:last-child td { border-bottom: none; }
+.beh-badge {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+/* ─── REGLAS ──────────────────────────────────────────── */
+.rule-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--linea);
+}
+.rule-item:last-child { border-bottom: none; }
+.rule-letter-badge {
+  width: 34px; height: 34px;
+  border-radius: 8px;
+  background: var(--azul);
+  color: #fff;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 15px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.rule-content { flex: 1; }
+.rule-title { font-weight: 500; font-size: 14px; margin-bottom: 2px; }
+.rule-desc { font-size: 13px; color: var(--gris-m); line-height: 1.5; }
+.rule-ex {
+  margin-top: 6px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11.5px;
+  background: var(--gris);
+  padding: 4px 10px;
+  border-radius: 5px;
+  display: inline-block;
+  color: var(--azul);
+}
+
+/* ─── ERD ─────────────────────────────────────────────── */
+.erd-container {
+  background: var(--blanco);
+  border: 1px solid var(--linea);
+  border-radius: 14px;
+  padding: 2rem;
+  overflow-x: auto;
+}
+.erd-svg-wrap { min-width: 900px; }
+
+.erd-table {
+  display: inline-block;
+  border: 1.5px solid var(--linea);
+  border-radius: 10px;
+  overflow: hidden;
+  min-width: 200px;
+  font-size: 12.5px;
+  vertical-align: top;
+  box-shadow: 0 2px 8px rgba(0,0,0,.05);
+}
+.erd-table-header {
+  padding: 9px 14px;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: .03em;
+  color: #fff;
+}
+.erd-field {
+  display: flex;
+  align-items: center;
+  padding: 6px 14px;
+  border-top: 1px solid var(--linea);
+  gap: .5rem;
+  background: var(--blanco);
+}
+.erd-field:hover { background: var(--gris); }
+.erd-field-name { flex: 1; font-family: "IBM Plex Mono", monospace; font-size: 11.5px; }
+.erd-field-type { font-size: 11px; color: var(--gris-m); font-family: "IBM Plex Mono", monospace; }
+.erd-pk { background: #FFF3CD; color: #856404; font-size: 10px; padding: 1px 5px; border-radius: 3px; font-weight: 600; flex-shrink: 0; }
+.erd-fk { background: #D1ECF1; color: #0C5460; font-size: 10px; padding: 1px 5px; border-radius: 3px; font-weight: 600; flex-shrink: 0; }
+
+.erd-canvas {
+  position: relative;
+  overflow: visible;
+}
+
+/* ─── CODIFICADOR INTERACTIVO ─────────────────────────── */
+.coder-step {
+  background: var(--blanco);
+  border: 1.5px solid var(--linea);
+  border-radius: 14px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  transition: border-color .2s, box-shadow .2s;
+}
+.coder-step.active-step {
+  border-color: var(--azul-m);
+  box-shadow: 0 0 0 3px var(--azul-l);
+}
+.coder-step.done-step {
+  border-color: var(--teal);
+  background: #F5FFFC;
+}
+.step-num {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: var(--gris);
+  color: var(--gris-m);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 13px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: .6rem;
+  flex-shrink: 0;
+  transition: all .2s;
+}
+.active-step .step-num { background: var(--azul); color: #fff; }
+.done-step .step-num { background: var(--teal); color: #fff; }
+.step-title { font-weight: 500; font-size: 14.5px; }
+.step-header { display: flex; align-items: center; margin-bottom: .75rem; }
+
+.coder-select {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid var(--linea);
+  border-radius: 9px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  background: var(--gris);
+  color: var(--gris-d);
+  cursor: pointer;
+  transition: border-color .2s;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23888' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+}
+.coder-select:focus {
+  outline: none;
+  border-color: var(--azul-m);
+  background-color: var(--blanco);
+}
+.coder-select:disabled { opacity: .45; cursor: not-allowed; }
+
+.result-panel {
+  background: var(--gris-d);
+  border-radius: 14px;
+  padding: 1.75rem;
+  color: #fff;
+  font-family: "IBM Plex Mono", monospace;
+  position: sticky;
+  top: 72px;
+}
+.result-title {
+  font-size: 10px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.4);
+  margin-bottom: 1.25rem;
+}
+.result-code-display {
+  font-size: 2.2rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  min-height: 2.8rem;
+  transition: all .3s;
+}
+.result-code-display .part-topo { color: #7EC8E3; }
+.result-code-display .part-sep  { color: rgba(255,255,255,.25); margin: 0 8px; }
+.result-code-display .part-morfo { color: #7EDBA8; }
+.result-code-display .part-comp  { color: #F4A573; }
+.result-code-display .part-grado { color: #F4D173; }
+.result-placeholder { color: rgba(255,255,255,.15); }
+.result-desc {
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  color: rgba(255,255,255,.55);
+  margin-top: .75rem;
+  min-height: 2.5rem;
+  line-height: 1.5;
+}
+.result-divider {
+  border: none;
+  border-top: 1px solid rgba(255,255,255,.08);
+  margin: 1.25rem 0;
+}
+.result-parts { display: flex; flex-direction: column; gap: .5rem; }
+.result-part-row {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  font-size: 12.5px;
+}
+.result-part-label { color: rgba(255,255,255,.35); width: 100px; flex-shrink: 0; }
+.result-part-val { font-weight: 600; }
+.result-part-name { color: rgba(255,255,255,.5); font-family: "DM Sans", sans-serif; font-size: 12px; }
+.regla-badge {
+  font-size: 10px;
+  background: rgba(255,255,255,.08);
+  padding: 2px 8px;
+  border-radius: 4px;
+  color: rgba(255,255,255,.5);
+  margin-left: auto;
+}
+.btn-reset {
+  margin-top: 1.25rem;
+  width: 100%;
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.12);
+  color: rgba(255,255,255,.65);
+  border-radius: 8px;
+  padding: 9px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all .2s;
+}
+.btn-reset:hover { background: rgba(255,255,255,.12); color: #fff; }
+
+.alerta-box {
+  background: #FFF4DC;
+  border: 1px solid #F4C96A;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 12.5px;
+  color: #7B4F10;
+  margin-top: 8px;
+  display: none;
+}
+.alerta-box.show { display: block; }
+
+.hint-text {
+  font-size: 12px;
+  color: var(--gris-m);
+  margin-top: 6px;
+  line-height: 1.5;
+}
+
+/* ─── SECTION TITLES ──────────────────────────────────── */
+.section-eyebrow {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10.5px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--gris-m);
+  margin-bottom: .4rem;
+}
+.section-title {
+  font-family: "DM Serif Display", serif;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  line-height: 1.15;
+  color: var(--azul);
+  margin-bottom: .75rem;
+}
+.section-desc { color: var(--gris-m); font-size: 14.5px; max-width: 600px; margin-bottom: 2rem; }
+
+/* ─── ERD DIAGRAM ─────────────────────────────────────── */
+.erd-wrap { overflow-x: auto; padding-bottom: 1rem; }
+.erd-diagram {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(200px, 1fr));
+  gap: 20px;
+  min-width: 900px;
+  position: relative;
+  padding: 20px;
+}
+.erd-col { display: flex; flex-direction: column; gap: 20px; }
+.erd-relation-label {
+  font-size: 10px;
+  color: var(--gris-m);
+  font-family: "IBM Plex Mono", monospace;
+  text-align: center;
+  padding: 4px 0;
+}
+.erd-connector-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--gris-m);
+  font-family: "IBM Plex Mono", monospace;
+  margin: 4px 0;
+}
+.erd-connector-line {
+  height: 1.5px;
+  background: var(--linea);
+  flex: 1;
+  position: relative;
+}
+.erd-connector-line::after {
+  content: "▶";
+  position: absolute;
+  right: -6px;
+  top: -8px;
+  font-size: 10px;
+  color: var(--linea);
+}
+
+/* ─── GRADO ESPECIAL SNC ─────────────────────────────── */
+.snc-table { width: 100%; font-size: 13px; border-collapse: collapse; }
+.snc-table th {
+  background: var(--gris);
+  padding: 8px 12px;
+  text-align: left;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--gris-m);
+  border-bottom: 2px solid var(--linea);
+}
+.snc-table td { padding: 9px 12px; border-bottom: 1px solid var(--linea); }
+.snc-table tr:last-child td { border-bottom: none; }
+.snc-grade-i   { color: var(--teal); font-weight: 600; }
+.snc-grade-ii  { color: var(--ambar); font-weight: 600; }
+.snc-grade-iii { color: var(--coral); font-weight: 600; }
+.snc-grade-iv  { color: #8B0000; font-weight: 600; }
+
+@media (max-width: 768px) {
+  .result-panel { position: static; margin-top: 1.5rem; }
+  .erd-diagram { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="site-header">
+  <div class="container">
+    <div class="header-eyebrow">OMS · IARC · Min. Sanidad España 2021</div>
+    <h1 class="header-title">CIE-<em>O</em>-3</h1>
+    <p class="header-sub">Clasificación Internacional de Enfermedades para Oncología — Tercera Edición, Primera Revisión. Sistema de codificación anatomopatológica.</p>
+    <span class="header-badge">CIE-O-3.1 · Versión normativa</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<div class="main-nav">
+  <div class="container">
+    <ul class="nav-tabs-custom">
+      <li><button class="nav-tab-btn active" onclick="showSection('arquitectura',this)">Arquitectura del código</button></li>
+      <li><button class="nav-tab-btn" onclick="showSection('entidades',this)">Entidad–Relación</button></li>
+      <li><button class="nav-tab-btn" onclick="showSection('reglas',this)">Reglas A–K</button></li>
+      <li><button class="nav-tab-btn" onclick="showSection('codificador',this)">Codificador paso a paso</button></li>
+      <li><button class="nav-tab-btn" onclick="showSection('especiales',this)">Casos especiales</button></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     SECCIÓN 1: ARQUITECTURA
+══════════════════════════════════════════════════════════════════ -->
+<section id="arquitectura" class="section active">
+  <div class="container">
+    <div class="section-eyebrow">Estructura fundamental</div>
+    <h2 class="section-title">Código de 10 caracteres</h2>
+    <p class="section-desc">Cada diagnóstico oncológico genera exactamente dos códigos simultáneos: un código de topografía y un código de morfología. Juntos suman 10 caracteres.</p>
+
+    <div class="row g-4">
+      <div class="col-lg-8">
+        <div class="code-architecture">
+          <div class="code-arch-title">Estructura del código completo</div>
+          <div class="code-boxes">
+            <div class="code-box cb-topo">
+              <span class="digit">C</span>
+              <span class="label">Prefijo<br>topografía</span>
+            </div>
+            <div class="code-box cb-topo">
+              <span class="digit">X X</span>
+              <span class="label">Localización<br>(2 dígitos)</span>
+            </div>
+            <div class="code-sep">.</div>
+            <div class="code-box cb-topo">
+              <span class="digit">X</span>
+              <span class="label">Sublocalización<br>(decimal)</span>
+            </div>
+            <div class="code-sep" style="margin: 0 10px; font-size:1.2rem; color:rgba(255,255,255,.2)">+</div>
+            <div class="code-box cb-hist">
+              <span class="digit">X X X X</span>
+              <span class="label">Tipo histológico<br>(4 dígitos)</span>
+            </div>
+            <div class="code-sep">/</div>
+            <div class="code-box cb-comp">
+              <span class="digit">X</span>
+              <span class="label">Comporta-<br>miento</span>
+            </div>
+            <div class="code-box cb-grado">
+              <span class="digit">X</span>
+              <span class="label">Grado /<br>Linaje</span>
+            </div>
+          </div>
+
+          <div class="code-example">
+            <div class="code-ex-label">Ejemplo — Carcinoma escamoso pobremente diferenciado, lóbulo superior del pulmón</div>
+            <div class="code-ex-result">
+              <div>
+                <div class="code-ex-val" style="color:#7EC8E3">C34.1</div>
+                <div class="code-ex-desc">Lóbulo superior del pulmón</div>
+              </div>
+              <div style="color:rgba(255,255,255,.2); font-size:1.5rem">+</div>
+              <div>
+                <div class="code-ex-val" style="color:#7EDBA8">8070/<span style="color:#F4A573">3</span><span style="color:#F4D173">3</span></div>
+                <div class="code-ex-desc">Carcinoide escamoso / maligno / pobre dif.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="card-clean h-100">
+          <div class="card-header-line">
+            <div class="card-dot" style="background:var(--azul)"></div>
+            <div class="card-title">Eje 1 — Topografía</div>
+          </div>
+          <p class="mb-2" style="font-size:13.5px">Indica el <strong>sitio de origen</strong> del tumor. Mismo conjunto C00–C80 que la CIE-10, pero para todas las neoplasias (no solo malignas).</p>
+          <table class="table table-sm mb-0" style="font-size:12.5px">
+            <tr><td class="text-muted">C</td><td>Prefijo fijo</td></tr>
+            <tr><td class="text-muted">XX</td><td>Localización (órgano)</td></tr>
+            <tr><td class="text-muted">.X</td><td>Sublocalización</td></tr>
+            <tr><td class="text-muted">.8</td><td>Lesión que rebasa límites (Regla C)</td></tr>
+            <tr><td class="text-muted">.9</td><td>SAI (sin otra indicación)</td></tr>
+          </table>
+          <div class="mt-3 p-2 rounded" style="background:var(--azul-l); font-size:12px; color:var(--azul)">
+            <strong>Codigos especiales:</strong><br>
+            C42.1 = médula ósea (leucemias, Regla E)<br>
+            C77._ = ganglios linfáticos (linfomas, Regla D)
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="card-clean">
+          <div class="card-header-line">
+            <div class="card-dot" style="background:var(--teal)"></div>
+            <div class="card-title">Tipo histológico (4 dígitos)</div>
+          </div>
+          <p style="font-size:13px; color:var(--gris-m)">El tipo celular que se transformó en neoplásico. Rangos M8000–M9989.</p>
+          <table class="table table-sm mb-0" style="font-size:12.5px">
+            <tr><td class="text-muted">8000–8004</td><td>Neoplasias SAI</td></tr>
+            <tr><td class="text-muted">8010–8084</td><td>Carcinomas epiteliales</td></tr>
+            <tr><td class="text-muted">8140–8389</td><td>Adenocarcinomas</td></tr>
+            <tr><td class="text-muted">8720–8790</td><td>Melanocíticos</td></tr>
+            <tr><td class="text-muted">8800–8990</td><td>Tejidos blandos</td></tr>
+            <tr><td class="text-muted">9590–9699</td><td>Linfomas</td></tr>
+            <tr><td class="text-muted">9800–9931</td><td>Leucemias</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="card-clean">
+          <div class="card-header-line">
+            <div class="card-dot" style="background:var(--coral)"></div>
+            <div class="card-title">Comportamiento (/X)</div>
+          </div>
+          <table class="beh-table" style="font-size:12.5px">
+            <thead>
+              <tr><th>Dígito</th><th>Significado</th><th>Registro</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><span class="beh-badge" style="background:var(--teal-l);color:var(--teal)">/0</span></td><td>Benigno</td><td>—</td></tr>
+              <tr><td><span class="beh-badge" style="background:var(--ambar-l);color:var(--ambar)">/1</span></td><td>Incierto / borderline</td><td>—</td></tr>
+              <tr><td><span class="beh-badge" style="background:var(--azul-l);color:var(--azul)">/2</span></td><td>In situ / no invasor</td><td>✓</td></tr>
+              <tr><td><span class="beh-badge" style="background:var(--coral-l);color:var(--coral)">/3</span></td><td>Maligno primario</td><td>✓</td></tr>
+              <tr><td><span class="beh-badge" style="background:var(--gris);color:var(--gris-m)">/6</span></td><td>Maligno, metástasis</td><td>Solo AP</td></tr>
+              <tr><td><span class="beh-badge" style="background:var(--gris);color:var(--gris-m)">/9</span></td><td>Primario/metástasis incierto</td><td>Solo AP</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="card-clean">
+          <div class="card-header-line">
+            <div class="card-dot" style="background:var(--ambar)"></div>
+            <div class="card-title">Grado / Linaje (6.° dígito)</div>
+          </div>
+          <p style="font-size:12px; color:var(--gris-m); margin-bottom:.75rem">Tumores sólidos: diferenciación. Hematología: linaje celular.</p>
+          <div class="row g-2">
+            <div class="col-6">
+              <div style="background:var(--ambar-l); border-radius:8px; padding:10px; font-size:12px;">
+                <strong style="color:var(--ambar)">Diferenciación</strong>
+                <div class="mt-1" style="line-height:1.7; font-family:'IBM Plex Mono',monospace; font-size:11px;">
+                  1 → bien dif.<br>2 → mod. dif.<br>3 → pobre dif.<br>4 → indiferenciado<br>9 → no determinado
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div style="background:var(--lila-l); border-radius:8px; padding:10px; font-size:12px;">
+                <strong style="color:var(--lila)">Linaje hematológico</strong>
+                <div class="mt-1" style="line-height:1.7; font-family:'IBM Plex Mono',monospace; font-size:11px;">
+                  5 → célula T<br>6 → célula B<br>7 → célula nula<br>8 → célula NK<br>9 → no det.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-2 p-2 rounded" style="background:var(--gris); font-size:11.5px; color:var(--gris-m)">
+            <strong>Regla G:</strong> Si el diagnóstico indica dos grados, usar el <strong>mayor</strong>. Los dígitos 5–8 prevalecen sobre 1–4.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     SECCIÓN 2: ERD
+══════════════════════════════════════════════════════════════════ -->
+<section id="entidades" class="section">
+  <div class="container">
+    <div class="section-eyebrow">Modelo de datos</div>
+    <h2 class="section-title">Entidad–Relación</h2>
+    <p class="section-desc">Estructura normalizada del sistema CIE-O-3. Las tablas catálogo son de solo lectura; las tablas pivote implementan la lógica de relaciones.</p>
+
+    <div class="erd-wrap">
+      <div class="erd-container">
+        <div class="erd-diagram">
+
+          <!-- Columna 1: Grupos -->
+          <div class="erd-col">
+            <div class="erd-table">
+              <div class="erd-table-header" style="background:var(--teal)">GRUPO_ORGANICO</div>
+              <div class="erd-field"><span class="erd-pk">PK</span><span class="erd-field-name">id_grupo</span><span class="erd-field-type">int</span></div>
+              <div class="erd-field"><span class="erd-field-name">nombre</span><span class="erd-field-type">varchar</span></div>
+            </div>
+            <div class="erd-relation-label">1 ──── N ↓</div>
+            <div class="erd-table">
+              <div class="erd-table-header" style="background:var(--lila)">GRUPO_HISTOLOGICO</div>
+              <div class="erd-field"><span class="erd-pk">PK</span><span class="erd-field-name">id_grupo</span><span class="erd-field-type">int</span></div>
+              <div class="erd-field"><span class="erd-field-name">nombre</span><span class="erd-field-type">varchar</span></div>
+              <div class="erd-field"><span class="erd-field-name">tipo_grado</span><span class="erd-field-type">enum</span></div>
+            </div>
+          </div>
+
+          <!-- Columna 2: Catálogos principales -->
+          <div class="erd-col">
+            <div class="erd-table">
+              <div class="erd-table-header" style="background:var(--azul)">TOPOGRAFIA</div>
+              <div class="erd-field"><span class="erd-pk">PK</span><span class="erd-field-name">cod_topografia</span><span class="erd-field-type">char(6)</span></div>
+              <div class="erd-field"><span class="erd-fk">FK</span><span class="erd-field-name">id_grupo_organico</span><span class="erd-field-type">int</span></div>
+              <div class="erd-field"><span class="erd-field-name">descripcion</span><span class="erd-field-type">varchar</span></div>
+              <div class="erd-field"><span class="erd-field-name">notas_reglas</span><span class="erd-field-type">text</span></div>
+            </div>
+            <div class="erd-relation-label">1 ──── N ↓</div>
+            <div class="erd-table">
+              <div class="erd-table-header" style="background:var(--lila)">MORFOLOGIA</div>
+              <div class="erd-field"><span class="erd-pk">PK</span><span class="erd-field-name">cod_morfologia</span><span class="erd-field-type">char(4)</span></div>
+              <div class="erd-field"><span class="erd-fk">FK</span><span class="erd-field-name">id_grupo_histologico</span><span class="erd-field-type">int</span></div>
+              <div class="erd-field"><span class="erd-field-name">descripcion</span><span class="erd-field-type">varchar</span></div>
+              <div class="erd-field"><span class="erd-field-name">topo_restriccion_pdf</span><span class="erd-field-type">varchar</span></div>
+            </div>
+          </div>
+
+          <!-- Columna 3: Dígitos y restricciones -->
+          <div class="erd-col">
+            <div class="erd-table">
+              <div class="erd-table-header" style="background:var(--coral)">COMPORTAMIENTO</div>
+              <div class="erd-field"><span class="erd-pk">PK</span><span class="erd-field-name">cod_comportamiento</span><span class="erd-field-type">char(1)</span></div>
+              <div class="erd-field"><span class="erd-field-name">descripcion</span><span class="erd-field-type">varchar</span></div>
+              <div class="erd-field"><span class="erd-field-name">uso_registro_cancer</span><span class="erd-field-type">bool</span></div>
+            </div>
+            <div class="erd-relation-label">M ─── N (pivot)</div>
+            <div class="erd-table">
+              <div class="erd-table-header" style="background:var(--ambar)">GRADO</div>
+              <div class="erd-field"><span class="erd-pk">PK</span><span class="erd-field-name">cod_grado</span><span class="erd-field-type">char(1)</span></div>
+              <div class="erd-field"><span class="erd-field-name">descripcion</span><span class="erd-field-type">varchar</span></div>
+              <div class="erd-field"><span class="erd-field-name">tipo</span><span class="erd-field-type">enum</span></div>
+            </div>
+            <div class="erd-relation-label">M ─── N (pivot)</div>
+            <div class="erd-table">
+              <div class="erd-table-header" style="background:var(--coral)" >RESTRICCION_TOPO_MORFO</div>
+              <div class="erd-field"><span class="erd-pk">PK</span><span class="erd-field-name">id_restriccion</span><span class="erd-field-type">int</span></div>
+              <div class="erd-field"><span class="erd-fk">FK</span><span class="erd-field-name">cod_topografia</span><span class="erd-field-type">char(6)</span></div>
+              <div class="erd-field"><span class="erd-fk">FK</span><span class="erd-field-name">cod_morfologia</span><span class="erd-field-type">char(4)</span></div>
+              <div class="erd-field"><span class="erd-field-name">tipo_restriccion</span><span class="erd-field-type">enum</span></div>
+              <div class="erd-field"><span class="erd-field-name">descripcion_regla</span><span class="erd-field-type">text</span></div>
+            </div>
+          </div>
+
+          <!-- Columna 4: Tablas pivote + operacional -->
+          <div class="erd-col">
+            <div class="erd-table">
+              <div class="erd-table-header" style="background:#3C3489">MORFO_COMPORTAMIENTO</div>
+              <div class="erd-field"><span class="erd-fk">FK</span><span class="erd-field-name">cod_morfologia</span><span class="erd-field-type">char(4)</span></div>
+              <div class="erd-field"><span class="erd-fk">FK</span><span class="erd-field-name">cod_comportamiento</span><span class="erd-field-type">char(1)</span></div>
+              <div class="erd-field"><span class="erd-field-name">es_habitual_pdf</span><span class="erd-field-type">bool</span></div>
+              <div class="erd-field"><span class="erd-field-name">es_defecto</span><span class="erd-field-type">bool</span></div>
+            </div>
+            <div class="erd-table">
+              <div class="erd-table-header" style="background:#712B13">MORFO_GRADO</div>
+              <div class="erd-field"><span class="erd-fk">FK</span><span class="erd-field-name">cod_morfologia</span><span class="erd-field-type">char(4)</span></div>
+              <div class="erd-field"><span class="erd-fk">FK</span><span class="erd-field-name">cod_grado</span><span class="erd-field-type">char(1)</span></div>
+              <div class="erd-field"><span class="erd-field-name">es_defecto</span><span class="erd-field-type">bool</span></div>
+            </div>
+            <div class="erd-table">
+              <div class="erd-table-header" style="background:#2E4057">CODIGO_GENERADO</div>
+              <div class="erd-field"><span class="erd-pk">PK</span><span class="erd-field-name">id_codigo</span><span class="erd-field-type">int</span></div>
+              <div class="erd-field"><span class="erd-fk">FK</span><span class="erd-field-name">cod_topografia</span><span class="erd-field-type">char(6)</span></div>
+              <div class="erd-field"><span class="erd-fk">FK</span><span class="erd-field-name">cod_morfologia</span><span class="erd-field-type">char(4)</span></div>
+              <div class="erd-field"><span class="erd-fk">FK</span><span class="erd-field-name">cod_comportamiento</span><span class="erd-field-type">char(1)</span></div>
+              <div class="erd-field"><span class="erd-fk">FK</span><span class="erd-field-name">cod_grado</span><span class="erd-field-type">char(1)</span></div>
+              <div class="erd-field"><span class="erd-field-name">codigo_topo_final</span><span class="erd-field-type">varchar</span></div>
+              <div class="erd-field"><span class="erd-field-name">codigo_morfo_final</span><span class="erd-field-type">varchar</span></div>
+              <div class="erd-field"><span class="erd-field-name">patologo_anuló</span><span class="erd-field-type">bool</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Leyenda relaciones -->
+        <div class="mt-3 pt-3" style="border-top:1px solid var(--linea)">
+          <div class="row g-3" style="font-size:12px; color:var(--gris-m)">
+            <div class="col-auto"><strong style="color:var(--azul)">Regla D:</strong> Linfomas ganglionares → C77._</div>
+            <div class="col-auto"><strong style="color:var(--coral)">Regla E:</strong> Leucemias → C42.1 siempre</div>
+            <div class="col-auto"><strong style="color:var(--teal)">Regla F:</strong> Matriz de comportamiento; el patólogo puede anular</div>
+            <div class="col-auto"><strong style="color:var(--ambar)">Regla H:</strong> Restricciones topo orientativas (no obligatorias)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     SECCIÓN 3: REGLAS A–K
+══════════════════════════════════════════════════════════════════ -->
+<section id="reglas" class="section">
+  <div class="container">
+    <div class="section-eyebrow">Directrices oficiales — §4.1 Tabla 14 del PDF</div>
+    <h2 class="section-title">Reglas de codificación A–K</h2>
+    <p class="section-desc">El PDF establece 10 reglas oficiales (no existe Regla I, intencionalmente). Cada regla aplica a situaciones específicas de codificación.</p>
+
+    <div class="row g-4">
+      <div class="col-lg-6">
+        <div class="card-clean">
+          <div class="card-header-line">
+            <div class="card-dot" style="background:var(--azul)"></div>
+            <div class="card-title">Reglas de topografía</div>
+          </div>
+
+          <div class="rule-item">
+            <div class="rule-letter-badge">A</div>
+            <div class="rule-content">
+              <div class="rule-title">Localizaciones mal definidas</div>
+              <div class="rule-desc">Si el diagnóstico no especifica tejido de origen, usar el tejido específico del índice alfabético — no C76 (SAI).</div>
+              <span class="rule-ex">Carcinoma del brazo → C44.6 (piel), no C76.4</span>
+            </div>
+          </div>
+
+          <div class="rule-item">
+            <div class="rule-letter-badge">B</div>
+            <div class="rule-content">
+              <div class="rule-title">Prefijos (peri-, para-, pre-...)</div>
+              <div class="rule-desc">Localización modificada por prefijo no listado → C76 (mal definida), salvo que el tipo tumoral indique tejido específico.</div>
+              <span class="rule-ex">Tumor peripancreático → C48.0 (retroperitoneo)</span>
+            </div>
+          </div>
+
+          <div class="rule-item">
+            <div class="rule-letter-badge">C</div>
+            <div class="rule-content">
+              <div class="rule-title">Tumor que rebasa límites</div>
+              <div class="rule-desc">Tumor en dos o más subcategorías contiguas sin punto de origen determinable → subcategoría .8</div>
+              <span class="rule-ex">Carcinoma esofágico cervicotorácico → C15.8</span>
+            </div>
+          </div>
+
+          <div class="rule-item">
+            <div class="rule-letter-badge" style="background:var(--teal)">D</div>
+            <div class="rule-content">
+              <div class="rule-title">Linfomas — código topográfico especial</div>
+              <div class="rule-desc">Ganglionares → C77._. Extraganglionares → sitio de origen. Múltiples regiones → C77.8. Sin localización → C80.9.</div>
+              <span class="rule-ex">Linfoma MALT gástrico → C16.9  ·  Linfoma ganglionar → C77.9</span>
+            </div>
+          </div>
+
+          <div class="rule-item" style="border-bottom:none">
+            <div class="rule-letter-badge" style="background:var(--teal)">E</div>
+            <div class="rule-content">
+              <div class="rule-title">Leucemias — siempre C42.1</div>
+              <div class="rule-desc">TODAS las leucemias → C42.1 (médula ósea). <strong>Excepción:</strong> sarcoma mieloide (9930/3) → localización del depósito.</div>
+              <span class="rule-ex">LMA → C42.1  ·  Sarcoma mieloide en ganglio → C77.9</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="card-clean">
+          <div class="card-header-line">
+            <div class="card-dot" style="background:var(--coral)"></div>
+            <div class="card-title">Reglas de morfología</div>
+          </div>
+
+          <div class="rule-item">
+            <div class="rule-letter-badge" style="background:var(--coral)">F</div>
+            <div class="rule-content">
+              <div class="rule-title">Sistema matricial de comportamiento</div>
+              <div class="rule-desc">Usar comportamiento correcto aunque el término exacto no aparezca en CIE-O. La matriz permite cualquier combinación. El <strong>patólogo tiene la última palabra</strong>.</div>
+              <span class="rule-ex">Cordoma benigno → 9370/0 (aunque no esté listado)</span>
+            </div>
+          </div>
+
+          <div class="rule-item">
+            <div class="rule-letter-badge" style="background:var(--ambar)">G</div>
+            <div class="rule-content">
+              <div class="rule-title">Grado: asignar el MAYOR</div>
+              <div class="rule-desc">Si el diagnóstico indica dos niveles de grado, usar el mayor. Los dígitos de linaje 5–8 prevalecen sobre diferenciación 1–4.</div>
+              <span class="rule-ex">Mod. dif. con áreas pobremente dif. → grado 3</span>
+            </div>
+          </div>
+
+          <div class="rule-item">
+            <div class="rule-letter-badge" style="background:var(--coral)">H</div>
+            <div class="rule-content">
+              <div class="rule-title">Morfología asociada a localización</div>
+              <div class="rule-desc">Usar código topo sugerido entre paréntesis si el diagnóstico no indica localización. Si hay localización indicada, usarla aunque difiera del código sugerido.</div>
+              <span class="rule-ex">Basocelular sin loc. → C44._  ·  Con loc. distinta → usar esa</span>
+            </div>
+          </div>
+
+          <div class="rule-item">
+            <div class="rule-letter-badge" style="background:var(--coral)">J</div>
+            <div class="rule-content">
+              <div class="rule-title">Diagnósticos morfológicos compuestos</div>
+              <div class="rule-desc">Si el término compuesto no aparece, invertir el orden de las raíces de las palabras.</div>
+              <span class="rule-ex">Mixofibrosarcoma → buscar Fibromixosarcoma (8811/3)</span>
+            </div>
+          </div>
+
+          <div class="rule-item" style="border-bottom:none">
+            <div class="rule-letter-badge" style="background:var(--coral)">K</div>
+            <div class="rule-content">
+              <div class="rule-title">Múltiples términos morfológicos</div>
+              <div class="rule-desc">Si un tumor tiene dos adjetivos con códigos distintos y no hay código único, usar el <strong>numéricamente mayor</strong> (generalmente más específico).</div>
+              <span class="rule-ex">Carcinoma escamoso de células transicionales → 8120/3</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     SECCIÓN 4: CODIFICADOR PASO A PASO
+══════════════════════════════════════════════════════════════════ -->
+<section id="codificador" class="section">
+  <div class="container">
+    <div class="section-eyebrow">Herramienta interactiva</div>
+    <h2 class="section-title">Codificador paso a paso</h2>
+    <p class="section-desc">Selecciona cada campo en orden. El sistema aplica automáticamente las reglas A–K del PDF.</p>
+
+    <div class="row g-4">
+      <!-- Pasos -->
+      <div class="col-lg-7">
+
+        <!-- Paso 1: Contexto -->
+        <div class="coder-step active-step" id="step-ctx">
+          <div class="step-header">
+            <span class="step-num">0</span>
+            <span class="step-title">Contexto de uso</span>
+          </div>
+          <select class="coder-select" id="sel-ctx" onchange="onCtxChange()">
+            <option value="">-- Seleccionar contexto --</option>
+            <option value="laboratorio_ap">Laboratorio de Anatomía Patológica (permite /6 y /9)</option>
+            <option value="registro_cancer">Registro de cáncer / DEIS (solo /2 y /3)</option>
+          </select>
+          <p class="hint-text">El contexto determina qué comportamientos están disponibles según §4.3.2 del PDF.</p>
+        </div>
+
+        <!-- Paso 2: Topografía -->
+        <div class="coder-step" id="step-topo">
+          <div class="step-header">
+            <span class="step-num">1</span>
+            <span class="step-title">Topografía — ¿Dónde se origina el tumor?</span>
+          </div>
+          <select class="coder-select" id="sel-sistema" onchange="onSistema()" disabled>
+            <option value="">-- Sistema orgánico --</option>
+          </select>
+          <select class="coder-select mt-2" id="sel-topo" onchange="onTopo()" disabled>
+            <option value="">-- Sitio anatómico --</option>
+          </select>
+          <div class="alerta-box" id="alert-topo"></div>
+          <p class="hint-text">Regla A: preferir sitio específico sobre SAI. Regla C: usar .8 si el tumor rebasa límites.</p>
+        </div>
+
+        <!-- Paso 3: Histología -->
+        <div class="coder-step" id="step-hist">
+          <div class="step-header">
+            <span class="step-num">2</span>
+            <span class="step-title">Tipo histológico — ¿Qué tipo celular?</span>
+          </div>
+          <select class="coder-select" id="sel-grupo-hist" onchange="onGrupoHist()" disabled>
+            <option value="">-- Grupo histológico --</option>
+          </select>
+          <select class="coder-select mt-2" id="sel-hist" onchange="onHist()" disabled>
+            <option value="">-- Tipo histológico --</option>
+          </select>
+          <p class="hint-text">Regla K: si hay dos adjetivos con códigos distintos, usar el mayor. Regla J: invertir raíces si el término no aparece.</p>
+        </div>
+
+        <!-- Paso 4: Comportamiento -->
+        <div class="coder-step" id="step-comp">
+          <div class="step-header">
+            <span class="step-num">3</span>
+            <span class="step-title">Comportamiento — ¿Cómo actúa el tumor?</span>
+          </div>
+          <select class="coder-select" id="sel-comp" onchange="onComp()" disabled>
+            <option value="">-- Comportamiento --</option>
+          </select>
+          <div class="alerta-box" id="alert-comp"></div>
+          <p class="hint-text">Regla F: el sistema matricial permite cualquier comportamiento. El patólogo tiene la última palabra.</p>
+        </div>
+
+        <!-- Paso 5: Grado -->
+        <div class="coder-step" id="step-grado">
+          <div class="step-header">
+            <span class="step-num">4</span>
+            <span class="step-title" id="grado-step-title">Grado / Diferenciación</span>
+          </div>
+          <select class="coder-select" id="sel-grado" onchange="onGrado()" disabled>
+            <option value="">-- Grado --</option>
+          </select>
+          <div class="alerta-box" id="alert-grado"></div>
+          <p class="hint-text" id="grado-hint">Regla G: si el informe indica dos grados, usar el mayor. Los dígitos de linaje 5–8 prevalecen sobre 1–4.</p>
+        </div>
+
+      </div>
+
+      <!-- Panel resultado -->
+      <div class="col-lg-5">
+        <div class="result-panel" id="result-panel">
+          <div class="result-title">Código CIE-O-3 generado</div>
+          <div class="result-code-display" id="result-code">
+            <span class="result-placeholder">_ _ . _</span>
+            <span class="result-placeholder" style="margin:0 8px">  </span>
+            <span class="result-placeholder">_ _ _ _ / _ _</span>
+          </div>
+          <div class="result-desc" id="result-desc">Complete los campos para generar el código.</div>
+
+          <hr class="result-divider">
+
+          <div class="result-parts" id="result-parts">
+            <div class="result-part-row">
+              <span class="result-part-label">Topografía</span>
+              <span class="result-part-val part-topo" id="rp-topo">—</span>
+              <span class="result-part-name" id="rp-topo-name"></span>
+            </div>
+            <div class="result-part-row">
+              <span class="result-part-label">Histología</span>
+              <span class="result-part-val" style="color:#7EDBA8" id="rp-hist">—</span>
+              <span class="result-part-name" id="rp-hist-name"></span>
+            </div>
+            <div class="result-part-row">
+              <span class="result-part-label">Comportamiento</span>
+              <span class="result-part-val part-comp" id="rp-comp">—</span>
+              <span class="result-part-name" id="rp-comp-name"></span>
+              <span class="regla-badge">Regla F</span>
+            </div>
+            <div class="result-part-row">
+              <span class="result-part-label" id="rp-grado-label">Grado</span>
+              <span class="result-part-val part-grado" id="rp-grado">—</span>
+              <span class="result-part-name" id="rp-grado-name"></span>
+              <span class="regla-badge">Regla G</span>
+            </div>
+          </div>
+
+          <button class="btn-reset" onclick="resetAll()">↺ Reiniciar codificación</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     SECCIÓN 5: CASOS ESPECIALES
+══════════════════════════════════════════════════════════════════ -->
+<section id="especiales" class="section">
+  <div class="container">
+    <div class="section-eyebrow">Excepciones normativas</div>
+    <h2 class="section-title">Casos especiales</h2>
+    <p class="section-desc">El PDF establece reglas específicas para situaciones que no siguen el patrón general.</p>
+
+    <div class="row g-4">
+
+      <!-- SNC -->
+      <div class="col-12">
+        <div class="card-clean">
+          <div class="card-header-line">
+            <div class="card-dot" style="background:var(--lila)"></div>
+            <div class="card-title">Tumores del SNC — Grados OMS vs CIE-O (§4.6, Tabla 27)</div>
+          </div>
+          <p style="font-size:13.5px; color:var(--gris-m); margin-bottom:1rem">Los grados OMS I–IV para tumores del SNC <strong>no son equivalentes</strong> al sexto dígito de CIE-O. El grado OMS estima pronóstico; el sexto dígito de CIE-O describe diferenciación. Si no hay descripción verbal del grado → usar 9.</p>
+          <div class="table-responsive">
+            <table class="snc-table">
+              <thead>
+                <tr><th>Tipo tumoral</th><th>Grado OMS</th><th>Código CIE-O</th><th>Comportamiento</th><th>Nota</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Astrocitoma pilocítico</td><td class="snc-grade-i">I</td><td><code>9421</code></td><td>/1</td><td>Comportamiento benigno/incierto pese a ser infiltrante</td></tr>
+                <tr><td>Astrocitoma difuso IDH-mutado</td><td class="snc-grade-ii">II</td><td><code>9400</code></td><td>/3</td><td>Maligno pese a grado bajo</td></tr>
+                <tr><td>Astrocitoma anaplásico IDH-mutado</td><td class="snc-grade-iii">III</td><td><code>9401</code></td><td>/3</td><td></td></tr>
+                <tr><td>Glioblastoma IDH wild-type</td><td class="snc-grade-iv">IV</td><td><code>9440</code></td><td>/3</td><td>IDH wild-type implica grado IV automáticamente (WHO 2021)</td></tr>
+                <tr><td>Meduloblastoma</td><td class="snc-grade-iv">IV</td><td><code>9470</code></td><td>/3</td><td>Siempre /3 aunque histológicamente sea "diferenciado"</td></tr>
+                <tr><td>Meningioma SAI</td><td class="snc-grade-i">I</td><td><code>9530</code></td><td>/0</td><td>Comportamiento benigno /0 (OMS grado I)</td></tr>
+                <tr><td>Meningioma atípico</td><td class="snc-grade-ii">II</td><td><code>9539</code></td><td>/1</td><td>Comportamiento incierto /1 (OMS grado II)</td></tr>
+                <tr><td>Schwannoma</td><td class="snc-grade-i">I</td><td><code>9560</code></td><td>/0</td><td></td></tr>
+                <tr><td>Ependimoma mixopapilar</td><td class="snc-grade-i">I</td><td><code>9394</code></td><td>/1</td><td></td></tr>
+                <tr><td>Craneofaringioma</td><td class="snc-grade-i">I</td><td><code>9350</code></td><td>/1</td><td>Benigno histológicamente pero comportamiento incierto por localización</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Laboratorio AP vs Registro -->
+      <div class="col-lg-6">
+        <div class="card-clean h-100">
+          <div class="card-header-line">
+            <div class="card-dot" style="background:var(--azul)"></div>
+            <div class="card-title">Laboratorio AP vs Registro de cáncer (§4.3.2)</div>
+          </div>
+          <p style="font-size:13px">El PDF distingue dos contextos de uso con reglas diferentes para el comportamiento:</p>
+          <div class="row g-2 mt-1">
+            <div class="col-6">
+              <div style="background:var(--azul-l); border-radius:8px; padding:12px; font-size:12.5px;">
+                <strong style="color:var(--azul)">Laboratorio AP</strong>
+                <p style="font-size:12px; color:var(--gris-m); margin:6px 0 0">Rastreo de muestras. Permite /6 (metástasis) y /9 (incierto). Ej: biopsia de ganglio con adenocarcinoma metastásico → C77.0, 8490<strong>/6</strong></p>
+              </div>
+            </div>
+            <div class="col-6">
+              <div style="background:var(--teal-l); border-radius:8px; padding:12px; font-size:12.5px;">
+                <strong style="color:var(--teal)">Registro de cáncer</strong>
+                <p style="font-size:12px; color:var(--gris-m); margin:6px 0 0">Solo registra el tumor primario. Usa únicamente /2 (in situ) y /3 (maligno). El /6 se deduce de la base del diagnóstico.</p>
+              </div>
+            </div>
+          </div>
+          <div class="mt-3 p-2 rounded" style="background:var(--gris); font-size:12px;">
+            <strong>Ejemplo (Tabla 19 del PDF):</strong><br>
+            a. Biopsia ganglio: <code>C77.0  8490/6</code><br>
+            b. ★ Primario gástrico: <code>C16.1  8490/3</code> ← solo este va al registro<br>
+            c. Metástasis bronquial: <code>C34.1  8490/6</code>
+          </div>
+        </div>
+      </div>
+
+      <!-- CIN III / NIC III -->
+      <div class="col-lg-6">
+        <div class="card-clean h-100">
+          <div class="card-header-line">
+            <div class="card-dot" style="background:var(--coral)"></div>
+            <div class="card-title">NIC III / CIN III y displasias (§4.3.2)</div>
+          </div>
+          <p style="font-size:13px">Uno de los errores más frecuentes en codificación anatomopatológica:</p>
+          <div style="background:var(--coral-l); border-radius:8px; padding:14px; font-size:13px; margin-bottom:1rem;">
+            <strong style="color:var(--coral)">NIC III / CIN III → comportamiento /2 (in situ)</strong>
+            <p style="font-size:12px; margin:6px 0 0; color:#7B1A0F">Se considera equivalente al carcinoma in situ. El PDF indica que el comportamiento correcto es /2, <strong>no /3</strong>.</p>
+          </div>
+          <table class="table table-sm" style="font-size:12.5px">
+            <tr><td><code>8077/2</code></td><td>NIC III / CIN III cervical (C53._)</td></tr>
+            <tr><td><code>8077/2</code></td><td>NIVA III / VAIN III vaginal (C52._)</td></tr>
+            <tr><td><code>8077/2</code></td><td>NIV III / VIN III vulvar (C51._)</td></tr>
+            <tr><td><code>8077/2</code></td><td>NIA III / AIN III anal (C21.1)</td></tr>
+          </table>
+          <div class="p-2 rounded" style="background:var(--gris); font-size:12px;">
+            Si el anatomopatólogo considera que la NIC III no es equivalente a carcinoma in situ, puede cambiar a /1 (Regla F).
+          </div>
+        </div>
+      </div>
+
+      <!-- Neoplasias múltiples -->
+      <div class="col-12">
+        <div class="card-clean">
+          <div class="card-header-line">
+            <div class="card-dot" style="background:var(--ambar)"></div>
+            <div class="card-title">Neoplasias primarias múltiples (§4.4) — Reglas IARC/IACR 2004</div>
+          </div>
+          <div class="row g-3">
+            <div class="col-md-4">
+              <div style="background:var(--gris); border-radius:8px; padding:12px; font-size:12.5px; height:100%">
+                <strong>Regla 1</strong>
+                <p style="font-size:12px; color:var(--gris-m); margin-top:4px">El reconocimiento de dos o más cánceres primarios no depende del tiempo transcurrido entre diagnósticos.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div style="background:var(--gris); border-radius:8px; padding:12px; font-size:12.5px; height:100%">
+                <strong>Regla 2</strong>
+                <p style="font-size:12px; color:var(--gris-m); margin-top:4px">Un cáncer primario es el que se origina en una localización o tejido primario y no es extensión, recidiva ni metástasis.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div style="background:var(--ambar-l); border-radius:8px; padding:12px; font-size:12.5px; height:100%">
+                <strong style="color:var(--ambar)">Excepciones sistémicas</strong>
+                <p style="font-size:12px; margin-top:4px">Sarcoma de Kaposi (9140) y tumores hematopoyéticos se cuentan <strong>una sola vez</strong> por persona, independientemente de cuántos órganos afecten.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+// ══════════════════════════════════════════════════════════════
+// DATOS
+// ══════════════════════════════════════════════════════════════
+const SISTEMAS = {
+  "Cavidad oral y faringe": {
+    topos: [
+      {c:"C00.9",d:"Labio SAI"},{c:"C01.9",d:"Base de la lengua"},{c:"C02.9",d:"Lengua SAI"},
+      {c:"C03.9",d:"Encía SAI"},{c:"C04.9",d:"Suelo de la boca SAI"},{c:"C05.9",d:"Paladar SAI"},
+      {c:"C06.9",d:"Boca SAI"},{c:"C07.9",d:"Glándula parótida"},{c:"C08.9",d:"Glándula salival mayor SAI"},
+      {c:"C09.9",d:"Amígdala SAI"},{c:"C10.9",d:"Orofaringe SAI"},{c:"C11.9",d:"Nasofaringe SAI"},
+      {c:"C12.9",d:"Seno piriforme"},{c:"C13.9",d:"Hipofaringe SAI"},
+    ]
+  },
+  "Esófago y estómago": {
+    topos: [
+      {c:"C15.0",d:"Esófago cervical"},{c:"C15.1",d:"Esófago torácico"},{c:"C15.5",d:"Tercio inferior / unión GE"},
+      {c:"C15.8",d:"Esófago — lesión que sobrepasa límites (Regla C)"},{c:"C15.9",d:"Esófago SAI"},
+      {c:"C16.0",d:"Cardias / unión gastroesofágica"},{c:"C16.1",d:"Fundus gástrico"},
+      {c:"C16.2",d:"Cuerpo gástrico"},{c:"C16.3",d:"Antro gástrico"},{c:"C16.4",d:"Píloro"},
+      {c:"C16.8",d:"Estómago — lesión que sobrepasa límites (Regla C)"},{c:"C16.9",d:"Estómago SAI"},
+    ]
+  },
+  "Colon y recto": {
+    topos: [
+      {c:"C18.0",d:"Ciego"},{c:"C18.1",d:"Apéndice"},{c:"C18.2",d:"Colon ascendente"},
+      {c:"C18.3",d:"Ángulo hepático"},{c:"C18.4",d:"Colon transverso"},{c:"C18.5",d:"Ángulo esplénico"},
+      {c:"C18.6",d:"Colon descendente"},{c:"C18.7",d:"Colon sigmoides"},{c:"C18.9",d:"Colon SAI"},
+      {c:"C19.9",d:"Unión rectosigmoidea"},{c:"C20.9",d:"Recto SAI"},
+      {c:"C21.0",d:"Ano SAI"},{c:"C21.1",d:"Canal anal"},
+    ]
+  },
+  "Hígado, vía biliar y páncreas": {
+    topos: [
+      {c:"C22.0",d:"Hígado"},{c:"C22.1",d:"Vías biliares intrahepáticas"},
+      {c:"C23.9",d:"Vesícula biliar"},{c:"C24.0",d:"Vías biliares extrahepáticas"},
+      {c:"C24.1",d:"Ampolla de Vater"},{c:"C25.0",d:"Cabeza del páncreas"},
+      {c:"C25.1",d:"Cuerpo del páncreas"},{c:"C25.2",d:"Cola del páncreas"},{c:"C25.9",d:"Páncreas SAI"},
+    ]
+  },
+  "Aparato respiratorio": {
+    topos: [
+      {c:"C30.0",d:"Fosa nasal"},{c:"C31.0",d:"Seno maxilar"},{c:"C31.9",d:"Seno accesorio SAI"},
+      {c:"C32.0",d:"Glotis"},{c:"C32.1",d:"Supraglotis"},{c:"C32.9",d:"Laringe SAI"},
+      {c:"C33.9",d:"Tráquea"},{c:"C34.0",d:"Bronquio principal"},{c:"C34.1",d:"Lóbulo superior del pulmón"},
+      {c:"C34.2",d:"Lóbulo medio del pulmón"},{c:"C34.3",d:"Lóbulo inferior del pulmón"},
+      {c:"C34.9",d:"Pulmón SAI"},{c:"C38.4",d:"Pleura"},
+    ]
+  },
+  "Huesos y tejidos blandos": {
+    topos: [
+      {c:"C40.0",d:"Huesos largos MMSS"},{c:"C40.2",d:"Huesos largos MMII (fémur/tibia/peroné)"},
+      {c:"C41.2",d:"Columna vertebral"},{c:"C41.4",d:"Pelvis ósea"},
+      {c:"C49.0",d:"Tejidos blandos cabeza/cuello"},{c:"C49.1",d:"Tejidos blandos MMSS"},
+      {c:"C49.2",d:"Tejidos blandos MMII"},{c:"C49.3",d:"Tejidos blandos tórax"},
+      {c:"C49.4",d:"Tejidos blandos abdomen"},{c:"C49.5",d:"Tejidos blandos pelvis"},
+      {c:"C49.9",d:"Tejido conjuntivo y blando SAI"},
+    ]
+  },
+  "Piel": {
+    topos: [
+      {c:"C44.0",d:"Piel del labio"},{c:"C44.1",d:"Piel del párpado"},{c:"C44.2",d:"Piel del oído externo"},
+      {c:"C44.3",d:"Piel de la cara SAI"},{c:"C44.4",d:"Piel del cuero cabelludo y cuello"},
+      {c:"C44.5",d:"Piel del tronco"},{c:"C44.6",d:"Piel extremidad superior"},
+      {c:"C44.7",d:"Piel extremidad inferior"},{c:"C44.9",d:"Piel SAI"},
+    ]
+  },
+  "Mama": {
+    topos: [
+      {c:"C50.0",d:"Pezón y aréola"},{c:"C50.1",d:"Cuadrante superoexterno"},
+      {c:"C50.2",d:"Cuadrante superointerno"},{c:"C50.3",d:"Cuadrante inferointerno"},
+      {c:"C50.4",d:"Cuadrante inferoexterno"},{c:"C50.5",d:"Cola axilar"},
+      {c:"C50.6",d:"Región central"},{c:"C50.9",d:"Mama SAI"},
+    ]
+  },
+  "Ginecológico": {
+    topos: [
+      {c:"C51.9",d:"Vulva SAI"},{c:"C52.9",d:"Vagina"},
+      {c:"C53.0",d:"Endocérvix"},{c:"C53.1",d:"Exocérvix"},{c:"C53.9",d:"Cérvix uteri SAI"},
+      {c:"C54.1",d:"Endometrio"},{c:"C54.2",d:"Miometrio"},{c:"C54.9",d:"Cuerpo uterino SAI"},
+      {c:"C55.9",d:"Útero SAI"},{c:"C56.9",d:"Ovario"},{c:"C57.0",d:"Trompa de Falopio"},
+      {c:"C58.9",d:"Placenta"},
+    ]
+  },
+  "Genitourinario masculino": {
+    topos: [
+      {c:"C60.9",d:"Pene SAI"},{c:"C61.9",d:"Próstata"},
+      {c:"C62.9",d:"Testículo SAI"},{c:"C63.0",d:"Epidídimo"},
+      {c:"C64.9",d:"Riñón (parénquima)"},{c:"C65.9",d:"Pelvis renal"},
+      {c:"C66.9",d:"Uréter"},{c:"C67.9",d:"Vejiga urinaria SAI"},{c:"C68.0",d:"Uretra"},
+    ]
+  },
+  "Ojo y SNC": {
+    topos: [
+      {c:"C69.2",d:"Retina"},{c:"C69.3",d:"Coroides"},{c:"C69.6",d:"Órbita SAI"},
+      {c:"C70.0",d:"Meninges cerebrales"},{c:"C70.1",d:"Meninges espinales"},
+      {c:"C71.0",d:"Cerebro SAI"},{c:"C71.1",d:"Lóbulo frontal"},{c:"C71.2",d:"Lóbulo temporal"},
+      {c:"C71.4",d:"Lóbulo occipital"},{c:"C71.6",d:"Cerebelo"},{c:"C71.7",d:"Tronco encefálico"},
+      {c:"C71.9",d:"Cerebro SAI"},{c:"C72.0",d:"Médula espinal"},
+    ]
+  },
+  "Glándulas endocrinas": {
+    topos: [
+      {c:"C73.9",d:"Tiroides"},{c:"C74.0",d:"Corteza suprarrenal"},{c:"C74.1",d:"Médula suprarrenal"},
+      {c:"C75.0",d:"Glándula paratiroides"},{c:"C75.1",d:"Hipófisis"},{c:"C75.3",d:"Glándula pineal"},
+    ]
+  },
+  "Hematopoyético (leucemias) — Regla E": {
+    alerta: "Regla E: todas las leucemias y síndromes mieloproliferativos → C42.1 obligatorio.",
+    topos: [
+      {c:"C42.0",d:"Sangre periférica"},{c:"C42.1",d:"Médula ósea ★ (leucemias, SMD, SMP — Regla E)"},
+      {c:"C42.2",d:"Bazo"},{c:"C42.4",d:"Sistema hematopoyético SAI"},
+    ]
+  },
+  "Ganglios linfáticos (linfomas) — Regla D": {
+    alerta: "Regla D: linfomas ganglionares → C77._. Linfomas extraganglionares → sitio de origen.",
+    topos: [
+      {c:"C77.0",d:"Ganglio cabeza/cuello"},{c:"C77.1",d:"Ganglio mediastínico/intratorácico"},
+      {c:"C77.2",d:"Ganglio intraabdominal"},{c:"C77.3",d:"Ganglio axilar / MMSS"},
+      {c:"C77.4",d:"Ganglio inguinal / MMII"},{c:"C77.5",d:"Ganglio pélvico"},
+      {c:"C77.8",d:"Ganglios — múltiples regiones (Regla D)"},{c:"C77.9",d:"Ganglio SAI"},
+      {c:"C80.9",d:"Primario desconocido (linfoma sin localización)"},
+    ]
+  },
+};
+
+const GRUPOS_HIST = {
+  "Neoplasias SAI": [
+    {c:"8000",d:"Neoplasia SAI"},{c:"8001",d:"Células tumorales SAI"},{c:"8002",d:"Tumor maligno células pequeñas"},
+    {c:"8003",d:"Tumor maligno células gigantes"},{c:"8004",d:"Tumor maligno células fusiformes"},
+    {c:"8005",d:"Tumor maligno tipo células claras"},
+  ],
+  "Carcinomas epiteliales": [
+    {c:"8010",d:"Carcinoma SAI"},{c:"8020",d:"Carcinoma indiferenciado SAI"},{c:"8021",d:"Carcinoma anaplásico SAI"},
+    {c:"8041",d:"Carcinoma células pequeñas SAI"},{c:"8046",d:"Carcinoma no células pequeñas"},
+    {c:"8050",d:"Carcinoma papilar SAI"},{c:"8070",d:"Carcinoma escamoso SAI"},
+    {c:"8071",d:"Carcinoma escamoso queratinizante"},{c:"8072",d:"Carcinoma escamoso no queratinizante"},
+    {c:"8076",d:"Carcinoma escamoso microinvasor"},{c:"8077",d:"NIC III / CIN III (in situ /2)"},
+    {c:"8090",d:"Carcinoma basocelular SAI (C44._ — Regla H)"},{c:"8120",d:"Carcinoma urotelial SAI (C67._ — Regla H)"},
+  ],
+  "Adenocarcinomas": [
+    {c:"8140",d:"Adenocarcinoma SAI"},{c:"8142",d:"Linitis plástica (C16._ — Regla H)"},
+    {c:"8160",d:"Colangiocarcinoma (C22.1/C24.0 — Regla H)"},{c:"8170",d:"Hepatocarcinoma SAI (C22.0 — Regla H)"},
+    {c:"8200",d:"Carcinoma adenoide quístico"},{c:"8210",d:"Adenocarcinoma en pólipo"},
+    {c:"8230",d:"Adenocarcinoma sólido SAI"},{c:"8260",d:"Adenocarcinoma papilar SAI"},
+    {c:"8310",d:"Adenocarcinoma células claras SAI"},{c:"8330",d:"Adenocarcinoma folicular (C73.9 — Regla H)"},
+    {c:"8340",d:"Carcinoma papilar variante folicular (C73.9)"},{c:"8380",d:"Adenocarcinoma endometrioide SAI"},
+    {c:"8440",d:"Cistadenocarcinoma SAI"},{c:"8460",d:"Cistoadenocarcinoma seroso bajo grado (C56.9)"},
+    {c:"8461",d:"Cistoadenocarcinoma seroso alto grado (C56.9/C57.0)"},{c:"8480",d:"Adenocarcinoma mucinoso"},
+    {c:"8490",d:"Carcinoma células en anillo de sello"},{c:"8500",d:"Carcinoma ductal infiltrante (C50._ — Regla H)"},
+    {c:"8510",d:"Carcinoma medular SAI"},{c:"8520",d:"Carcinoma lobulillar SAI (C50._ — Regla H)"},
+  ],
+  "Tumores neuroendocrinos": [
+    {c:"8240",d:"Tumor carcinoide G1 / NET G1"},{c:"8249",d:"Tumor neuroendocrino G2"},
+    {c:"8246",d:"Carcinoma neuroendocrino SAI"},{c:"8013",d:"Carcinoma neuroendocrino células grandes"},
+    {c:"8041",d:"Carcinoma células pequeñas (neuroendocrino alto grado)"},
+    {c:"8247",d:"Carcinoma células de Merkel (C44._ — Regla H)"},
+  ],
+  "Tumores melanocíticos": [
+    {c:"8720",d:"Melanoma maligno SAI"},{c:"8721",d:"Melanoma nodular"},{c:"8742",d:"Melanoma lentigo maligno"},
+    {c:"8743",d:"Melanoma extensión superficial"},{c:"8744",d:"Melanoma lentiginoso acral"},
+    {c:"8750",d:"Nevo intradérmico"},{c:"8760",d:"Nevo compuesto"},
+  ],
+  "Tumores tejidos blandos y mesenquimáticos": [
+    {c:"8800",d:"Sarcoma SAI"},{c:"8810",d:"Fibrosarcoma SAI"},{c:"8815",d:"Tumor fibroso solitario"},
+    {c:"8821",d:"Fibromatosis agresiva / tumor desmoide"},{c:"8830",d:"Histiocitoma fibroso SAI"},
+    {c:"8850",d:"Lipoma SAI"},{c:"8851",d:"Liposarcoma bien diferenciado"},
+    {c:"8852",d:"Liposarcoma mixoide"},{c:"8890",d:"Leiomioma SAI / leiomiosarcoma"},
+    {c:"8900",d:"Rabdomiosarcoma SAI"},{c:"8910",d:"Rabdomiosarcoma embrionario"},
+    {c:"8920",d:"Rabdomiosarcoma alveolar"},{c:"8936",d:"GIST SAI"},
+  ],
+  "Tumores óseos y cartilaginosos": [
+    {c:"9180",d:"Osteosarcoma SAI"},{c:"9191",d:"Osteoma osteoide"},{c:"9220",d:"Condrosarcoma SAI"},
+    {c:"9230",d:"Condroblastoma SAI"},{c:"9250",d:"Tumor células gigantes hueso SAI"},
+    {c:"9260",d:"Sarcoma de Ewing"},{c:"9370",d:"Cordoma SAI"},
+  ],
+  "Tumores SNC y neurales": [
+    {c:"9380",d:"Glioma SAI (C71._ — Regla H)"},{c:"9391",d:"Ependimoma SAI (C71./C72.)"},
+    {c:"9400",d:"Astrocitoma difuso IDH-mutado"},{c:"9401",d:"Astrocitoma anaplásico IDH-mutado"},
+    {c:"9421",d:"Astrocitoma pilocítico (C71._ — Regla H)"},{c:"9440",d:"Glioblastoma SAI (C71._ — Regla H)"},
+    {c:"9450",d:"Oligodendroglioma IDH-mutado 1p/19q"},{c:"9470",d:"Meduloblastoma SAI (C71.6)"},
+    {c:"9508",d:"Tumor teratoide/rabdoide atípico"},{c:"9530",d:"Meningioma SAI (C70._ — Regla H)"},
+    {c:"9539",d:"Meningioma atípico (C70._)"},{c:"9540",d:"Neurofibroma SAI"},
+    {c:"9560",d:"Schwannoma / neurilemoma SAI"},{c:"9510",d:"Retinoblastoma (C69.2 — Regla H)"},
+  ],
+  "Tumores células germinales": [
+    {c:"9060",d:"Disgerminoma (C56.9)"},{c:"9061",d:"Seminoma SAI (C62.9 — Regla H)"},
+    {c:"9070",d:"Carcinoma embrionario SAI"},{c:"9071",d:"Tumor saco vitelino SAI"},
+    {c:"9080",d:"Teratoma SAI"},{c:"9100",d:"Coriocarcinoma SAI"},
+  ],
+  "Linfomas": [
+    {c:"9590",d:"Linfoma maligno SAI"},{c:"9650",d:"Linfoma Hodgkin clásico SAI → C77._ (Regla D)"},
+    {c:"9663",d:"LH esclerosis nodular → C77._ (Regla D)"},{c:"9673",d:"Linfoma células del manto → C77._ (Regla D)"},
+    {c:"9680",d:"Linfoma difuso células B grandes → C77._ (Regla D)"},{c:"9687",d:"Linfoma de Burkitt"},
+    {c:"9690",d:"Linfoma folicular SAI"},{c:"9699",d:"Linfoma MALT (extraganglionar — Regla D)"},
+    {c:"9700",d:"Micosis fungoide (C44._ — linfoma cutáneo)"},{c:"9702",d:"Linfoma T periférico SAI"},
+    {c:"9714",d:"Linfoma anaplásico células grandes ALK+"},{c:"9719",d:"Linfoma NK/T extranodal nasal"},
+  ],
+  "Leucemias y síndromes mieloproliferativos": [
+    {c:"9823",d:"LLC / linfoma células pequeñas B → C42.1 (Regla E)"},
+    {c:"9861",d:"LMA SAI → C42.1 (Regla E)"},{c:"9866",d:"Leucemia promielocítica aguda → C42.1 (Regla E) ★URGENCIA"},
+    {c:"9875",d:"LMC BCR-ABL1+ → C42.1 (Regla E)"},{c:"9930",d:"Sarcoma mieloide ★EXCEPCIÓN Regla E → NO C42.1"},
+    {c:"9950",d:"Policitemia vera → C42.1 (Regla E)"},{c:"9961",d:"Mielofibrosis primaria → C42.1 (Regla E)"},
+    {c:"9962",d:"Trombocitemia esencial → C42.1 (Regla E)"},{c:"9980",d:"SMD con displasia unilinaje → C42.1"},
+    {c:"9732",d:"Mieloma múltiple → C42.1 (enfermedad sistémica)"},
+  ],
+  "Neoplasias de células plasmáticas": [
+    {c:"9732",d:"Mieloma múltiple → C42.1"},{c:"9731",d:"Plasmocitoma óseo solitario (hueso afectado)"},
+    {c:"9734",d:"Plasmocitoma extraóseo"},{c:"9765",d:"MGUS (comportamiento /1)"},
+  ],
+  "Tumores fibroepiteliales (mama/ovario)": [
+    {c:"9010",d:"Fibroadenoma SAI (C50._ — Regla H)"},{c:"9020",d:"Tumor filoides SAI (C50._ — Regla H)"},
+    {c:"9000",d:"Tumor de Brenner SAI (C56.9 — Regla H)"},
+  ],
+};
+
+const COMP_TODOS = [
+  {v:"0",d:"Benigno",lab:true},{v:"1",d:"Incierto / borderline",lab:true},
+  {v:"2",d:"In situ / no invasor",lab:true},{v:"3",d:"Maligno primario",lab:true},
+  {v:"6",d:"Maligno — metástasis (solo AP)",lab:false},{v:"9",d:"Incierto primario/metástasis (solo AP)",lab:false},
+];
+
+const GRADO_DIFERENCIACION = [
+  {v:"1",d:"Grado I — bien diferenciado"},{v:"2",d:"Grado II — moderadamente diferenciado"},
+  {v:"3",d:"Grado III — pobremente diferenciado"},{v:"4",d:"Grado IV — indiferenciado / anaplásico"},
+  {v:"9",d:"No determinado / no señalado"},
+];
+const GRADO_LINAJE = [
+  {v:"5",d:"Célula T"},{v:"6",d:"Célula B / pre-B / precursor B"},
+  {v:"7",d:"Célula nula / no T y no B"},{v:"8",d:"Célula NK / citolítica natural"},
+  {v:"9",d:"No determinado"},
+];
+
+const GRUPOS_HEMA = ["Leucemias y síndromes mieloproliferativos","Linfomas","Neoplasias de células plasmáticas"];
+
+// ══════════════════════════════════════════════════════════════
+// ESTADO
+// ══════════════════════════════════════════════════════════════
+let state = { ctx:"", topo:"", topoDesc:"", hist:"", histDesc:"", comp:"", grado:"", tipoGrado:"dif" };
+
+// ══════════════════════════════════════════════════════════════
+// NAV
+// ══════════════════════════════════════════════════════════════
+function showSection(id, btn) {
+  document.querySelectorAll(".section").forEach(s => s.classList.remove("active"));
+  document.querySelectorAll(".nav-tab-btn").forEach(b => b.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+  if (btn) btn.classList.add("active");
+}
+
+// ══════════════════════════════════════════════════════════════
+// CODIFICADOR
+// ══════════════════════════════════════════════════════════════
+function onCtxChange() {
+  const v = document.getElementById("sel-ctx").value;
+  state.ctx = v;
+  if (v) {
+    markDone("step-ctx");
+    enableStep("step-topo");
+    populateSistemas();
+  }
+}
+
+function populateSistemas() {
+  const sel = document.getElementById("sel-sistema");
+  sel.innerHTML = '<option value="">-- Sistema orgánico --</option>';
+  Object.keys(SISTEMAS).forEach(s => {
+    const o = document.createElement("option"); o.value = s; o.textContent = s; sel.appendChild(o);
+  });
+  sel.disabled = false;
+}
+
+function onSistema() {
+  const s = document.getElementById("sel-sistema").value;
+  const selT = document.getElementById("sel-topo");
+  selT.innerHTML = '<option value="">-- Sitio anatómico --</option>';
+  if (!s) { selT.disabled = true; return; }
+  const data = SISTEMAS[s];
+  if (data.alerta) {
+    const a = document.getElementById("alert-topo");
+    a.textContent = data.alerta; a.classList.add("show");
+  } else {
+    document.getElementById("alert-topo").classList.remove("show");
+  }
+  data.topos.forEach(t => {
+    const o = document.createElement("option"); o.value = t.c + "|" + t.d;
+    o.textContent = t.c + " — " + t.d; selT.appendChild(o);
+  });
+  selT.disabled = false;
+}
+
+function onTopo() {
+  const v = document.getElementById("sel-topo").value;
+  if (!v) return;
+  const [c, d] = v.split("|");
+  state.topo = c; state.topoDesc = d;
+  markDone("step-topo");
+  enableStep("step-hist");
+  populateGruposHist();
+  updateResult();
+}
+
+function populateGruposHist() {
+  const sel = document.getElementById("sel-grupo-hist");
+  sel.innerHTML = '<option value="">-- Grupo histológico --</option>';
+  Object.keys(GRUPOS_HIST).forEach(g => {
+    const o = document.createElement("option"); o.value = g; o.textContent = g; sel.appendChild(o);
+  });
+  sel.disabled = false;
+}
+
+function onGrupoHist() {
+  const g = document.getElementById("sel-grupo-hist").value;
+  const selH = document.getElementById("sel-hist");
+  selH.innerHTML = '<option value="">-- Tipo histológico --</option>';
+  if (!g) { selH.disabled = true; return; }
+  GRUPOS_HIST[g].forEach(h => {
+    const o = document.createElement("option"); o.value = h.c + "|" + h.d;
+    o.textContent = h.c + " — " + h.d; selH.appendChild(o);
+  });
+  selH.disabled = false;
+  state.tipoGrado = GRUPOS_HEMA.includes(g) ? "linaje" : "dif";
+}
+
+function onHist() {
+  const v = document.getElementById("sel-hist").value;
+  if (!v) return;
+  const [c, d] = v.split("|");
+  state.hist = c; state.histDesc = d;
+
+  // Alertas especiales
+  const alertC = document.getElementById("alert-comp");
+  if (c === "9930") {
+    alertC.textContent = "★ EXCEPCIÓN Regla E: sarcoma mieloide → NO usar C42.1. Codificar según localización del depósito.";
+    alertC.classList.add("show");
+  } else if (c === "9866") {
+    alertC.textContent = "★ Leucemia promielocítica aguda (PML-RARA): URGENCIA oncohematológica. Verificar que la topografía sea C42.1 (Regla E).";
+    alertC.classList.add("show");
+  } else {
+    alertC.classList.remove("show");
+  }
+
+  markDone("step-hist");
+  enableStep("step-comp");
+  populateComp();
+  updateResult();
+}
+
+function populateComp() {
+  const sel = document.getElementById("sel-comp");
+  sel.innerHTML = '<option value="">-- Comportamiento --</option>';
+  const soloLab = state.ctx === "laboratorio_ap";
+  COMP_TODOS.forEach(c => {
+    if (!c.lab && !soloLab) return; // /6 y /9 solo si AP
+    const o = document.createElement("option");
+    o.value = c.v + "|" + c.d;
+    o.textContent = "/" + c.v + " — " + c.d;
+    sel.appendChild(o);
+  });
+  sel.disabled = false;
+}
+
+function onComp() {
+  const v = document.getElementById("sel-comp").value;
+  if (!v) return;
+  const [c, d] = v.split("|");
+  state.comp = c;
+
+  // Advertencias
+  const aG = document.getElementById("alert-grado");
+  if (c === "0" || c === "1") {
+    aG.textContent = "Regla G + §4.6: para comportamiento /0 y /1, el sexto dígito debe ser 9 (no procede asignar grado).";
+    aG.classList.add("show");
+  } else {
+    aG.classList.remove("show");
+  }
+
+  // Caso especial CIN III
+  if (state.hist === "8077" && c === "3") {
+    document.getElementById("alert-comp").textContent = "⚠ Atención: para NIC III / CIN III el comportamiento correcto según el PDF es /2 (in situ), no /3. Solo cambiar a /3 si hay invasión documentada.";
+    document.getElementById("alert-comp").classList.add("show");
+  }
+
+  markDone("step-comp");
+  enableStep("step-grado");
+  populateGrado();
+  updateResult();
+}
+
+function populateGrado() {
+  const sel = document.getElementById("sel-grado");
+  sel.innerHTML = '<option value="">-- Grado --</option>';
+  const esHema = state.tipoGrado === "linaje";
+  const comp = state.comp;
+
+  document.getElementById("grado-step-title").textContent = esHema
+    ? "Inmunofenotipo / Linaje celular" : "Grado histológico / Diferenciación";
+  document.getElementById("grado-hint").textContent = esHema
+    ? "§3.13.3 Tabla 22: los dígitos de linaje 5–8 prevalecen sobre diferenciación 1–4 (Regla G)."
+    : "Regla G: si el informe indica dos grados, usar el mayor. Si no se especifica grado → 9.";
+  document.getElementById("rp-grado-label").textContent = esHema ? "Linaje" : "Grado";
+
+  const lista = (comp === "0" || comp === "1")
+    ? [{v:"9",d:"No procede (comportamiento /0 o /1)"}]
+    : (esHema ? GRADO_LINAJE : GRADO_DIFERENCIACION);
+
+  lista.forEach(g => {
+    const o = document.createElement("option"); o.value = g.v + "|" + g.d;
+    o.textContent = g.v + " — " + g.d; sel.appendChild(o);
+  });
+  sel.disabled = false;
+}
+
+function onGrado() {
+  const v = document.getElementById("sel-grado").value;
+  if (!v) return;
+  const [c, d] = v.split("|");
+  state.grado = c;
+  markDone("step-grado");
+  updateResult();
+}
+
+function updateResult() {
+  const topo = state.topo || "_ _._ ";
+  const hist = state.hist || "_ _ _ _";
+  const comp = state.comp ? "/" + state.comp : "/_ ";
+  const grado = state.grado || "_ ";
+
+  const hasAll = state.topo && state.hist && state.comp && state.grado;
+
+  let codeHtml = "";
+  if (state.topo)
+    codeHtml += `<span class="part-topo">${state.topo}</span>`;
+  else
+    codeHtml += `<span class="result-placeholder">_ _._ </span>`;
+
+  codeHtml += `<span class="part-sep">  </span>`;
+
+  if (state.hist)
+    codeHtml += `<span style="color:#7EDBA8">${state.hist}</span>`;
+  else
+    codeHtml += `<span class="result-placeholder">_ _ _ _</span>`;
+
+  if (state.comp)
+    codeHtml += `<span class="part-comp">/${state.comp}</span>`;
+  else
+    codeHtml += `<span class="result-placeholder">/_ </span>`;
+
+  if (state.grado)
+    codeHtml += `<span class="part-grado">${state.grado}</span>`;
+  else
+    codeHtml += `<span class="result-placeholder">_ </span>`;
+
+  document.getElementById("result-code").innerHTML = codeHtml;
+
+  let desc = "";
+  if (hasAll) {
+    desc = `${state.histDesc} de ${state.topoDesc}`;
+    const compNames = {"0":"benigno","1":"incierto","2":"in situ","3":"maligno primario","6":"metástasis","9":"incierto"};
+    desc += ` — ${compNames[state.comp] || ""}`;
+  } else {
+    desc = "Complete los campos para generar el código.";
+  }
+  document.getElementById("result-desc").textContent = desc;
+
+  document.getElementById("rp-topo").textContent = state.topo || "—";
+  document.getElementById("rp-topo-name").textContent = state.topoDesc || "";
+  document.getElementById("rp-hist").textContent = state.hist || "—";
+  document.getElementById("rp-hist-name").textContent = state.histDesc ? state.histDesc.substring(0,40) : "";
+  document.getElementById("rp-comp").textContent = state.comp ? "/"+state.comp : "—";
+  const cNames = {"0":"Benigno","1":"Incierto","2":"In situ","3":"Maligno primario","6":"Metástasis","9":"Incierto P/M"};
+  document.getElementById("rp-comp-name").textContent = cNames[state.comp] || "";
+  document.getElementById("rp-grado").textContent = state.grado || "—";
+  const gNames = {"1":"G1","2":"G2","3":"G3","4":"G4","5":"Cél. T","6":"Cél. B","7":"Nula","8":"NK","9":"No det."};
+  document.getElementById("rp-grado-name").textContent = gNames[state.grado] || "";
+}
+
+function enableStep(id) {
+  document.getElementById(id).classList.add("active-step");
+  document.getElementById(id).classList.remove("done-step");
+}
+function markDone(id) {
+  document.getElementById(id).classList.remove("active-step");
+  document.getElementById(id).classList.add("done-step");
+}
+
+function resetAll() {
+  state = { ctx:"", topo:"", topoDesc:"", hist:"", histDesc:"", comp:"", grado:"", tipoGrado:"dif" };
+  ["sel-ctx","sel-sistema","sel-topo","sel-grupo-hist","sel-hist","sel-comp","sel-grado"].forEach(id => {
+    const el = document.getElementById(id);
+    el.value = "";
+    if (id !== "sel-ctx") el.disabled = true;
+  });
+  ["alert-topo","alert-comp","alert-grado"].forEach(id => {
+    document.getElementById(id).classList.remove("show");
+  });
+  ["step-topo","step-hist","step-comp","step-grado"].forEach(id => {
+    const el = document.getElementById(id);
+    el.classList.remove("active-step","done-step");
+  });
+  document.getElementById("step-ctx").classList.remove("done-step");
+  document.getElementById("step-ctx").classList.add("active-step");
+  updateResult();
+}
+
+// Init
+document.getElementById("step-topo").querySelector(".coder-select").disabled = true;
+</script>
+</body>
+</html>

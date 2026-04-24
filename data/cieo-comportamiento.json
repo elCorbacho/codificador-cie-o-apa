@@ -1,0 +1,32 @@
+[
+  {
+    "code": "0",
+    "preferredTerm": "Benigno",
+    "isLab": true
+  },
+  {
+    "code": "1",
+    "preferredTerm": "Incierto / borderline",
+    "isLab": true
+  },
+  {
+    "code": "2",
+    "preferredTerm": "In situ / no invasor",
+    "isLab": true
+  },
+  {
+    "code": "3",
+    "preferredTerm": "Maligno primario",
+    "isLab": true
+  },
+  {
+    "code": "6",
+    "preferredTerm": "Maligno — metástasis (solo AP)",
+    "isLab": false
+  },
+  {
+    "code": "9",
+    "preferredTerm": "Incierto primario/metástasis (solo AP)",
+    "isLab": false
+  }
+]

@@ -1,0 +1,331 @@
+﻿Codigo_CXX,Organo_General,Codigo_organo-zona,Descripcion_organo-zona
+C00,Labio,C00.0,Labio superior externo
+C00,Labio,C00.1,Labio inferior externo
+C00,Labio,C00.2,"Labio externo, sin otra especificación"
+C00,Labio,C00.3,Mucosa del labio superior
+C00,Labio,C00.4,Mucosa del labio inferior
+C00,Labio,C00.5,"Mucosa del labio, sin otra especificación"
+C00,Labio,C00.6,Comisura labial
+C00,Labio,C00.8,Lesión superpuesta del labio
+C00,Labio,C00.9,"Labio, sin otra especificación"
+C01,Base de lengua,C01.9,"Base de lengua, sin otra especificación"
+C02,Otras partes y partes no especificadas de la lengua,C02.0,Cara dorsal de la lengua
+C02,Otras partes y partes no especificadas de la lengua,C02.1,Borde de la lengua
+C02,Otras partes y partes no especificadas de la lengua,C02.2,Cara ventral de la lengua
+C02,Otras partes y partes no especificadas de la lengua,C02.3,"Dos tercios anteriores de la lengua, sin otra especificación"
+C02,Otras partes y partes no especificadas de la lengua,C02.4,Amígdala lingual
+C02,Otras partes y partes no especificadas de la lengua,C02.8,Lesión superpuesta de la lengua
+C02,Otras partes y partes no especificadas de la lengua,C02.9,"Lengua, sin otra especificación"
+C03,Encía,C03.0,Encía superior
+C03,Encía,C03.1,Encía inferior
+C03,Encía,C03.9,"Encía, sin otra especificación"
+C04,Piso de boca,C04.0,Piso anterior de la boca
+C04,Piso de boca,C04.1,Piso lateral de la boca
+C04,Piso de boca,C04.8,Lesión superpuesta del piso de la boca
+C04,Piso de boca,C04.9,"Piso de la boca, sin otra especificación"
+C05,Paladar,C05.0,Paladar duro
+C05,Paladar,C05.1,Paladar blando
+C05,Paladar,C05.2,Úvula
+C05,Paladar,C05.8,Lesión superpuesta del paladar
+C05,Paladar,C05.9,"Paladar, sin otra especificación"
+C06,Otras partes y partes no especificadas de la boca,C06.0,Mucosa de la mejilla
+C06,Otras partes y partes no especificadas de la boca,C06.1,Vestíbulo de la boca
+C06,Otras partes y partes no especificadas de la boca,C06.2,Área retromolar
+C06,Otras partes y partes no especificadas de la boca,C06.8,Lesión superpuesta de otras partes y partes no especificadas de la boca
+C06,Otras partes y partes no especificadas de la boca,C06.9,"Boca, sin otra especificación"
+C07,Glándula parótida,C07.9,Glándula parótida
+C08,Otras glándulas salivales mayores y no especificadas,C08.0,Glándula submandibular
+C08,Otras glándulas salivales mayores y no especificadas,C08.1,Glándula sublingual
+C08,Otras glándulas salivales mayores y no especificadas,C08.8,Lesión superpuesta de glándulas salivales mayores
+C08,Otras glándulas salivales mayores y no especificadas,C08.9,"Glándula salival mayor, sin otra especificación"
+C09,Amígdala,C09.0,Fosa amigdalina
+C09,Amígdala,C09.1,Pilar amigdalino
+C09,Amígdala,C09.8,Lesión superpuesta de la amígdala
+C09,Amígdala,C09.9,"Amígdala, sin otra especificación"
+C10,Orofaringe,C10.0,Valécula
+C10,Orofaringe,C10.1,Cara anterior de la epiglotis
+C10,Orofaringe,C10.2,Pared lateral de la orofaringe
+C10,Orofaringe,C10.3,Pared posterior de la orofaringe
+C10,Orofaringe,C10.4,Hendidura branquial
+C10,Orofaringe,C10.8,Lesión superpuesta de la orofaringe
+C10,Orofaringe,C10.9,"Orofaringe, sin otra especificación"
+C11,Nasofaringe,C11.0,Pared superior de la nasofaringe
+C11,Nasofaringe,C11.1,Pared posterior de la nasofaringe
+C11,Nasofaringe,C11.2,Pared lateral de la nasofaringe
+C11,Nasofaringe,C11.3,Pared anterior de la nasofaringe
+C11,Nasofaringe,C11.8,Lesión superpuesta de la nasofaringe
+C11,Nasofaringe,C11.9,"Nasofaringe, sin otra especificación"
+C12,Seno piriforme,C12.9,Seno piriforme
+C13,Hipofaringe,C13.0,Región postcricoidea
+C13,Hipofaringe,C13.1,"Pliegue ariepiglótico, cara hipofaríngea"
+C13,Hipofaringe,C13.2,Pared posterior de la hipofaringe
+C13,Hipofaringe,C13.8,Lesión superpuesta de la hipofaringe
+C13,Hipofaringe,C13.9,"Hipofaringe, sin otra especificación"
+C14,"Otros sitios y sitios mal definidos del labio, cavidad oral y faringe",C14.0,"Faringe, sin otra especificación"
+C14,"Otros sitios y sitios mal definidos del labio, cavidad oral y faringe",C14.2,Anillo de Waldeyer
+C14,"Otros sitios y sitios mal definidos del labio, cavidad oral y faringe",C14.8,"Lesión superpuesta del labio, cavidad oral y faringe"
+C15,Esófago,C15.0,Esófago cervical
+C15,Esófago,C15.1,Esófago torácico
+C15,Esófago,C15.2,Esófago abdominal
+C15,Esófago,C15.3,Tercio superior del esófago
+C15,Esófago,C15.4,Tercio medio del esófago
+C15,Esófago,C15.5,Tercio inferior del esófago
+C15,Esófago,C15.8,Lesión superpuesta del esófago
+C15,Esófago,C15.9,"Esófago, sin otra especificación"
+C16,Estómago,C16.0,"Cardias, sin otra especificación"
+C16,Estómago,C16.1,Fundus gástrico
+C16,Estómago,C16.2,Cuerpo del estómago
+C16,Estómago,C16.3,Antro pilórico
+C16,Estómago,C16.4,Píloro
+C16,Estómago,C16.5,"Curvatura menor del estómago, sin otra especificación"
+C16,Estómago,C16.6,"Curvatura mayor del estómago, sin otra especificación"
+C16,Estómago,C16.8,Lesión superpuesta del estómago
+C16,Estómago,C16.9,"Estómago, sin otra especificación"
+C17,Intestino delgado,C17.0,Duodeno
+C17,Intestino delgado,C17.1,Yeyuno
+C17,Intestino delgado,C17.2,Íleon
+C17,Intestino delgado,C17.3,Divertículo de Meckel
+C17,Intestino delgado,C17.8,Lesión superpuesta del intestino delgado
+C17,Intestino delgado,C17.9,"Intestino delgado, sin otra especificación"
+C18,Colon,C18.0,Ciego
+C18,Colon,C18.1,Apéndice
+C18,Colon,C18.2,Colon ascendente
+C18,Colon,C18.3,Ángulo hepático del colon
+C18,Colon,C18.4,Colon transverso
+C18,Colon,C18.5,Ángulo esplénico del colon
+C18,Colon,C18.6,Colon descendente
+C18,Colon,C18.7,Colon sigmoide
+C18,Colon,C18.8,Lesión superpuesta del colon
+C18,Colon,C18.9,"Colon, sin otra especificación"
+C19,Unión rectosigmoidea,C19.9,Unión rectosigmoidea
+C20,Recto,C20.9,"Recto, sin otra especificación"
+C21,Ano y canal anal,C21.0,"Ano, sin otra especificación"
+C21,Ano y canal anal,C21.1,Canal anal
+C21,Ano y canal anal,C21.2,Zona cloacogénica
+C21,Ano y canal anal,C21.8,"Lesión superpuesta del recto, ano y canal anal"
+C22,Hígado y vías biliares intrahepáticas,C22.0,Hígado
+C22,Hígado y vías biliares intrahepáticas,C22.1,Vía biliar intrahepática
+C23,Vesícula biliar,C23.9,Vesícula biliar
+C24,Otras partes y partes no especificadas de las vías biliares,C24.0,Vía biliar extrahepática
+C24,Otras partes y partes no especificadas de las vías biliares,C24.1,Ampolla de Vater
+C24,Otras partes y partes no especificadas de las vías biliares,C24.8,Lesión superpuesta de vías biliares
+C24,Otras partes y partes no especificadas de las vías biliares,C24.9,"Vía biliar, sin otra especificación"
+C25,Páncreas,C25.0,Cabeza del páncreas
+C25,Páncreas,C25.1,Cuerpo del páncreas
+C25,Páncreas,C25.2,Cola del páncreas
+C25,Páncreas,C25.3,Conducto pancreático
+C25,Páncreas,C25.4,Islotes de Langerhans
+C25,Páncreas,C25.7,Otras partes especificadas del páncreas
+C25,Páncreas,C25.8,Lesión superpuesta del páncreas
+C25,Páncreas,C25.9,"Páncreas, sin otra especificación"
+C26,Otros sitios y sitios mal definidos de órganos digestivos,C26.0,"Tracto intestinal, sin otra especificación"
+C26,Otros sitios y sitios mal definidos de órganos digestivos,C26.8,Lesión superpuesta del sistema digestivo
+C26,Otros sitios y sitios mal definidos de órganos digestivos,C26.9,"Tracto gastrointestinal, sin otra especificación"
+C30,Cavidad nasal y oído medio,C30.0,Cavidad nasal
+C30,Cavidad nasal y oído medio,C30.1,Oído medio
+C31,Senos paranasales,C31.0,Seno maxilar
+C31,Senos paranasales,C31.1,Seno etmoidal
+C31,Senos paranasales,C31.2,Seno frontal
+C31,Senos paranasales,C31.3,Seno esfenoidal
+C31,Senos paranasales,C31.8,Lesión superpuesta de senos paranasales
+C31,Senos paranasales,C31.9,"Seno paranasal, sin otra especificación"
+C32,Laringe,C32.0,Glotis
+C32,Laringe,C32.1,Supraglotis
+C32,Laringe,C32.2,Subglotis
+C32,Laringe,C32.3,Cartílago laríngeo
+C32,Laringe,C32.8,Lesión superpuesta de la laringe
+C32,Laringe,C32.9,"Laringe, sin otra especificación"
+C33,Tráquea,C33.9,Tráquea
+C34,Bronquios y pulmón,C34.0,Bronquio principal
+C34,Bronquios y pulmón,C34.1,Lóbulo superior del pulmón
+C34,Bronquios y pulmón,C34.2,Lóbulo medio del pulmón
+C34,Bronquios y pulmón,C34.3,Lóbulo inferior del pulmón
+C34,Bronquios y pulmón,C34.8,Lesión superpuesta de bronquios y pulmón
+C34,Bronquios y pulmón,C34.9,"Pulmón, sin otra especificación"
+C37,Timo,C37.9,Timo
+C38,"Corazón, mediastino y pleura",C38.0,Corazón
+C38,"Corazón, mediastino y pleura",C38.1,Mediastino anterior
+C38,"Corazón, mediastino y pleura",C38.2,Mediastino posterior
+C38,"Corazón, mediastino y pleura",C38.3,"Mediastino, sin otra especificación"
+C38,"Corazón, mediastino y pleura",C38.4,"Pleura, sin otra especificación"
+C38,"Corazón, mediastino y pleura",C38.8,"Lesión superpuesta de corazón, mediastino y pleura"
+C39,Otros sitios y sitios mal definidos del sistema respiratorio y órganos intratorácicos,C39.0,"Tracto respiratorio superior, sin otra especificación"
+C39,Otros sitios y sitios mal definidos del sistema respiratorio y órganos intratorácicos,C39.8,Lesión superpuesta del sistema respiratorio y órganos intratorácicos
+C39,Otros sitios y sitios mal definidos del sistema respiratorio y órganos intratorácicos,C39.9,Sitios mal definidos del sistema respiratorio
+C40,"Huesos, articulaciones y cartílago articular de extremidades",C40.0,"Huesos largos de extremidad superior, escápula y articulaciones asociadas"
+C40,"Huesos, articulaciones y cartílago articular de extremidades",C40.1,Huesos cortos de extremidad superior y articulaciones asociadas
+C40,"Huesos, articulaciones y cartílago articular de extremidades",C40.2,Huesos largos de extremidad inferior y articulaciones asociadas
+C40,"Huesos, articulaciones y cartílago articular de extremidades",C40.3,Huesos cortos de extremidad inferior y articulaciones asociadas
+C40,"Huesos, articulaciones y cartílago articular de extremidades",C40.8,"Lesión superpuesta de huesos, articulaciones y cartílago articular de extremidades"
+C40,"Huesos, articulaciones y cartílago articular de extremidades",C40.9,"Hueso de extremidad, sin otra especificación"
+C41,"Huesos, articulaciones y cartílago articular de otros sitios y no especificados",C41.0,Huesos del cráneo y de la cara y articulaciones asociadas
+C41,"Huesos, articulaciones y cartílago articular de otros sitios y no especificados",C41.1,Mandíbula
+C41,"Huesos, articulaciones y cartílago articular de otros sitios y no especificados",C41.2,Columna vertebral
+C41,"Huesos, articulaciones y cartílago articular de otros sitios y no especificados",C41.3,"Costilla, esternón, clavícula y articulaciones asociadas"
+C41,"Huesos, articulaciones y cartílago articular de otros sitios y no especificados",C41.4,"Huesos de la pelvis, sacro, cóccix y articulaciones asociadas"
+C41,"Huesos, articulaciones y cartílago articular de otros sitios y no especificados",C41.8,"Lesión superpuesta de huesos, articulaciones y cartílago articular"
+C41,"Huesos, articulaciones y cartílago articular de otros sitios y no especificados",C41.9,"Hueso, sin otra especificación"
+C42,Sistemas hematopoyético y reticuloendotelial,C42.0,Sangre
+C42,Sistemas hematopoyético y reticuloendotelial,C42.1,Médula ósea
+C42,Sistemas hematopoyético y reticuloendotelial,C42.2,Bazo
+C42,Sistemas hematopoyético y reticuloendotelial,C42.3,"Sistema reticuloendotelial, sin otra especificación"
+C42,Sistemas hematopoyético y reticuloendotelial,C42.4,"Sistema hematopoyético, sin otra especificación"
+C44,Piel,C44.0,"Piel del labio, sin otra especificación"
+C44,Piel,C44.1,"Piel del párpado, incluido canto"
+C44,Piel,C44.2,Piel del oído externo
+C44,Piel,C44.3,Piel de otras partes y partes no especificadas de la cara
+C44,Piel,C44.4,Piel del cuero cabelludo y cuello
+C44,Piel,C44.5,Piel del tronco
+C44,Piel,C44.6,Piel de extremidad superior y hombro
+C44,Piel,C44.7,Piel de extremidad inferior y cadera
+C44,Piel,C44.8,Lesión superpuesta de piel
+C44,Piel,C44.9,"Piel, sin otra especificación"
+C47,Nervios periféricos y sistema nervioso autónomo,C47.0,"Nervios periféricos y sistema nervioso autónomo de cabeza, cara y cuello"
+C47,Nervios periféricos y sistema nervioso autónomo,C47.1,Nervios periféricos y sistema nervioso autónomo de extremidad superior y hombro
+C47,Nervios periféricos y sistema nervioso autónomo,C47.2,Nervios periféricos y sistema nervioso autónomo de extremidad inferior y cadera
+C47,Nervios periféricos y sistema nervioso autónomo,C47.3,Nervios periféricos y sistema nervioso autónomo de tórax
+C47,Nervios periféricos y sistema nervioso autónomo,C47.4,Nervios periféricos y sistema nervioso autónomo de abdomen
+C47,Nervios periféricos y sistema nervioso autónomo,C47.5,Nervios periféricos y sistema nervioso autónomo de pelvis
+C47,Nervios periféricos y sistema nervioso autónomo,C47.6,"Nervios periféricos y sistema nervioso autónomo de tronco, sin otra especificación"
+C47,Nervios periféricos y sistema nervioso autónomo,C47.8,Lesión superpuesta de nervios periféricos y sistema nervioso autónomo
+C47,Nervios periféricos y sistema nervioso autónomo,C47.9,"Nervios periféricos y sistema nervioso autónomo, sin otra especificación"
+C48,Retroperitoneo y peritoneo,C48.0,Retroperitoneo
+C48,Retroperitoneo y peritoneo,C48.1,Partes especificadas del peritoneo
+C48,Retroperitoneo y peritoneo,C48.2,"Peritoneo, sin otra especificación"
+C48,Retroperitoneo y peritoneo,C48.8,Lesión superpuesta del retroperitoneo y peritoneo
+C49,"Tejido conjuntivo, subcutáneo y otros tejidos blandos",C49.0,"Tejido conjuntivo, subcutáneo y otros tejidos blandos de cabeza, cara y cuello"
+C49,"Tejido conjuntivo, subcutáneo y otros tejidos blandos",C49.1,"Tejido conjuntivo, subcutáneo y otros tejidos blandos de extremidad superior y hombro"
+C49,"Tejido conjuntivo, subcutáneo y otros tejidos blandos",C49.2,"Tejido conjuntivo, subcutáneo y otros tejidos blandos de extremidad inferior y cadera"
+C49,"Tejido conjuntivo, subcutáneo y otros tejidos blandos",C49.3,"Tejido conjuntivo, subcutáneo y otros tejidos blandos de tórax"
+C49,"Tejido conjuntivo, subcutáneo y otros tejidos blandos",C49.4,"Tejido conjuntivo, subcutáneo y otros tejidos blandos de abdomen"
+C49,"Tejido conjuntivo, subcutáneo y otros tejidos blandos",C49.5,"Tejido conjuntivo, subcutáneo y otros tejidos blandos de pelvis"
+C49,"Tejido conjuntivo, subcutáneo y otros tejidos blandos",C49.6,"Tejido conjuntivo, subcutáneo y otros tejidos blandos de tronco, sin otra especificación"
+C49,"Tejido conjuntivo, subcutáneo y otros tejidos blandos",C49.8,"Lesión superpuesta de tejido conjuntivo, subcutáneo y otros tejidos blandos"
+C49,"Tejido conjuntivo, subcutáneo y otros tejidos blandos",C49.9,"Tejido conjuntivo, subcutáneo y otros tejidos blandos, sin otra especificación"
+C50,Mama,C50.0,Pezón
+C50,Mama,C50.1,Porción central de la mama
+C50,Mama,C50.2,Cuadrante superior interno de la mama
+C50,Mama,C50.3,Cuadrante inferior interno de la mama
+C50,Mama,C50.4,Cuadrante superior externo de la mama
+C50,Mama,C50.5,Cuadrante inferior externo de la mama
+C50,Mama,C50.6,Prolongación axilar de la mama
+C50,Mama,C50.8,Lesión superpuesta de la mama
+C50,Mama,C50.9,"Mama, sin otra especificación"
+C51,Vulva,C51.0,Labio mayor
+C51,Vulva,C51.1,Labio menor
+C51,Vulva,C51.2,Clítoris
+C51,Vulva,C51.8,Lesión superpuesta de la vulva
+C51,Vulva,C51.9,"Vulva, sin otra especificación"
+C52,Vagina,C52.9,Vagina
+C53,Cuello uterino,C53.0,Endocérvix
+C53,Cuello uterino,C53.1,Exocérvix
+C53,Cuello uterino,C53.8,Lesión superpuesta del cuello uterino
+C53,Cuello uterino,C53.9,"Cuello uterino, sin otra especificación"
+C54,Cuerpo uterino,C54.0,Istmo uterino
+C54,Cuerpo uterino,C54.1,Endometrio
+C54,Cuerpo uterino,C54.2,Miometrio
+C54,Cuerpo uterino,C54.3,Fondo uterino
+C54,Cuerpo uterino,C54.8,Lesión superpuesta del cuerpo uterino
+C54,Cuerpo uterino,C54.9,"Cuerpo uterino, sin otra especificación"
+C55,"Útero, sin otra especificación",C55.9,"Útero, sin otra especificación"
+C56,Ovario,C56.9,Ovario
+C57,Otros órganos genitales femeninos y no especificados,C57.0,Trompa uterina
+C57,Otros órganos genitales femeninos y no especificados,C57.1,Ligamento ancho
+C57,Otros órganos genitales femeninos y no especificados,C57.2,Ligamento redondo
+C57,Otros órganos genitales femeninos y no especificados,C57.3,Parametrio
+C57,Otros órganos genitales femeninos y no especificados,C57.4,Anexos uterinos
+C57,Otros órganos genitales femeninos y no especificados,C57.7,Otros órganos genitales femeninos especificados
+C57,Otros órganos genitales femeninos y no especificados,C57.8,Lesión superpuesta de órganos genitales femeninos
+C57,Otros órganos genitales femeninos y no especificados,C57.9,"Órgano genital femenino, sin otra especificación"
+C58,Placenta,C58.9,Placenta
+C60,Pene,C60.0,Prepucio
+C60,Pene,C60.1,Glande
+C60,Pene,C60.2,Cuerpo del pene
+C60,Pene,C60.8,Lesión superpuesta del pene
+C60,Pene,C60.9,"Pene, sin otra especificación"
+C61,Próstata,C61.9,Próstata
+C62,Testículo,C62.0,Testículo no descendido
+C62,Testículo,C62.1,Testículo descendido
+C62,Testículo,C62.9,"Testículo, sin otra especificación"
+C63,Otros órganos genitales masculinos y no especificados,C63.0,Epidídimo
+C63,Otros órganos genitales masculinos y no especificados,C63.1,Cordón espermático
+C63,Otros órganos genitales masculinos y no especificados,C63.2,"Escroto, sin otra especificación"
+C63,Otros órganos genitales masculinos y no especificados,C63.7,Otros órganos genitales masculinos especificados
+C63,Otros órganos genitales masculinos y no especificados,C63.8,Lesión superpuesta de órganos genitales masculinos
+C63,Otros órganos genitales masculinos y no especificados,C63.9,"Órgano genital masculino, sin otra especificación"
+C64,Riñón,C64.9,"Riñón, sin otra especificación"
+C65,Pelvis renal,C65.9,Pelvis renal
+C66,Uréter,C66.9,Uréter
+C67,Vejiga urinaria,C67.0,Trígono vesical
+C67,Vejiga urinaria,C67.1,Cúpula vesical
+C67,Vejiga urinaria,C67.2,Pared lateral de la vejiga
+C67,Vejiga urinaria,C67.3,Pared anterior de la vejiga
+C67,Vejiga urinaria,C67.4,Pared posterior de la vejiga
+C67,Vejiga urinaria,C67.5,Cuello vesical
+C67,Vejiga urinaria,C67.6,Orificio ureteral
+C67,Vejiga urinaria,C67.7,Uraco
+C67,Vejiga urinaria,C67.8,Lesión superpuesta de la vejiga
+C67,Vejiga urinaria,C67.9,"Vejiga urinaria, sin otra especificación"
+C68,Otros órganos urinarios y no especificados,C68.0,Uretra
+C68,Otros órganos urinarios y no especificados,C68.1,Glándula parauretral
+C68,Otros órganos urinarios y no especificados,C68.8,Lesión superpuesta de órganos urinarios
+C68,Otros órganos urinarios y no especificados,C68.9,"Sistema urinario, sin otra especificación"
+C69,Ojo y anexos,C69.0,Conjuntiva
+C69,Ojo y anexos,C69.1,"Córnea, sin otra especificación"
+C69,Ojo y anexos,C69.2,Retina
+C69,Ojo y anexos,C69.3,Coroides
+C69,Ojo y anexos,C69.4,Cuerpo ciliar
+C69,Ojo y anexos,C69.5,Glándula lagrimal
+C69,Ojo y anexos,C69.6,"Órbita, sin otra especificación"
+C69,Ojo y anexos,C69.8,Lesión superpuesta del ojo y anexos
+C69,Ojo y anexos,C69.9,"Ojo, sin otra especificación"
+C70,Meninges,C70.0,Meninges cerebrales
+C70,Meninges,C70.1,Meninges espinales
+C70,Meninges,C70.9,"Meninges, sin otra especificación"
+C71,Encéfalo,C71.0,Cerebro
+C71,Encéfalo,C71.1,Lóbulo frontal
+C71,Encéfalo,C71.2,Lóbulo temporal
+C71,Encéfalo,C71.3,Lóbulo parietal
+C71,Encéfalo,C71.4,Lóbulo occipital
+C71,Encéfalo,C71.5,"Ventrículo cerebral, sin otra especificación"
+C71,Encéfalo,C71.6,"Cerebelo, sin otra especificación"
+C71,Encéfalo,C71.7,Tronco encefálico
+C71,Encéfalo,C71.8,Lesión superpuesta del encéfalo
+C71,Encéfalo,C71.9,"Encéfalo, sin otra especificación"
+C72,"Médula espinal, nervios craneales y otras partes del SNC",C72.0,Médula espinal
+C72,"Médula espinal, nervios craneales y otras partes del SNC",C72.1,Cauda equina
+C72,"Médula espinal, nervios craneales y otras partes del SNC",C72.2,Nervio olfatorio
+C72,"Médula espinal, nervios craneales y otras partes del SNC",C72.3,Nervio óptico
+C72,"Médula espinal, nervios craneales y otras partes del SNC",C72.4,Nervio acústico
+C72,"Médula espinal, nervios craneales y otras partes del SNC",C72.5,"Nervio craneal, sin otra especificación"
+C72,"Médula espinal, nervios craneales y otras partes del SNC",C72.8,Lesión superpuesta del encéfalo y sistema nervioso central
+C72,"Médula espinal, nervios craneales y otras partes del SNC",C72.9,"Sistema nervioso central, sin otra especificación"
+C73,Glándula tiroides,C73.9,Glándula tiroides
+C74,Glándula suprarrenal,C74.0,Corteza suprarrenal
+C74,Glándula suprarrenal,C74.1,Médula suprarrenal
+C74,Glándula suprarrenal,C74.9,"Glándula suprarrenal, sin otra especificación"
+C75,Otras glándulas endocrinas y estructuras relacionadas,C75.0,Glándula paratiroides
+C75,Otras glándulas endocrinas y estructuras relacionadas,C75.1,Hipófisis
+C75,Otras glándulas endocrinas y estructuras relacionadas,C75.2,Conducto craneofaríngeo
+C75,Otras glándulas endocrinas y estructuras relacionadas,C75.3,Glándula pineal
+C75,Otras glándulas endocrinas y estructuras relacionadas,C75.4,Cuerpo carotídeo
+C75,Otras glándulas endocrinas y estructuras relacionadas,C75.5,Cuerpo aórtico y otros paraganglios
+C75,Otras glándulas endocrinas y estructuras relacionadas,C75.8,Lesión superpuesta de glándulas endocrinas y estructuras relacionadas
+C75,Otras glándulas endocrinas y estructuras relacionadas,C75.9,"Glándula endocrina, sin otra especificación"
+C76,Otros sitios y sitios mal definidos,C76.0,"Cabeza, cara o cuello, sin otra especificación"
+C76,Otros sitios y sitios mal definidos,C76.1,"Tórax, sin otra especificación"
+C76,Otros sitios y sitios mal definidos,C76.2,"Abdomen, sin otra especificación"
+C76,Otros sitios y sitios mal definidos,C76.3,"Pelvis, sin otra especificación"
+C76,Otros sitios y sitios mal definidos,C76.4,"Extremidad superior, sin otra especificación"
+C76,Otros sitios y sitios mal definidos,C76.5,"Extremidad inferior, sin otra especificación"
+C76,Otros sitios y sitios mal definidos,C76.7,Otros sitios mal definidos
+C76,Otros sitios y sitios mal definidos,C76.8,Lesión superpuesta de sitios mal definidos
+C77,Ganglios linfáticos,C77.0,"Ganglios linfáticos de cabeza, cara y cuello"
+C77,Ganglios linfáticos,C77.1,Ganglios linfáticos intratorácicos
+C77,Ganglios linfáticos,C77.2,Ganglios linfáticos intraabdominales
+C77,Ganglios linfáticos,C77.3,Ganglios linfáticos axilares y de extremidad superior
+C77,Ganglios linfáticos,C77.4,Ganglios linfáticos inguinales y de extremidad inferior
+C77,Ganglios linfáticos,C77.5,Ganglios linfáticos pélvicos
+C77,Ganglios linfáticos,C77.8,Ganglios linfáticos de múltiples regiones
+C77,Ganglios linfáticos,C77.9,"Ganglio linfático, sin otra especificación"
+C80,Sitio primario desconocido,C80.9,Sitio primario desconocido
