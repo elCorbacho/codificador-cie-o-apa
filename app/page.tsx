@@ -1,44 +1,35 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Search } from "lucide-react";
+"use client";
+
+import * as Tabs from "@radix-ui/react-tabs";
+import { Header, TabNav } from "@/components/layout";
+import { ArquitecturaSection } from "@/components/cieo/Arquitectura";
+import { ErdDiagram } from "@/components/cieo/erd/erd-diagram";
+import { ReglasGrid } from "@/components/cieo/reglas/reglas-grid";
+import { CodificadorWizard } from "@/components/cieo/codificador/codificador-wizard";
+import { CasosCards } from "@/components/cieo/casos-especiales/casos-cards";
 
 export default function HomePage() {
   return (
-    <main className="flex-1 flex flex-col items-center justify-center min-h-[80vh] px-4 py-12">
-      <div className="text-center space-y-6 max-w-2xl">
-        <Badge variant="secondary" className="text-sm px-4 py-1">
-          CIE-O Codificador
-        </Badge>
-        
-        <h1 className="text-4xl md:text-5xl font-bold text-primary">
-          Codificador CIE-O
-        </h1>
-        
-        <p className="text-lg text-foreground-muted">
-          Sistema de búsqueda y codificación de términos CIE-O (Clasificación 
-          Internacional de Enfermedades para Oncología). Topografía y morfología.
-        </p>
-        
-        <Card className="mt-8">
-          <CardHeader>
-            <CardTitle className="text-center">Buscar códigos</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="flex gap-2">
-              <div className="flex-1 relative">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-foreground-muted" />
-                <input
-                  type="text"
-                  placeholder="Buscar por código o término..."
-                  className="w-full pl-10 pr-4 py-2 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-ring"
-                />
-              </div>
-              <Button>Buscar</Button>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
-    </main>
+    <>
+      <Header />
+      <TabNav />
+      <Tabs.Root defaultValue="arquitectura" className="flex-1">
+        <Tabs.Content value="arquitectura" className="flex-1">
+          <ArquitecturaSection />
+        </Tabs.Content>
+        <Tabs.Content value="entidad-relacion" className="flex-1">
+          <ErdDiagram />
+        </Tabs.Content>
+        <Tabs.Content value="reglas" className="flex-1">
+          <ReglasGrid />
+        </Tabs.Content>
+        <Tabs.Content value="codificador" className="flex-1">
+          <CodificadorWizard />
+        </Tabs.Content>
+        <Tabs.Content value="casos-especiales" className="flex-1">
+          <CasosCards />
+        </Tabs.Content>
+      </Tabs.Root>
+    </>
   );
 }
