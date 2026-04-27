@@ -20,10 +20,10 @@ export function ContextSelector() {
       <div className="mb-4">
         <Select.Root value={ctx} onValueChange={handleChange}>
           <Select.Trigger
-            className="w-full flex items-center justify-between px-4 py-3 rounded-lg border bg-gris text-gris-d text-sm outline-none focus:border-azul-m focus:bg-blanco transition-colors"
+            className="w-full flex items-center justify-between px-4 py-3 rounded-lg border bg-gris text-gris-d text-sm outline-none focus:border-azul-m focus:bg-canvas transition-colors"
             style={{
-              border: "1.5px solid var(--linea)",
-              background: "var(--gris)",
+              border: "1.5px solid var(--color-hairline)",
+              background: "var(--color-surface-soft)",
               fontFamily: "var(--font-body, 'DM Sans', sans-serif)",
               fontSize: "14px",
               cursor: "pointer",
@@ -42,7 +42,7 @@ export function ContextSelector() {
 
           <Select.Portal>
             <Select.Content
-              className="bg-blanco border border-linea rounded-lg shadow-lg overflow-hidden z-50"
+              className="bg-canvas border border-hairline rounded-lg shadow-lg overflow-hidden z-50"
               position="popper"
               style={{ width: "var(--radix-select-trigger-width)", maxHeight: "300px" }}
             >
@@ -72,7 +72,7 @@ export function ContextSelector() {
           </Select.Portal>
         </Select.Root>
       </div>
-      <p className="text-xs mt-2" style={{ color: "var(--gris-m)", fontSize: "12px", lineHeight: 1.5 }}>
+      <p className="text-xs mt-2" style={{ color: "var(--color-muted)", fontSize: "12px", lineHeight: 1.5 }}>
         El contexto determina qué comportamientos están disponibles según §4.3.2 del PDF.
       </p>
     </div>

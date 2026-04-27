@@ -2,123 +2,32 @@
 
 /* Project colors from AGENTS.md */
 @theme inline {
-  /* Primary: navy blue */
-  --color-primary: #0D3B66;
-  --color-primary-foreground: #ffffff;
-
-  /* Secondary: teal */
+  --color-primary: #ff385c;
+  --color-primary-active: #e00b41;
+  --color-primary-disabled: #ffd1da;
   --color-secondary: #0E7C5B;
-  --color-secondary-foreground: #ffffff;
-
-  /* Background */
-  --color-background: #ffffff;
-  --color-background-secondary: #f8fafc;
-
-  /* Foreground */
-  --color-foreground: #171717;
-  --color-foreground-muted: #64748b;
-
-  /* UI colors */
-  --color-border: #e2e8f0;
-  --color-ring: #0D3B66;
+  --color-lila: #4A3F8F;
+  --color-canvas: #ffffff;
+  --color-surface-soft: #f7f7f7;
+  --color-surface-strong: #f2f2f2;
+  --color-hairline: #dddddd;
+  --color-hairline-soft: #ebebeb;
+  --color-border-strong: #c1c1c1;
+  --color-ink: #222222;
+  --color-body: #3f3f3f;
+  --color-muted: #6a6a6a;
+  --color-muted-soft: #929292;
+  --color-error: #c13515;
+  --color-error-hover: #b32505;
+  --color-ambar: #B8651A;
+  --color-legal-link: #428bff;
+  --color-scrim: rgba(0,0,0,0.5);
 
   /* Fonts */
   --font-sans: var(--font-body);
   --font-mono: var(--font-code);
-
-  /* Result panel colors */
-  --color-topo: #7EC8E3;
-  --color-hist: #7EDBA8;
-  --color-comp: #F4A573;
-  --color-grado: #F4D173;
 }
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-
-  /* Extended color palette */
-  --azul: #0D3B66;
-  --azul-m: #1A5C99;
-  --azul-l: #D6E8F7;
-  --teal: #0E7C5B;
-  --teal-l: #D0EFE6;
-  --coral: #C0392B;
-  --coral-l: #FAE0DE;
-  --ambar: #B8651A;
-  --ambar-l: #FDF0DC;
-  --lila: #4A3F8F;
-  --lila-l: #ECEAF8;
-  --gris: #F4F3F0;
-  --gris-m: #888580;
-  --gris-d: #2C2B28;
-  --linea: #E0DDD8;
-  --blanco: #FAFAF8;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-body), DM_Sans, Arial, Helvetica, sans-serif;
-}
-
-/* ─── EXTENDED UTILITY CLASSES ─── */
-/* Backgrounds */
-.bg-azul { background-color: var(--azul); }
-.bg-azul-m { background-color: var(--azul-m); }
-.bg-azul-l { background-color: var(--azul-l); }
-.bg-teal { background-color: var(--teal); }
-.bg-teal-l { background-color: var(--teal-l); }
-.bg-coral { background-color: var(--coral); }
-.bg-coral-l { background-color: var(--coral-l); }
-.bg-ambar { background-color: var(--ambar); }
-.bg-ambar-l { background-color: var(--ambar-l); }
-.bg-lila { background-color: var(--lila); }
-.bg-lila-l { background-color: var(--lila-l); }
-.bg-gris { background-color: var(--gris); }
-.bg-gris-d { background-color: var(--gris-d); }
-.bg-blanco { background-color: var(--blanco); }
-.bg-linea { background-color: var(--linea); }
-
-/* Text colors */
-.text-azul { color: var(--azul); }
-.text-azul-m { color: var(--azul-m); }
-.text-azul-l { color: var(--azul-l); }
-.text-teal { color: var(--teal); }
-.text-teal-l { color: var(--teal-l); }
-.text-coral { color: var(--coral); }
-.text-coral-l { color: var(--coral-l); }
-.text-ambar { color: var(--ambar); }
-.text-ambar-l { color: var(--ambar-l); }
-.text-lila { color: var(--lila); }
-.text-lila-l { color: var(--lila-l); }
-.text-gris { color: var(--gris); }
-.text-gris-m { color: var(--gris-m); }
-.text-gris-d { color: var(--gris-d); }
-.text-blanco { color: var(--blanco); }
-.text-linea { color: var(--linea); }
-
-/* Result code colors (from result panel) */
-.text-topo { color: var(--color-topo); }
-.text-hist { color: var(--color-hist); }
-.text-comp { color: var(--color-comp); }
-.text-grado { color: var(--color-grado); }
-
-/* Borders */
-.border-azul { border-color: var(--azul); }
-.border-teal { border-color: var(--teal); }
-.border-coral { border-color: var(--coral); }
-.border-ambar { border-color: var(--ambar); }
-.border-lila { border-color: var(--lila); }
-.border-gris { border-color: var(--gris); }
-.border-linea { border-color: var(--linea); }
 
 /* Font families */
 .font-heading { font-family: var(--font-heading), DM_Serif_Display, Georgia, serif; }
@@ -127,25 +36,25 @@ body {
 
 /* Utility classes for project colors */
 .bg-primary {
-  background-color: #0D3B66;
+  background-color: var(--color-primary);
 }
 
 .bg-secondary {
-  background-color: #0E7C5B;
+  background-color: var(--color-secondary);
 }
 
 .text-primary {
-  color: #0D3B66;
+  color: var(--color-primary);
 }
 
 .text-secondary {
-  color: #0E7C5B;
+  color: var(--color-secondary);
 }
 
 .border-primary {
-  border-color: #0D3B66;
+  border-color: var(--color-primary);
 }
 
 .border-secondary {
-  border-color: #0E7C5B;
+  border-color: var(--color-secondary);
 }

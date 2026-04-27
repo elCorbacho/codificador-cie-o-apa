@@ -20,7 +20,7 @@ export function AppTabs() {
     <Tabs.Root defaultValue="arquitectura" className="flex flex-col flex-1">
       {/* Tab Navigation Bar — sticky dentro del Tabs.Root */}
       <Tabs.List
-        className="bg-azul border-t border-white/10 sticky top-0 z-50 flex gap-0 list-none m-0 p-0 overflow-x-auto"
+        className="bg-canvas border-b border-hairline sticky top-0 z-50 flex list-none m-0 p-0 overflow-x-auto"
         style={{
           position: "sticky",
           top: 0,
@@ -35,13 +35,13 @@ export function AppTabs() {
               key={tab.value}
               value={tab.value}
               className="
-                bg-transparent border-none text-white/55
-                font-body font-medium text-[13px]
-                px-[22px] py-[14px] cursor-pointer whitespace-nowrap
-                border-b-[3px] border-b-transparent
+                bg-transparent border-none text-muted
+                font-body font-medium text-[16px]
+                px-[22px] py-[28px] cursor-pointer whitespace-nowrap
+                border-b-[2px] border-b-transparent
                 transition-all duration-200
-                hover:text-white/85
-                data-[state=active]:text-white data-[state=active]:border-b-[#7EC8E3]
+                hover:text-ink
+                data-[state=active]:text-ink data-[state=active]:border-b-ink
               "
               style={{ fontFamily: "var(--font-body, 'DM Sans', sans-serif)" }}
             >

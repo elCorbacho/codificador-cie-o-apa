@@ -10,16 +10,15 @@ interface RuleProps {
 
 function RuleItem({ letter, badgeColor, title, description, example }: RuleProps) {
   return (
-    <div className="flex gap-4 py-4 border-b border-linea" style={{ borderBottom: "1px solid var(--linea)" }}>
+    <div className="flex gap-4 py-4 border-b border-hairline" style={{ borderBottom: "1px solid var(--color-hairline)" }}>
       <div
-        className="w-9 h-9 rounded-lg flex items-center justify-center font-code font-semibold text-base flex-shrink-0"
+        className="w-9 h-9 rounded-lg flex items-center justify-center font-mono font-semibold text-base flex-shrink-0"
         style={{
           width: "34px",
           height: "34px",
           borderRadius: "8px",
           background: badgeColor,
-          color: "#fff",
-          fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)",
+          color: "var(--color-canvas)",
           fontSize: "15px",
           fontWeight: 600,
           display: "flex",
@@ -31,21 +30,17 @@ function RuleItem({ letter, badgeColor, title, description, example }: RuleProps
         {letter}
       </div>
       <div className="flex-1">
-        <div className="font-medium text-sm mb-0.5" style={{ fontSize: "14px" }}>
+        <div className="font-medium text-sm mb-0.5">
           {title}
         </div>
-        <div className="text-sm mb-1.5" style={{ fontSize: "13px", color: "var(--gris-m)", lineHeight: 1.5 }}>
+        <div className="text-sm mb-1.5 text-muted leading-1.5">
           {description}
         </div>
         {example && (
           <span
-            className="font-code inline-block px-2.5 py-1 rounded text-xs"
+            className="font-mono inline-block px-2.5 py-1 rounded text-xs bg-surface-soft text-primary"
             style={{
-              fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)",
               fontSize: "11.5px",
-              background: "var(--gris)",
-              borderRadius: "5px",
-              color: "var(--azul)",
             }}
           >
             {example}
@@ -60,7 +55,7 @@ export function ReglasGrid() {
   const topoRules = [
     {
       letter: "A",
-      badgeColor: "var(--azul)",
+      badgeColor: "var(--color-primary)",
       title: "Localizaciones mal definidas",
       description:
         "Si el diagnóstico no especifica tejido de origen, usar el tejido específico del índice alfabético — no C76 (SAI).",
@@ -68,7 +63,7 @@ export function ReglasGrid() {
     },
     {
       letter: "B",
-      badgeColor: "var(--azul)",
+      badgeColor: "var(--color-primary)",
       title: "Prefijos (peri-, para-, pre-...)",
       description:
         "Localización modificada por prefijo no listado → C76 (mal definida), salvo que el tipo tumoral indique tejido específico.",
@@ -76,7 +71,7 @@ export function ReglasGrid() {
     },
     {
       letter: "C",
-      badgeColor: "var(--azul)",
+      badgeColor: "var(--color-primary)",
       title: "Tumor que rebasa límites",
       description:
         "Tumor en dos o más subcategorías contiguas sin punto de origen determinable → subcategoría .8",
@@ -84,7 +79,7 @@ export function ReglasGrid() {
     },
     {
       letter: "D",
-      badgeColor: "var(--teal)",
+      badgeColor: "var(--color-secondary)",
       title: "Linfomas — código topográfico especial",
       description:
         "Ganglionares → C77._. Extraganglionares → sitio de origen. Múltiples regiones → C77.8. Sin localización → C80.9.",
@@ -92,7 +87,7 @@ export function ReglasGrid() {
     },
     {
       letter: "E",
-      badgeColor: "var(--teal)",
+      badgeColor: "var(--color-secondary)",
       title: "Leucemias — siempre C42.1",
       description:
         "TODAS las leucemias → C42.1 (médula ósea). Excepción: sarcoma mieloide (9930/3) → localización del depósito.",
@@ -103,7 +98,7 @@ export function ReglasGrid() {
   const morfoRules = [
     {
       letter: "F",
-      badgeColor: "var(--coral)",
+      badgeColor: "var(--color-error)",
       title: "Sistema matricial de comportamiento",
       description:
         "Usar comportamiento correcto aunque el término exacto no aparezca en CIE-O. La matriz permite cualquier combinación. El patólogo tiene la última palabra.",
@@ -111,7 +106,7 @@ export function ReglasGrid() {
     },
     {
       letter: "G",
-      badgeColor: "var(--ambar)",
+      badgeColor: "var(--color-ambar)",
       title: "Grado: asignar el MAYOR",
       description:
         "Si el diagnóstico indica dos niveles de grado, usar el mayor. Los dígitos de linaje 5–8 prevalecen sobre diferenciación 1–4.",
@@ -119,7 +114,7 @@ export function ReglasGrid() {
     },
     {
       letter: "H",
-      badgeColor: "var(--coral)",
+      badgeColor: "var(--color-error)",
       title: "Morfología asociada a localización",
       description:
         "Usar código topo sugerido entre paréntesis si el diagnóstico no indica localización. Si hay localización indicada, usarla aunque difiera del código sugerido.",
@@ -127,7 +122,7 @@ export function ReglasGrid() {
     },
     {
       letter: "J",
-      badgeColor: "var(--coral)",
+      badgeColor: "var(--color-error)",
       title: "Diagnósticos morfológicos compuestos",
       description:
         "Si el término compuesto no aparece, invertir el orden de las raíces de las palabras.",
@@ -135,7 +130,7 @@ export function ReglasGrid() {
     },
     {
       letter: "K",
-      badgeColor: "var(--coral)",
+      badgeColor: "var(--color-error)",
       title: "Múltiples términos morfológicos",
       description:
         "Si un tumor tiene dos adjetivos con códigos distintos y no hay código único, usar el numéricamente mayor (generalmente más específico).",
@@ -147,36 +142,30 @@ export function ReglasGrid() {
     <div className="py-10">
       <div className="container mx-auto px-4">
         <p
-          className="font-code uppercase"
+          className="font-mono uppercase text-muted mb-[0.4rem]"
           style={{
-            fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)",
             fontSize: "10.5px",
             letterSpacing: ".14em",
-            color: "var(--gris-m)",
-            marginBottom: ".4rem",
           }}
         >
           Directrices oficiales — §4.1 Tabla 14 del PDF
         </p>
 
         <h2
-          className="font-heading mb-3"
+          className="font-heading mb-3 text-primary"
           style={{
-            fontFamily: "var(--font-heading, 'DM Serif Display', serif)",
             fontSize: "clamp(1.6rem, 3vw, 2.2rem)",
             lineHeight: 1.15,
-            color: "var(--azul)",
           }}
         >
           Reglas de codificación A–K
         </h2>
 
         <p
+          className="text-muted mb-8"
           style={{
-            color: "var(--gris-m)",
             fontSize: "14.5px",
             maxWidth: "600px",
-            marginBottom: "2rem",
           }}
         >
           El PDF establece 10 reglas oficiales (no existe Regla I, intencionalmente). Cada regla aplica a situaciones específicas de codificación.
@@ -185,15 +174,13 @@ export function ReglasGrid() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Topography rules */}
           <div
-            className="rounded-[14px] border p-7 bg-blanco"
-            style={{ background: "var(--blanco)", border: "1px solid var(--linea)" }}
+            className="rounded-[14px] border border-hairline p-7 bg-canvas"
           >
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-2.5 h-2.5 rounded-full" style={{ background: "var(--azul)" }} />
+              <div className="w-2.5 h-2.5 rounded-full bg-primary" />
               <h3
                 className="font-heading"
                 style={{
-                  fontFamily: "var(--font-heading, 'DM Serif Display', serif)",
                   fontSize: "1.15rem",
                   lineHeight: 1.2,
                 }}
@@ -208,15 +195,13 @@ export function ReglasGrid() {
 
           {/* Morphology rules */}
           <div
-            className="rounded-[14px] border p-7 bg-blanco"
-            style={{ background: "var(--blanco)", border: "1px solid var(--linea)" }}
+            className="rounded-[14px] border border-hairline p-7 bg-canvas"
           >
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-2.5 h-2.5 rounded-full" style={{ background: "var(--coral)" }} />
+              <div className="w-2.5 h-2.5 rounded-full bg-error" />
               <h3
                 className="font-heading"
                 style={{
-                  fontFamily: "var(--font-heading, 'DM Serif Display', serif)",
                   fontSize: "1.15rem",
                   lineHeight: 1.2,
                 }}

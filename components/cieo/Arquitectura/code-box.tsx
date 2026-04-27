@@ -3,7 +3,7 @@ export function CodeBox() {
     <div
       className="rounded-[14px] p-8 text-white"
       style={{
-        background: "var(--gris-d)",
+        background: "var(--color-ink)",
         fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)",
       }}
     >
@@ -24,7 +24,7 @@ export function CodeBox() {
         {/* Topography: C prefix */}
         <div
           className="flex-1 min-w-[90px] rounded-[10px] p-4 text-center"
-          style={{ background: "#0D3B66", border: "1px solid #1A5C99" }}
+          style={{ background: "var(--color-primary)", border: "1px solid var(--color-primary-active)" }}
         >
           <span className="text-[2rem] font-semibold leading-tight block">C</span>
           <span
@@ -39,7 +39,7 @@ export function CodeBox() {
         {/* Topography: 2 digits */}
         <div
           className="flex-1 min-w-[90px] rounded-[10px] p-4 text-center"
-          style={{ background: "#0D3B66", border: "1px solid #1A5C99" }}
+          style={{ background: "var(--color-primary)", border: "1px solid var(--color-primary-active)" }}
         >
           <span className="text-[2rem] font-semibold leading-tight block">XX</span>
           <span
@@ -57,7 +57,7 @@ export function CodeBox() {
         {/* Topography: sublocation */}
         <div
           className="flex-1 min-w-[90px] rounded-[10px] p-4 text-center"
-          style={{ background: "#0D3B66", border: "1px solid #1A5C99" }}
+          style={{ background: "var(--color-primary)", border: "1px solid var(--color-primary-active)" }}
         >
           <span className="text-[2rem] font-semibold leading-tight block">X</span>
           <span
@@ -80,7 +80,7 @@ export function CodeBox() {
         {/* Histology: 4 digits */}
         <div
           className="flex-1 min-w-[90px] rounded-[10px] p-4 text-center"
-          style={{ background: "#0E3B30", border: "1px solid #0E7C5B" }}
+          style={{ background: "var(--color-secondary)", border: "1px solid var(--color-secondary)" }}
         >
           <span className="text-[2rem] font-semibold leading-tight block">XXXX</span>
           <span
@@ -98,7 +98,7 @@ export function CodeBox() {
         {/* Behavior */}
         <div
           className="flex-1 min-w-[90px] rounded-[10px] p-4 text-center"
-          style={{ background: "#4A1F1A", border: "1px solid #C0392B" }}
+          style={{ background: "var(--color-error)", border: "1px solid var(--color-error-hover)" }}
         >
           <span className="text-[2rem] font-semibold leading-tight block">X</span>
           <span
@@ -113,7 +113,7 @@ export function CodeBox() {
         {/* Grade */}
         <div
           className="flex-1 min-w-[90px] rounded-[10px] p-4 text-center"
-          style={{ background: "#3D2A08", border: "1px solid #B8651A" }}
+          style={{ background: "var(--color-ink)", border: "1px solid var(--color-ink)" }}
         >
           <span className="text-[2rem] font-semibold leading-tight block">X</span>
           <span
@@ -145,7 +145,7 @@ export function CodeBox() {
         </p>
         <div className="flex flex-wrap gap-4 items-center">
           <div>
-            <div className="text-[1.6rem] font-semibold" style={{ color: "#7EC8E3" }}>
+            <div className="text-[1.6rem] font-semibold" style={{ color: "var(--color-primary)" }}>
               C34.1
             </div>
             <div
@@ -160,9 +160,9 @@ export function CodeBox() {
           </div>
           <span style={{ color: "rgba(255,255,255,.2)", fontSize: "1.5rem" }}>+</span>
           <div>
-            <div className="text-[1.6rem] font-semibold" style={{ color: "#7EDBA8" }}>
-              8070/<span style={{ color: "#F4A573" }}>3</span>
-              <span style={{ color: "#F4D173" }}>3</span>
+            <div className="text-[1.6rem] font-semibold" style={{ color: "var(--color-secondary)" }}>
+              8070/<span style={{ color: "var(--color-error)" }}>3</span>
+              <span style={{ color: "var(--color-primary-disabled)" }}>3</span>
             </div>
             <div
               style={{

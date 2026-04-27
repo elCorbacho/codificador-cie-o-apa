@@ -3,12 +3,11 @@ export function ErdDiagram() {
     <div className="py-10">
       <div className="container mx-auto px-4">
         <p
-          className="font-code uppercase"
+          className="font-code uppercase text-muted"
           style={{
             fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)",
             fontSize: "10.5px",
             letterSpacing: ".14em",
-            color: "var(--gris-m)",
             marginBottom: ".4rem",
           }}
         >
@@ -16,20 +15,19 @@ export function ErdDiagram() {
         </p>
 
         <h2
-          className="font-heading mb-3"
+          className="font-heading mb-3 text-primary"
           style={{
             fontFamily: "var(--font-heading, 'DM Serif Display', serif)",
             fontSize: "clamp(1.6rem, 3vw, 2.2rem)",
             lineHeight: 1.15,
-            color: "var(--azul)",
           }}
         >
           Entidad–Relación
         </h2>
 
         <p
+          className="text-muted"
           style={{
-            color: "var(--gris-m)",
             fontSize: "14.5px",
             maxWidth: "600px",
             marginBottom: "2rem",
@@ -50,20 +48,18 @@ export function ErdDiagram() {
             {/* Column 1: Grupos */}
             <div className="flex flex-col gap-5">
               <div
-                className="inline-block rounded-[10px] overflow-hidden text-sm"
+                className="inline-block rounded-[10px] overflow-hidden text-sm border border-hairline"
                 style={{
-                  border: "1.5px solid var(--linea)",
                   boxShadow: "0 2px 8px rgba(0,0,0,.05)",
                   minWidth: "200px",
                 }}
               >
                 <div
-                  className="px-4 py-2.5 font-semibold text-white"
-                  style={{ background: "var(--teal)" }}
+                  className="px-4 py-2.5 font-semibold text-white bg-secondary"
                 >
                   GRUPO_ORGANICO
                 </div>
-                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-linea bg-blanco hover:bg-gris">
+                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-surface-soft">
                   <span
                     className="px-1.5 py-0.5 rounded text-xs font-semibold"
                     style={{ background: "#FFF3CD", color: "#856404", fontSize: "10px" }}
@@ -73,42 +69,40 @@ export function ErdDiagram() {
                   <span className="flex-1" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)", fontSize: "11.5px" }}>
                     id_grupo
                   </span>
-                  <span style={{ fontSize: "11px", color: "var(--gris-m)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
+                  <span className="text-xs text-muted" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
                     int
                   </span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-linea bg-blanco hover:bg-gris">
+                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-surface-soft">
                   <span className="flex-1" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)", fontSize: "11.5px" }}>
                     nombre
                   </span>
-                  <span style={{ fontSize: "11px", color: "var(--gris-m)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
+                  <span className="text-xs text-muted" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
                     varchar
                   </span>
                 </div>
               </div>
 
               <div
-                className="text-center py-1"
-                style={{ fontSize: "10px", color: "var(--gris-m)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}
+                className="text-center py-1 text-xs text-muted"
+                style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}
               >
                 1 ──── N ↓
               </div>
 
               <div
-                className="inline-block rounded-[10px] overflow-hidden text-sm"
+                className="inline-block rounded-[10px] overflow-hidden text-sm border border-hairline"
                 style={{
-                  border: "1.5px solid var(--linea)",
                   boxShadow: "0 2px 8px rgba(0,0,0,.05)",
                   minWidth: "200px",
                 }}
               >
                 <div
-                  className="px-4 py-2.5 font-semibold text-white"
-                  style={{ background: "var(--lila)" }}
+                  className="px-4 py-2.5 font-semibold text-white bg-lila"
                 >
                   GRUPO_HISTOLOGICO
                 </div>
-                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-linea bg-blanco hover:bg-gris">
+                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-surface-soft">
                   <span
                     className="px-1.5 py-0.5 rounded text-xs font-semibold"
                     style={{ background: "#FFF3CD", color: "#856404", fontSize: "10px" }}
@@ -118,23 +112,23 @@ export function ErdDiagram() {
                   <span className="flex-1" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)", fontSize: "11.5px" }}>
                     id_grupo
                   </span>
-                  <span style={{ fontSize: "11px", color: "var(--gris-m)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
+                  <span className="text-xs text-muted" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
                     int
                   </span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-linea bg-blanco hover:bg-gris">
+                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-surface-soft">
                   <span className="flex-1" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)", fontSize: "11.5px" }}>
                     nombre
                   </span>
-                  <span style={{ fontSize: "11px", color: "var(--gris-m)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
+                  <span className="text-xs text-muted" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
                     varchar
                   </span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-linea bg-blanco hover:bg-gris">
+                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-surface-soft">
                   <span className="flex-1" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)", fontSize: "11.5px" }}>
                     tipo_grado
                   </span>
-                  <span style={{ fontSize: "11px", color: "var(--gris-m)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
+                  <span className="text-xs text-muted" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
                     enum
                   </span>
                 </div>
@@ -146,18 +140,18 @@ export function ErdDiagram() {
               <div
                 className="inline-block rounded-[10px] overflow-hidden text-sm"
                 style={{
-                  border: "1.5px solid var(--linea)",
+                  border: "1.5px solid var(--color-hairline)",
                   boxShadow: "0 2px 8px rgba(0,0,0,.05)",
                   minWidth: "200px",
                 }}
               >
                 <div
                   className="px-4 py-2.5 font-semibold text-white"
-                  style={{ background: "var(--azul)" }}
+                  style={{ background: "var(--color-primary)" }}
                 >
                   TOPOGRAFIA
                 </div>
-                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-linea bg-blanco hover:bg-gris">
+                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-gris">
                   <span
                     className="px-1.5 py-0.5 rounded text-xs font-semibold"
                     style={{ background: "#FFF3CD", color: "#856404", fontSize: "10px" }}
@@ -167,11 +161,11 @@ export function ErdDiagram() {
                   <span className="flex-1" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)", fontSize: "11.5px" }}>
                     cod_topografia
                   </span>
-                  <span style={{ fontSize: "11px", color: "var(--gris-m)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
+                  <span style={{ fontSize: "11px", color: "var(--color-muted)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
                     char(6)
                   </span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-linea bg-blanco hover:bg-gris">
+                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-gris">
                   <span
                     className="px-1.5 py-0.5 rounded text-xs font-semibold"
                     style={{ background: "#D1ECF1", color: "#0C5460", fontSize: "10px" }}
@@ -181,23 +175,23 @@ export function ErdDiagram() {
                   <span className="flex-1" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)", fontSize: "11.5px" }}>
                     id_grupo_organico
                   </span>
-                  <span style={{ fontSize: "11px", color: "var(--gris-m)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
+                  <span style={{ fontSize: "11px", color: "var(--color-muted)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
                     int
                   </span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-linea bg-blanco hover:bg-gris">
+                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-gris">
                   <span className="flex-1" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)", fontSize: "11.5px" }}>
                     descripcion
                   </span>
-                  <span style={{ fontSize: "11px", color: "var(--gris-m)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
+                  <span style={{ fontSize: "11px", color: "var(--color-muted)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
                     varchar
                   </span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-linea bg-blanco hover:bg-gris">
+                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-gris">
                   <span className="flex-1" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)", fontSize: "11.5px" }}>
                     notas_reglas
                   </span>
-                  <span style={{ fontSize: "11px", color: "var(--gris-m)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
+                  <span style={{ fontSize: "11px", color: "var(--color-muted)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
                     text
                   </span>
                 </div>
@@ -205,7 +199,7 @@ export function ErdDiagram() {
 
               <div
                 className="text-center py-1"
-                style={{ fontSize: "10px", color: "var(--gris-m)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}
+                style={{ fontSize: "10px", color: "var(--color-muted)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}
               >
                 1 ──── N ↓
               </div>
@@ -213,18 +207,18 @@ export function ErdDiagram() {
               <div
                 className="inline-block rounded-[10px] overflow-hidden text-sm"
                 style={{
-                  border: "1.5px solid var(--linea)",
+                  border: "1.5px solid var(--color-hairline)",
                   boxShadow: "0 2px 8px rgba(0,0,0,.05)",
                   minWidth: "200px",
                 }}
               >
                 <div
                   className="px-4 py-2.5 font-semibold text-white"
-                  style={{ background: "var(--lila)" }}
+                  style={{ background: "var(--color-lila)" }}
                 >
                   MORFOLOGIA
                 </div>
-                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-linea bg-blanco hover:bg-gris">
+                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-gris">
                   <span
                     className="px-1.5 py-0.5 rounded text-xs font-semibold"
                     style={{ background: "#FFF3CD", color: "#856404", fontSize: "10px" }}
@@ -234,11 +228,11 @@ export function ErdDiagram() {
                   <span className="flex-1" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)", fontSize: "11.5px" }}>
                     cod_morfologia
                   </span>
-                  <span style={{ fontSize: "11px", color: "var(--gris-m)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
+                  <span style={{ fontSize: "11px", color: "var(--color-muted)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
                     char(4)
                   </span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-linea bg-blanco hover:bg-gris">
+                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-gris">
                   <span
                     className="px-1.5 py-0.5 rounded text-xs font-semibold"
                     style={{ background: "#D1ECF1", color: "#0C5460", fontSize: "10px" }}
@@ -248,23 +242,23 @@ export function ErdDiagram() {
                   <span className="flex-1" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)", fontSize: "11.5px" }}>
                     id_grupo_histologico
                   </span>
-                  <span style={{ fontSize: "11px", color: "var(--gris-m)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
+                  <span style={{ fontSize: "11px", color: "var(--color-muted)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
                     int
                   </span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-linea bg-blanco hover:bg-gris">
+                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-gris">
                   <span className="flex-1" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)", fontSize: "11.5px" }}>
                     descripcion
                   </span>
-                  <span style={{ fontSize: "11px", color: "var(--gris-m)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
+                  <span style={{ fontSize: "11px", color: "var(--color-muted)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
                     varchar
                   </span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-linea bg-blanco hover:bg-gris">
+                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-gris">
                   <span className="flex-1" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)", fontSize: "11.5px" }}>
                     topo_restriccion_pdf
                   </span>
-                  <span style={{ fontSize: "11px", color: "var(--gris-m)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
+                  <span style={{ fontSize: "11px", color: "var(--color-muted)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
                     varchar
                   </span>
                 </div>
@@ -276,18 +270,18 @@ export function ErdDiagram() {
               <div
                 className="inline-block rounded-[10px] overflow-hidden text-sm"
                 style={{
-                  border: "1.5px solid var(--linea)",
+                  border: "1.5px solid var(--color-hairline)",
                   boxShadow: "0 2px 8px rgba(0,0,0,.05)",
                   minWidth: "200px",
                 }}
               >
                 <div
                   className="px-4 py-2.5 font-semibold text-white"
-                  style={{ background: "var(--coral)" }}
+                  style={{ background: "var(--color-error)" }}
                 >
                   COMPORTAMIENTO
                 </div>
-                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-linea bg-blanco hover:bg-gris">
+                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-gris">
                   <span
                     className="px-1.5 py-0.5 rounded text-xs font-semibold"
                     style={{ background: "#FFF3CD", color: "#856404", fontSize: "10px" }}
@@ -297,23 +291,23 @@ export function ErdDiagram() {
                   <span className="flex-1" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)", fontSize: "11.5px" }}>
                     cod_comportamiento
                   </span>
-                  <span style={{ fontSize: "11px", color: "var(--gris-m)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
+                  <span style={{ fontSize: "11px", color: "var(--color-muted)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
                     char(1)
                   </span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-linea bg-blanco hover:bg-gris">
+                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-gris">
                   <span className="flex-1" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)", fontSize: "11.5px" }}>
                     descripcion
                   </span>
-                  <span style={{ fontSize: "11px", color: "var(--gris-m)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
+                  <span style={{ fontSize: "11px", color: "var(--color-muted)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
                     varchar
                   </span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-linea bg-blanco hover:bg-gris">
+                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-gris">
                   <span className="flex-1" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)", fontSize: "11.5px" }}>
                     uso_registro_cancer
                   </span>
-                  <span style={{ fontSize: "11px", color: "var(--gris-m)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
+                  <span style={{ fontSize: "11px", color: "var(--color-muted)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
                     bool
                   </span>
                 </div>
@@ -321,7 +315,7 @@ export function ErdDiagram() {
 
               <div
                 className="text-center py-1"
-                style={{ fontSize: "10px", color: "var(--gris-m)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}
+                style={{ fontSize: "10px", color: "var(--color-muted)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}
               >
                 M ─── N (pivot)
               </div>
@@ -329,18 +323,18 @@ export function ErdDiagram() {
               <div
                 className="inline-block rounded-[10px] overflow-hidden text-sm"
                 style={{
-                  border: "1.5px solid var(--linea)",
+                  border: "1.5px solid var(--color-hairline)",
                   boxShadow: "0 2px 8px rgba(0,0,0,.05)",
                   minWidth: "200px",
                 }}
               >
                 <div
                   className="px-4 py-2.5 font-semibold text-white"
-                  style={{ background: "var(--ambar)" }}
+                  style={{ background: "var(--color-ambar)" }}
                 >
                   GRADO
                 </div>
-                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-linea bg-blanco hover:bg-gris">
+                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-gris">
                   <span
                     className="px-1.5 py-0.5 rounded text-xs font-semibold"
                     style={{ background: "#FFF3CD", color: "#856404", fontSize: "10px" }}
@@ -350,23 +344,23 @@ export function ErdDiagram() {
                   <span className="flex-1" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)", fontSize: "11.5px" }}>
                     cod_grado
                   </span>
-                  <span style={{ fontSize: "11px", color: "var(--gris-m)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
+                  <span style={{ fontSize: "11px", color: "var(--color-muted)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
                     char(1)
                   </span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-linea bg-blanco hover:bg-gris">
+                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-gris">
                   <span className="flex-1" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)", fontSize: "11.5px" }}>
                     descripcion
                   </span>
-                  <span style={{ fontSize: "11px", color: "var(--gris-m)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
+                  <span style={{ fontSize: "11px", color: "var(--color-muted)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
                     varchar
                   </span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-linea bg-blanco hover:bg-gris">
+                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-gris">
                   <span className="flex-1" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)", fontSize: "11.5px" }}>
                     tipo
                   </span>
-                  <span style={{ fontSize: "11px", color: "var(--gris-m)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
+                  <span style={{ fontSize: "11px", color: "var(--color-muted)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
                     enum
                   </span>
                 </div>
@@ -374,7 +368,7 @@ export function ErdDiagram() {
 
               <div
                 className="text-center py-1"
-                style={{ fontSize: "10px", color: "var(--gris-m)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}
+                style={{ fontSize: "10px", color: "var(--color-muted)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}
               >
                 M ─── N (pivot)
               </div>
@@ -382,18 +376,18 @@ export function ErdDiagram() {
               <div
                 className="inline-block rounded-[10px] overflow-hidden text-sm"
                 style={{
-                  border: "1.5px solid var(--linea)",
+                  border: "1.5px solid var(--color-hairline)",
                   boxShadow: "0 2px 8px rgba(0,0,0,.05)",
                   minWidth: "200px",
                 }}
               >
                 <div
                   className="px-4 py-2.5 font-semibold text-white"
-                  style={{ background: "var(--coral)" }}
+                  style={{ background: "var(--color-error)" }}
                 >
                   RESTRICCION_TOPO_MORFO
                 </div>
-                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-linea bg-blanco hover:bg-gris">
+                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-gris">
                   <span
                     className="px-1.5 py-0.5 rounded text-xs font-semibold"
                     style={{ background: "#FFF3CD", color: "#856404", fontSize: "10px" }}
@@ -403,11 +397,11 @@ export function ErdDiagram() {
                   <span className="flex-1" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)", fontSize: "11.5px" }}>
                     id_restriccion
                   </span>
-                  <span style={{ fontSize: "11px", color: "var(--gris-m)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
+                  <span style={{ fontSize: "11px", color: "var(--color-muted)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
                     int
                   </span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-linea bg-blanco hover:bg-gris">
+                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-gris">
                   <span
                     className="px-1.5 py-0.5 rounded text-xs font-semibold"
                     style={{ background: "#D1ECF1", color: "#0C5460", fontSize: "10px" }}
@@ -417,11 +411,11 @@ export function ErdDiagram() {
                   <span className="flex-1" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)", fontSize: "11.5px" }}>
                     cod_topografia
                   </span>
-                  <span style={{ fontSize: "11px", color: "var(--gris-m)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
+                  <span style={{ fontSize: "11px", color: "var(--color-muted)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
                     char(6)
                   </span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-linea bg-blanco hover:bg-gris">
+                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-gris">
                   <span
                     className="px-1.5 py-0.5 rounded text-xs font-semibold"
                     style={{ background: "#D1ECF1", color: "#0C5460", fontSize: "10px" }}
@@ -431,23 +425,23 @@ export function ErdDiagram() {
                   <span className="flex-1" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)", fontSize: "11.5px" }}>
                     cod_morfologia
                   </span>
-                  <span style={{ fontSize: "11px", color: "var(--gris-m)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
+                  <span style={{ fontSize: "11px", color: "var(--color-muted)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
                     char(4)
                   </span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-linea bg-blanco hover:bg-gris">
+                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-gris">
                   <span className="flex-1" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)", fontSize: "11.5px" }}>
                     tipo_restriccion
                   </span>
-                  <span style={{ fontSize: "11px", color: "var(--gris-m)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
+                  <span style={{ fontSize: "11px", color: "var(--color-muted)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
                     enum
                   </span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-linea bg-blanco hover:bg-gris">
+                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-gris">
                   <span className="flex-1" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)", fontSize: "11.5px" }}>
                     descripcion_regla
                   </span>
-                  <span style={{ fontSize: "11px", color: "var(--gris-m)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
+                  <span style={{ fontSize: "11px", color: "var(--color-muted)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
                     text
                   </span>
                 </div>
@@ -459,7 +453,7 @@ export function ErdDiagram() {
               <div
                 className="inline-block rounded-[10px] overflow-hidden text-sm"
                 style={{
-                  border: "1.5px solid var(--linea)",
+                  border: "1.5px solid var(--color-hairline)",
                   boxShadow: "0 2px 8px rgba(0,0,0,.05)",
                   minWidth: "200px",
                 }}
@@ -470,7 +464,7 @@ export function ErdDiagram() {
                 >
                   MORFO_COMPORTAMIENTO
                 </div>
-                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-linea bg-blanco hover:bg-gris">
+                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-gris">
                   <span
                     className="px-1.5 py-0.5 rounded text-xs font-semibold"
                     style={{ background: "#D1ECF1", color: "#0C5460", fontSize: "10px" }}
@@ -480,11 +474,11 @@ export function ErdDiagram() {
                   <span className="flex-1" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)", fontSize: "11.5px" }}>
                     cod_morfologia
                   </span>
-                  <span style={{ fontSize: "11px", color: "var(--gris-m)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
+                  <span style={{ fontSize: "11px", color: "var(--color-muted)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
                     char(4)
                   </span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-linea bg-blanco hover:bg-gris">
+                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-gris">
                   <span
                     className="px-1.5 py-0.5 rounded text-xs font-semibold"
                     style={{ background: "#D1ECF1", color: "#0C5460", fontSize: "10px" }}
@@ -494,23 +488,23 @@ export function ErdDiagram() {
                   <span className="flex-1" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)", fontSize: "11.5px" }}>
                     cod_comportamiento
                   </span>
-                  <span style={{ fontSize: "11px", color: "var(--gris-m)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
+                  <span style={{ fontSize: "11px", color: "var(--color-muted)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
                     char(1)
                   </span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-linea bg-blanco hover:bg-gris">
+                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-gris">
                   <span className="flex-1" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)", fontSize: "11.5px" }}>
                     es_habitual_pdf
                   </span>
-                  <span style={{ fontSize: "11px", color: "var(--gris-m)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
+                  <span style={{ fontSize: "11px", color: "var(--color-muted)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
                     bool
                   </span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-linea bg-blanco hover:bg-gris">
+                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-gris">
                   <span className="flex-1" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)", fontSize: "11.5px" }}>
                     es_defecto
                   </span>
-                  <span style={{ fontSize: "11px", color: "var(--gris-m)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
+                  <span style={{ fontSize: "11px", color: "var(--color-muted)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
                     bool
                   </span>
                 </div>
@@ -519,7 +513,7 @@ export function ErdDiagram() {
               <div
                 className="inline-block rounded-[10px] overflow-hidden text-sm"
                 style={{
-                  border: "1.5px solid var(--linea)",
+                  border: "1.5px solid var(--color-hairline)",
                   boxShadow: "0 2px 8px rgba(0,0,0,.05)",
                   minWidth: "200px",
                 }}
@@ -530,7 +524,7 @@ export function ErdDiagram() {
                 >
                   MORFO_GRADO
                 </div>
-                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-linea bg-blanco hover:bg-gris">
+                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-gris">
                   <span
                     className="px-1.5 py-0.5 rounded text-xs font-semibold"
                     style={{ background: "#D1ECF1", color: "#0C5460", fontSize: "10px" }}
@@ -540,11 +534,11 @@ export function ErdDiagram() {
                   <span className="flex-1" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)", fontSize: "11.5px" }}>
                     cod_morfologia
                   </span>
-                  <span style={{ fontSize: "11px", color: "var(--gris-m)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
+                  <span style={{ fontSize: "11px", color: "var(--color-muted)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
                     char(4)
                   </span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-linea bg-blanco hover:bg-gris">
+                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-gris">
                   <span
                     className="px-1.5 py-0.5 rounded text-xs font-semibold"
                     style={{ background: "#D1ECF1", color: "#0C5460", fontSize: "10px" }}
@@ -554,15 +548,15 @@ export function ErdDiagram() {
                   <span className="flex-1" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)", fontSize: "11.5px" }}>
                     cod_grado
                   </span>
-                  <span style={{ fontSize: "11px", color: "var(--gris-m)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
+                  <span style={{ fontSize: "11px", color: "var(--color-muted)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
                     char(1)
                   </span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-linea bg-blanco hover:bg-gris">
+                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-gris">
                   <span className="flex-1" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)", fontSize: "11.5px" }}>
                     es_defecto
                   </span>
-                  <span style={{ fontSize: "11px", color: "var(--gris-m)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
+                  <span style={{ fontSize: "11px", color: "var(--color-muted)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
                     bool
                   </span>
                 </div>
@@ -571,7 +565,7 @@ export function ErdDiagram() {
               <div
                 className="inline-block rounded-[10px] overflow-hidden text-sm"
                 style={{
-                  border: "1.5px solid var(--linea)",
+                  border: "1.5px solid var(--color-hairline)",
                   boxShadow: "0 2px 8px rgba(0,0,0,.05)",
                   minWidth: "200px",
                 }}
@@ -582,7 +576,7 @@ export function ErdDiagram() {
                 >
                   CODIGO_GENERADO
                 </div>
-                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-linea bg-blanco hover:bg-gris">
+                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-gris">
                   <span
                     className="px-1.5 py-0.5 rounded text-xs font-semibold"
                     style={{ background: "#FFF3CD", color: "#856404", fontSize: "10px" }}
@@ -592,11 +586,11 @@ export function ErdDiagram() {
                   <span className="flex-1" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)", fontSize: "11.5px" }}>
                     id_codigo
                   </span>
-                  <span style={{ fontSize: "11px", color: "var(--gris-m)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
+                  <span style={{ fontSize: "11px", color: "var(--color-muted)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
                     int
                   </span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-linea bg-blanco hover:bg-gris">
+                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-gris">
                   <span
                     className="px-1.5 py-0.5 rounded text-xs font-semibold"
                     style={{ background: "#D1ECF1", color: "#0C5460", fontSize: "10px" }}
@@ -606,11 +600,11 @@ export function ErdDiagram() {
                   <span className="flex-1" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)", fontSize: "11.5px" }}>
                     cod_topografia
                   </span>
-                  <span style={{ fontSize: "11px", color: "var(--gris-m)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
+                  <span style={{ fontSize: "11px", color: "var(--color-muted)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
                     char(6)
                   </span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-linea bg-blanco hover:bg-gris">
+                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-gris">
                   <span
                     className="px-1.5 py-0.5 rounded text-xs font-semibold"
                     style={{ background: "#D1ECF1", color: "#0C5460", fontSize: "10px" }}
@@ -620,11 +614,11 @@ export function ErdDiagram() {
                   <span className="flex-1" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)", fontSize: "11.5px" }}>
                     cod_morfologia
                   </span>
-                  <span style={{ fontSize: "11px", color: "var(--gris-m)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
+                  <span style={{ fontSize: "11px", color: "var(--color-muted)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
                     char(4)
                   </span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-linea bg-blanco hover:bg-gris">
+                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-gris">
                   <span
                     className="px-1.5 py-0.5 rounded text-xs font-semibold"
                     style={{ background: "#D1ECF1", color: "#0C5460", fontSize: "10px" }}
@@ -634,11 +628,11 @@ export function ErdDiagram() {
                   <span className="flex-1" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)", fontSize: "11.5px" }}>
                     cod_comportamiento
                   </span>
-                  <span style={{ fontSize: "11px", color: "var(--gris-m)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
+                  <span style={{ fontSize: "11px", color: "var(--color-muted)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
                     char(1)
                   </span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-linea bg-blanco hover:bg-gris">
+                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-gris">
                   <span
                     className="px-1.5 py-0.5 rounded text-xs font-semibold"
                     style={{ background: "#D1ECF1", color: "#0C5460", fontSize: "10px" }}
@@ -648,31 +642,31 @@ export function ErdDiagram() {
                   <span className="flex-1" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)", fontSize: "11.5px" }}>
                     cod_grado
                   </span>
-                  <span style={{ fontSize: "11px", color: "var(--gris-m)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
+                  <span style={{ fontSize: "11px", color: "var(--color-muted)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
                     char(1)
                   </span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-linea bg-blanco hover:bg-gris">
+                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-gris">
                   <span className="flex-1" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)", fontSize: "11.5px" }}>
                     codigo_topo_final
                   </span>
-                  <span style={{ fontSize: "11px", color: "var(--gris-m)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
+                  <span style={{ fontSize: "11px", color: "var(--color-muted)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
                     varchar
                   </span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-linea bg-blanco hover:bg-gris">
+                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-gris">
                   <span className="flex-1" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)", fontSize: "11.5px" }}>
                     codigo_morfo_final
                   </span>
-                  <span style={{ fontSize: "11px", color: "var(--gris-m)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
+                  <span style={{ fontSize: "11px", color: "var(--color-muted)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
                     varchar
                   </span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-linea bg-blanco hover:bg-gris">
+                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-gris">
                   <span className="flex-1" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)", fontSize: "11.5px" }}>
                     patologo_anuló
                   </span>
-                  <span style={{ fontSize: "11px", color: "var(--gris-m)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
+                  <span style={{ fontSize: "11px", color: "var(--color-muted)", fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)" }}>
                     bool
                   </span>
                 </div>
@@ -683,19 +677,19 @@ export function ErdDiagram() {
           {/* Legend */}
           <div
             className="mt-4 pt-4 flex flex-wrap gap-4 text-xs"
-            style={{ borderTop: "1px solid var(--linea)", fontSize: "12px", color: "var(--gris-m)" }}
+            style={{ borderTop: "1px solid var(--color-hairline)", fontSize: "12px", color: "var(--color-muted)" }}
           >
             <div>
-              <strong style={{ color: "var(--azul)" }}>Regla D:</strong> Linfomas ganglionares → C77._
+              <strong style={{ color: "var(--color-primary)" }}>Regla D:</strong> Linfomas ganglionares → C77._
             </div>
             <div>
-              <strong style={{ color: "var(--coral)" }}>Regla E:</strong> Leucemias → C42.1 siempre
+              <strong style={{ color: "var(--color-error)" }}>Regla E:</strong> Leucemias → C42.1 siempre
             </div>
             <div>
-              <strong style={{ color: "var(--teal)" }}>Regla F:</strong> Matriz de comportamiento; el patólogo puede anular
+              <strong style={{ color: "var(--color-secondary)" }}>Regla F:</strong> Matriz de comportamiento; el patólogo puede anular
             </div>
             <div>
-              <strong style={{ color: "var(--ambar)" }}>Regla H:</strong> Restricciones topo orientativas (no obligatorias)
+              <strong style={{ color: "var(--color-ambar)" }}>Regla H:</strong> Restricciones topo orientativas (no obligatorias)
             </div>
           </div>
         </div>

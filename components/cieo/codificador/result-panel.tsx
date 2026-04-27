@@ -37,7 +37,7 @@ export function ResultPanel() {
     <div
       className="rounded-[14px] p-7 text-white sticky"
       style={{
-        background: "var(--gris-d)",
+        background: "var(--color-ink)",
         fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)",
         top: "72px",
       }}

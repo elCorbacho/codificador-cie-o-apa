@@ -6,12 +6,10 @@ export function ArquitecturaSection() {
     <div className="py-10">
       <div className="container mx-auto px-4">
         <p
-          className="font-code uppercase"
+          className="font-code uppercase text-muted"
           style={{
-            fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)",
             fontSize: "10.5px",
             letterSpacing: ".14em",
-            color: "var(--gris-m)",
             marginBottom: ".4rem",
           }}
         >
@@ -19,20 +17,18 @@ export function ArquitecturaSection() {
         </p>
 
         <h2
-          className="font-heading mb-3"
+          className="font-heading mb-3 text-ink"
           style={{
-            fontFamily: "var(--font-heading, 'DM Serif Display', serif)",
             fontSize: "clamp(1.6rem, 3vw, 2.2rem)",
             lineHeight: 1.15,
-            color: "var(--azul)",
           }}
         >
           Código de 10 caracteres
         </h2>
 
         <p
+          className="text-muted"
           style={{
-            color: "var(--gris-m)",
             fontSize: "14.5px",
             maxWidth: "600px",
             marginBottom: "2rem",

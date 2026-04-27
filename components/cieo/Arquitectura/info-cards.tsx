@@ -10,11 +10,12 @@ interface InfoCardProps {
 function InfoCard({ dotColor, title, children, extra }: InfoCardProps) {
   return (
     <div
-      className="rounded-[14px] border border-linea p-7 bg-blanco"
-      style={{ background: "var(--blanco)", border: "1px solid var(--linea)" }}
+      className="rounded-[14px] border border-hairline p-7 bg-canvas"
+      style={{ background: "var(--color-canvas)", border: "1px solid var(--color-hairline)" }}
     >
       <div className="flex items-center gap-3 mb-5">
         <div
+          data-testid="topography-dot"
           className="w-2.5 h-2.5 rounded-full flex-shrink-0"
           style={{ background: dotColor }}
         />
@@ -39,7 +40,7 @@ export function InfoCards() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
       {/* Topography card */}
-      <InfoCard dotColor="var(--azul)" title="Eje 1 — Topografía">
+      <InfoCard dotColor="var(--color-primary)" title="Eje 1 — Topografía">
         <p className="text-sm mb-3" style={{ fontSize: "13.5px" }}>
           Indica el <strong>sitio de origen</strong> del tumor. Mismo conjunto C00–C80 que la CIE-10,
           pero para todas las neoplasias (no solo malignas).
@@ -47,30 +48,30 @@ export function InfoCards() {
         <table className="w-full text-sm mb-0" style={{ fontSize: "12.5px" }}>
           <tbody>
             <tr>
-              <td className="text-muted" style={{ color: "var(--gris-m)" }}>C</td>
+              <td className="text-muted" style={{ color: "var(--color-muted)" }}>C</td>
               <td>Prefijo fijo</td>
             </tr>
             <tr>
-              <td className="text-muted" style={{ color: "var(--gris-m)" }}>XX</td>
+              <td className="text-muted" style={{ color: "var(--color-muted)" }}>XX</td>
               <td>Localización (órgano)</td>
             </tr>
             <tr>
-              <td className="text-muted" style={{ color: "var(--gris-m)" }}>.X</td>
+              <td className="text-muted" style={{ color: "var(--color-muted)" }}>.X</td>
               <td>Sublocalización</td>
             </tr>
             <tr>
-              <td className="text-muted" style={{ color: "var(--gris-m)" }}>.8</td>
+              <td className="text-muted" style={{ color: "var(--color-muted)" }}>.8</td>
               <td>Lesión que rebasa límites (Regla C)</td>
             </tr>
             <tr>
-              <td className="text-muted" style={{ color: "var(--gris-m)" }}>.9</td>
+              <td className="text-muted" style={{ color: "var(--color-muted)" }}>.9</td>
               <td>SAI (sin otra indicación)</td>
             </tr>
           </tbody>
         </table>
         <div
           className="mt-3 p-2 rounded text-sm"
-          style={{ background: "var(--azul-l)", fontSize: "12px", color: "var(--azul)" }}
+          style={{ background: "var(--color-primary-disabled)", fontSize: "12px", color: "var(--color-primary)" }}
         >
           <strong>Códigos especiales:</strong>
           <br />
@@ -81,38 +82,38 @@ export function InfoCards() {
       </InfoCard>
 
       {/* Histology card */}
-      <InfoCard dotColor="var(--teal)" title="Tipo histológico (4 dígitos)">
-        <p style={{ fontSize: "13px", color: "var(--gris-m)", marginBottom: "0.75rem" }}>
+      <InfoCard dotColor="var(--color-secondary)" title="Tipo histológico (4 dígitos)">
+        <p style={{ fontSize: "13px", color: "var(--color-muted)", marginBottom: "0.75rem" }}>
           El tipo celular que se transformó en neoplásico. Rangos M8000–M9989.
         </p>
         <table className="w-full text-sm mb-0" style={{ fontSize: "12.5px" }}>
           <tbody>
             <tr>
-              <td className="text-muted" style={{ color: "var(--gris-m)" }}>8000–8004</td>
+              <td className="text-muted" style={{ color: "var(--color-muted)" }}>8000–8004</td>
               <td>Neoplasias SAI</td>
             </tr>
             <tr>
-              <td className="text-muted" style={{ color: "var(--gris-m)" }}>8010–8084</td>
+              <td className="text-muted" style={{ color: "var(--color-muted)" }}>8010–8084</td>
               <td>Carcinomas epiteliales</td>
             </tr>
             <tr>
-              <td className="text-muted" style={{ color: "var(--gris-m)" }}>8140–8389</td>
+              <td className="text-muted" style={{ color: "var(--color-muted)" }}>8140–8389</td>
               <td>Adenocarcinomas</td>
             </tr>
             <tr>
-              <td className="text-muted" style={{ color: "var(--gris-m)" }}>8720–8790</td>
+              <td className="text-muted" style={{ color: "var(--color-muted)" }}>8720–8790</td>
               <td>Melanocíticos</td>
             </tr>
             <tr>
-              <td className="text-muted" style={{ color: "var(--gris-m)" }}>8800–8990</td>
+              <td className="text-muted" style={{ color: "var(--color-muted)" }}>8800–8990</td>
               <td>Tejidos blandos</td>
             </tr>
             <tr>
-              <td className="text-muted" style={{ color: "var(--gris-m)" }}>9590–9699</td>
+              <td className="text-muted" style={{ color: "var(--color-muted)" }}>9590–9699</td>
               <td>Linfomas</td>
             </tr>
             <tr>
-              <td className="text-muted" style={{ color: "var(--gris-m)" }}>9800–9931</td>
+              <td className="text-muted" style={{ color: "var(--color-muted)" }}>9800–9931</td>
               <td>Leucemias</td>
             </tr>
           </tbody>
@@ -120,11 +121,11 @@ export function InfoCards() {
       </InfoCard>
 
       {/* Behavior card */}
-      <InfoCard dotColor="var(--coral)" title="Comportamiento (/X)">
+      <InfoCard dotColor="var(--color-error)" title="Comportamiento (/X)">
         <table className="w-full text-sm" style={{ fontSize: "12.5px" }}>
           <thead>
             <tr>
-              <th className="text-left font-medium" style={{ padding: "8px 12px", textTransform: "uppercase", letterSpacing: ".1em", color: "var(--gris-m)", fontSize: "11px" }}>Dígito</th>
+              <th className="text-left font-medium" style={{ padding: "8px 12px", textTransform: "uppercase", letterSpacing: ".1em", color: "var(--color-muted)", fontSize: "11px" }}>Dígito</th>
               <th className="text-left font-medium" style={{ padding: "8px 12px" }}>Significado</th>
               <th className="text-left font-medium" style={{ padding: "8px 12px" }}>Registro</th>
             </tr>
@@ -137,8 +138,8 @@ export function InfoCards() {
                   style={{
                     fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)",
                     fontSize: "13px",
-                    background: "var(--teal-l)",
-                    color: "var(--teal)",
+                    background: "var(--color-surface-soft)",
+                    color: "var(--color-secondary)",
                   }}
                 >
                   /0
@@ -154,8 +155,8 @@ export function InfoCards() {
                   style={{
                     fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)",
                     fontSize: "13px",
-                    background: "var(--ambar-l)",
-                    color: "var(--ambar)",
+                    background: "var(--color-surface-soft)",
+                    color: "var(--color-ambar)",
                   }}
                 >
                   /1
@@ -171,8 +172,8 @@ export function InfoCards() {
                   style={{
                     fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)",
                     fontSize: "13px",
-                    background: "var(--azul-l)",
-                    color: "var(--azul)",
+                    background: "var(--color-primary-disabled)",
+                    color: "var(--color-primary)",
                   }}
                 >
                   /2
@@ -188,8 +189,8 @@ export function InfoCards() {
                   style={{
                     fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)",
                     fontSize: "13px",
-                    background: "var(--coral-l)",
-                    color: "var(--coral)",
+                    background: "var(--color-error-hover)",
+                    color: "var(--color-error)",
                   }}
                 >
                   /3
@@ -205,8 +206,8 @@ export function InfoCards() {
                   style={{
                     fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)",
                     fontSize: "13px",
-                    background: "var(--gris)",
-                    color: "var(--gris-m)",
+                    background: "var(--color-surface-soft)",
+                    color: "var(--color-muted)",
                   }}
                 >
                   /6
@@ -222,8 +223,8 @@ export function InfoCards() {
                   style={{
                     fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)",
                     fontSize: "13px",
-                    background: "var(--gris)",
-                    color: "var(--gris-m)",
+                    background: "var(--color-surface-soft)",
+                    color: "var(--color-muted)",
                   }}
                 >
                   /9
@@ -237,16 +238,16 @@ export function InfoCards() {
       </InfoCard>
 
       {/* Grade card */}
-      <InfoCard dotColor="var(--ambar)" title="Grado / Linaje (6.° dígito)">
-        <p style={{ fontSize: "12px", color: "var(--gris-m)", marginBottom: "0.75rem" }}>
+      <InfoCard dotColor="var(--color-ambar)" title="Grado / Linaje (6.° dígito)">
+        <p style={{ fontSize: "12px", color: "var(--color-muted)", marginBottom: "0.75rem" }}>
           Tumores sólidos: diferenciación. Hematología: linaje celular.
         </p>
         <div className="grid grid-cols-2 gap-2">
           <div
             className="rounded-[8px] p-[10px] text-sm"
-            style={{ background: "var(--ambar-l)", fontSize: "12px" }}
+            style={{ background: "var(--color-surface-soft)", fontSize: "12px" }}
           >
-            <strong style={{ color: "var(--ambar)" }}>Diferenciación</strong>
+            <strong style={{ color: "var(--color-ambar)" }}>Diferenciación</strong>
             <div
               className="mt-1 font-code"
               style={{
@@ -268,9 +269,9 @@ export function InfoCards() {
           </div>
           <div
             className="rounded-[8px] p-[10px] text-sm"
-            style={{ background: "var(--lila-l)", fontSize: "12px" }}
+            style={{ background: "var(--color-surface-soft)", fontSize: "12px" }}
           >
-            <strong style={{ color: "var(--lila)" }}>Linaje hematológico</strong>
+            <strong style={{ color: "var(--color-lila)" }}>Linaje hematológico</strong>
             <div
               className="mt-1 font-code"
               style={{
@@ -293,7 +294,7 @@ export function InfoCards() {
         </div>
         <div
           className="mt-2 p-2 rounded text-sm"
-          style={{ background: "var(--gris)", fontSize: "11.5px", color: "var(--gris-m)" }}
+          style={{ background: "var(--color-surface-soft)", fontSize: "11.5px", color: "var(--color-muted)" }}
         >
           <strong>Regla G:</strong> Si el diagnóstico indica dos grados, usar el <strong>mayor</strong>.
           Los dígitos 5–8 prevalecen sobre 1–4.

@@ -19,34 +19,38 @@ interface StepProps {
 function WizardStep({ number, title, children, isActive, isDone }: StepProps) {
   return (
     <div
-      className="rounded-xl border p-6 mb-4 transition-all"
-      style={{
-        border: `1.5px solid ${isDone ? "var(--teal)" : isActive ? "var(--azul-m)" : "var(--linea)"}`,
-        background: isDone ? "#F5FFFC" : "var(--blanco)",
-        boxShadow: isActive ? "0 0 0 3px var(--azul-l)" : "none",
-      }}
+      className={`rounded-xl border p-6 mb-4 transition-all ${
+        isDone 
+          ? "border-secondary bg-surface-soft" 
+          : isActive 
+            ? "border-primary shadow-[0_0_0_3px_var(--color-primary-disabled)]" 
+            : "border-hairline bg-canvas"
+      }`}
     >
       <div className="flex items-center mb-4">
         <span
-          className="w-7 h-7 rounded-full flex items-center justify-center font-code font-semibold text-sm mr-3"
-          style={{
-            width: "28px",
-            height: "28px",
-            borderRadius: "50%",
-            background: isDone ? "var(--teal)" : isActive ? "var(--azul)" : "var(--gris)",
-            color: isDone || isActive ? "#fff" : "var(--gris-m)",
-            fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)",
-            fontSize: "13px",
-            display: "inline-flex",
-            alignItems: "center",
-            justifyContent: "center",
-            marginRight: ".6rem",
-            flexShrink: 0,
-          }}
+          className={`w-7 h-7 rounded-full flex items-center justify-center font-mono font-semibold text-sm mr-3 ${
+            isDone 
+              ? "bg-secondary text-canvas" 
+              : isActive 
+                ? "bg-primary text-canvas" 
+                : "bg-surface-soft text-muted"
+          }`}
+            style={{
+              width: "28px",
+              height: "28px",
+              borderRadius: "50%",
+              fontSize: "13px",
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              marginRight: ".6rem",
+              flexShrink: 0,
+            }}
         >
           {number}
         </span>
-        <span className="font-medium text-sm" style={{ fontSize: "14.5px" }}>
+        <span className="font-medium text-sm">
           {title}
         </span>
       </div>
@@ -73,36 +77,30 @@ export function CodificadorWizard() {
     <div className="py-10">
       <div className="container mx-auto px-4">
         <p
-          className="font-code uppercase"
+          className="font-mono uppercase text-muted mb-[0.4rem]"
           style={{
-            fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)",
             fontSize: "10.5px",
             letterSpacing: ".14em",
-            color: "var(--gris-m)",
-            marginBottom: ".4rem",
           }}
         >
           Herramienta interactiva
         </p>
 
         <h2
-          className="font-heading mb-3"
+          className="font-heading mb-3 text-primary"
           style={{
-            fontFamily: "var(--font-heading, 'DM Serif Display', serif)",
             fontSize: "clamp(1.6rem, 3vw, 2.2rem)",
             lineHeight: 1.15,
-            color: "var(--azul)",
           }}
         >
           Codificador paso a paso
         </h2>
 
         <p
+          className="text-muted mb-8"
           style={{
-            color: "var(--gris-m)",
             fontSize: "14.5px",
             maxWidth: "600px",
-            marginBottom: "2rem",
           }}
         >
           Selecciona cada campo en orden. El sistema aplica automáticamente las reglas A–K del PDF.

@@ -50,8 +50,8 @@ export function GradeSelector() {
           <Select.Trigger
             className="w-full flex items-center justify-between px-4 py-3 rounded-lg border text-sm outline-none transition-colors"
             style={{
-              border: "1.5px solid var(--linea)",
-              background: "var(--gris)",
+              border: "1.5px solid var(--color-hairline)",
+              background: "var(--color-surface-soft)",
               fontFamily: "var(--font-body, 'DM Sans', sans-serif)",
               fontSize: "14px",
               cursor: isDisabled ? "not-allowed" : "pointer",
@@ -71,7 +71,7 @@ export function GradeSelector() {
 
           <Select.Portal>
             <Select.Content
-              className="bg-blanco border border-linea rounded-lg shadow-lg overflow-hidden z-50"
+              className="bg-canvas border border-hairline rounded-lg shadow-lg overflow-hidden z-50"
               position="popper"
               style={{ width: "var(--radix-select-trigger-width)", maxHeight: "300px" }}
             >
@@ -95,7 +95,7 @@ export function GradeSelector() {
         </Select.Root>
       </div>
 
-      <p className="text-xs" style={{ color: "var(--gris-m)", fontSize: "12px", lineHeight: 1.5 }}>
+      <p className="text-xs" style={{ color: "var(--color-muted)", fontSize: "12px", lineHeight: 1.5 }}>
         {hint}
       </p>
     </div>
