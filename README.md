@@ -1,36 +1,110 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Codificador CIE-O-3
 
-## Getting Started
+[![License: PolyForm Noncommercial](https://img.shields.io/badge/License-PolyForm%20Noncommercial%201.0.0-orange)](LICENSE)
+[![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19-61dafb?logo=react)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-strict-blue?logo=typescript)](https://www.typescriptlang.org/)
+[![GitHub Pages](https://img.shields.io/badge/Deploy-GitHub%20Pages-brightgreen?logo=github)](https://pages.github.com/)
 
-First, run the development server:
+Aplicación web para **codificación anatomopatológica con CIE-O-3.1**, construida con
+**Next.js App Router** y export estático para GitHub Pages.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+El proyecto reúne:
+
+- explicación de la **arquitectura del código CIE-O-3**,
+- diagrama **entidad–relación** del modelo de datos,
+- resumen de **reglas A–K**,
+- un **codificador paso a paso** para topografía, histología, comportamiento y grado,
+- y una sección de **casos especiales** basada en la normativa.
+
+## Estado del proyecto
+
+- :white_check_mark: Home documental con tabs para Arquitectura, ERD, Reglas, Codificador y Casos especiales.
+- :white_check_mark: Codificador guiado con estado en **Zustand**.
+- :white_check_mark: Datos normalizados desde archivos JSON locales.
+- :white_check_mark: Validación tipada con **TypeScript strict** y **Zod**.
+- :white_check_mark: Tests unitarios con **Vitest**.
+- :white_check_mark: Deploy configurado para **GitHub Pages** con `output: 'export'`.
+
+## Stack técnico
+
+| Tecnología | Propósito |
+|------------|-----------|
+| Next.js 16 | App Router + static export |
+| React 19 | UI framework |
+| TypeScript (strict) | Type safety |
+| Tailwind CSS 4 | Styling |
+| Radix UI | Tabs y selects accesibles |
+| Zustand | Estado del wizard |
+| Zod | Validación |
+| Vitest | Tests unitarios |
+| Playwright | Revisión E2E / visual |
+
+## Estructura
+
+```text
+app/                          # Entrypoints App Router
+components/cieo/             # Secciones funcionales del dominio
+components/layout/           # Header, tabs y shell general
+components/ui/               # Primitivas UI
+data/                        # JSON fuente para topografía, histología, etc.
+lib/cieo/                    # Búsqueda, filtros y utilidades del dominio
+lib/validations/             # Esquemas Zod
+scripts/                     # Extracción/regeneración de datos
+store/                       # Estado global del codificador (Zustand)
+types/                       # Tipos del dominio
+.github/workflows/deploy.yml # Deploy a GitHub Pages
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Desarrollo local
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Abrir `http://localhost:3000`.
 
-## Learn More
+## Scripts disponibles
 
-To learn more about Next.js, take a look at the following resources:
+| Comando | Descripción |
+|---------|-------------|
+| `npm run dev` | Servidor de desarrollo |
+| `npm run lint` | Linting con ESLint |
+| `npm run typecheck` | Verificación de tipos |
+| `npm test` | Tests unitarios |
+| `npm run test:watch` | Tests en modo watch |
+| `npm run build` | Build estático para export a `out/` |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Datos y regeneración
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Los catálogos del dominio viven en `data/*.json`.
 
-## Deploy on Vercel
+Para regenerarlos desde la fuente HTML:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npx tsx scripts/extraer-datos.ts
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Despliegue en GitHub Pages
+
+El proyecto publica un export estático en `out/` mediante GitHub Actions.
+
+### Flujo
+
+1. Push a la rama `main`.
+2. El workflow `.github/workflows/deploy.yml` ejecuta `npm ci` y `npm run build`.
+3. Se sube `./out` como artifact de Pages.
+4. GitHub Pages publica el sitio bajo el subpath del repo.
+
+### Configuración clave
+
+- `output: 'export'`
+- `basePath: '/codificador-cie-o-apa'`
+- `images.unoptimized: true`
+
+## License
+
+Este proyecto está bajo **PolyForm Noncommercial License 1.0.0**.
+
+Ver [LICENSE](LICENSE) para más detalles.
