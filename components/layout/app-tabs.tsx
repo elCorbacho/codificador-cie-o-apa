@@ -1,66 +1,28 @@
 "use client";
 
-import * as Tabs from "@radix-ui/react-tabs";
 import { ArquitecturaSection } from "@/components/cieo/Arquitectura";
 import { ErdDiagram } from "@/components/cieo/erd/erd-diagram";
 import { ReglasGrid } from "@/components/cieo/reglas/reglas-grid";
 import { CodificadorWizard } from "@/components/cieo/codificador/codificador-wizard";
 import { CasosCards } from "@/components/cieo/casos-especiales/casos-cards";
 
-const TABS = [
-  { value: "arquitectura", label: "Arquitectura" },
-  { value: "entidad-relacion", label: "Entidad-Relación" },
-  { value: "reglas", label: "Reglas A-K" },
-  { value: "codificador", label: "Codificador" },
-  { value: "casos-especiales", label: "Casos especiales" },
-];
+interface AppTabsProps {
+  activeTab: string;
+}
 
-export function AppTabs() {
-  return (
-    <Tabs.Root defaultValue="arquitectura" className="flex flex-col flex-1">
-      {/* Tab Navigation Bar — sticky dentro del Tabs.Root */}
-      <Tabs.List
-        className="tabs-scroll sticky top-0 z-[100] m-0 flex list-none overflow-x-auto border-b border-hairline bg-canvas/80 backdrop-blur-md p-0"
-      >
-        <div className="container mx-auto px-4 flex">
-          {TABS.map((tab) => (
-            <Tabs.Trigger
-              key={tab.value}
-              value={tab.value}
-                className="
-                 bg-transparent border-none text-muted
-                 font-heading font-medium text-[14px]
-                 px-6 py-5 cursor-pointer whitespace-nowrap
-                 border-b-2 border-b-transparent
-                 tracking-tight
-                 transition-all duration-normal ease-premium
-                 hover:text-ink
-                 data-[state=active]:text-ink data-[state=active]:border-b-ink
-                 data-[state=active]:px-8
-               "
-            >
-              {tab.label}
-            </Tabs.Trigger>
-          ))}
-        </div>
-      </Tabs.List>
-
-      {/* Tab Content */}
-      <Tabs.Content value="arquitectura" className="flex-1">
-        <ArquitecturaSection />
-      </Tabs.Content>
-      <Tabs.Content value="entidad-relacion" className="flex-1">
-        <ErdDiagram />
-      </Tabs.Content>
-      <Tabs.Content value="reglas" className="flex-1">
-        <ReglasGrid />
-      </Tabs.Content>
-      <Tabs.Content value="codificador" className="flex-1">
-        <CodificadorWizard />
-      </Tabs.Content>
-      <Tabs.Content value="casos-especiales" className="flex-1">
-        <CasosCards />
-      </Tabs.Content>
-    </Tabs.Root>
-  );
+export function AppTabs({ activeTab }: AppTabsProps) {
+  switch (activeTab) {
+    case "arquitectura":
+      return <ArquitecturaSection />;
+    case "entidad-relacion":
+      return <ErdDiagram />;
+    case "reglas":
+      return <ReglasGrid />;
+    case "codificador":
+      return <CodificadorWizard />;
+    case "casos-especiales":
+      return <CasosCards />;
+    default:
+      return <ArquitecturaSection />;
+  }
 }

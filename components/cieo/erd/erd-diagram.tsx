@@ -2,15 +2,16 @@ export function ErdDiagram() {
   return (
     <div className="py-10">
       <div className="container mx-auto px-4">
-        <p className="erd-eyebrow font-code uppercase text-muted">
+        <p className="font-mono uppercase text-on-surface-variant mb-1"
+           style={{ fontSize: "10.5px", letterSpacing: ".14em" }}>
           Modelo de datos
         </p>
 
-        <h2 className="section-title mb-3 font-heading text-primary">
+        <h2 className="section-title mb-3 font-heading text-on-surface">
           Entidad–Relación
         </h2>
 
-        <p className="section-description mb-8 text-muted">
+        <p className="section-description mb-8 text-on-surface-variant">
           Estructura normalizada del sistema CIE-O-3. Las tablas catálogo son de solo lectura; las tablas pivote implementan la lógica de relaciones.
         </p>
 

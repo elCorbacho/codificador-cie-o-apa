@@ -1,10 +1,5 @@
-import { Header, AppTabs } from "@/components/layout";
+import { AppShell } from "@/components/layout/top-app-bar";
 
 export default function HomePage() {
-  return (
-    <>
-      <Header />
-      <AppTabs />
-    </>
-  );
+  return <AppShell />;
 }

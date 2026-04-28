@@ -12,7 +12,7 @@ describe('ArquitecturaSection Components', () => {
 
   it('renders CodeBox', () => {
     render(<CodeBox />);
-    expect(screen.getByText(/Estructura del código completo/i)).toBeDefined();
+    expect(screen.getByText(/Estructura del código — CIE-O-3.1/i)).toBeDefined();
   });
 
   it('renders InfoCards with correct topography color', () => {

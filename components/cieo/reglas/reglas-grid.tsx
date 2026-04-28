@@ -8,23 +8,23 @@ interface RuleProps {
 
 function RuleItem({ letter, badgeColor, title, description, example }: RuleProps) {
   return (
-    <div className="group relative flex gap-6 rounded-2xl border border-transparent p-4 transition-all duration-normal ease-premium hover:border-hairline hover:bg-surface-soft/40 hover:translate-x-1">
+    <div className="group relative flex gap-5 rounded-xl border border-outline-variant bg-surface-container-low p-4 transition-all duration-150 hover:border-primary/30 hover:bg-surface-container">
       <div
-        className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl font-code text-[16px] font-bold text-canvas transition-all duration-normal ease-premium group-hover:scale-110 group-hover:shadow-sm"
+        className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg font-mono text-[15px] font-bold text-white transition-all duration-150"
         style={{ background: badgeColor }}
       >
         {letter}
       </div>
       <div className="flex-1">
-        <h4 className="font-heading font-semibold text-[15px] mb-1 tracking-tight text-ink">
+        <h4 className="font-heading font-semibold text-[14.5px] mb-1 tracking-tight text-on-surface">
           {title}
         </h4>
-        <p className="text-[13.5px] mb-3 text-muted leading-relaxed">
+        <p className="text-[13px] mb-3 text-on-surface-variant leading-relaxed">
           {description}
         </p>
         {example && (
-          <div className="inline-flex items-center gap-2 rounded-lg bg-surface-soft px-3 py-1.5 font-code text-[11px] text-primary border border-hairline/50">
-            <span className="opacity-40 font-bold uppercase tracking-tighter">Ejemplo:</span>
+          <div className="inline-flex items-center gap-2 rounded-lg bg-surface-container px-3 py-1.5 font-mono text-[11px] text-on-surface border border-outline-variant/50">
+            <span className="opacity-50 font-bold uppercase tracking-tighter">Ejemplo:</span>
             <span className="font-medium">{example}</span>
           </div>
         )}
@@ -121,51 +121,83 @@ export function ReglasGrid() {
   ];
 
   return (
-    <div className="py-20 lg:py-32">
-      <div className="container mx-auto px-4">
-        <div className="mb-16 max-w-[720px]">
-          <p className="eyebrow mb-2 text-muted">
+    <div className="flex py-10">
+      {/* TOC Sidebar */}
+      <aside className="w-48 shrink-0 pr-6 border-r border-outline-variant hidden lg:block">
+        <p className="text-[11px] font-mono uppercase tracking-widest text-on-surface-variant mb-4">
+          Índice — Reglas A–K
+        </p>
+        <nav className="space-y-1">
+          {["A", "B", "C", "D", "E", "F", "G", "H", "J", "K"].map((letter) => (
+            <a
+              key={letter}
+              href={`#regla-${letter.toLowerCase()}`}
+              className="block text-[13px] text-on-surface-variant hover:text-primary transition-colors"
+            >
+              {letter}. {letter === "A" ? "Localizaciones mal definidas" :
+                     letter === "B" ? "Prefijos" :
+                     letter === "C" ? "Tumor que rebasa" :
+                     letter === "D" ? "Linfomas" :
+                     letter === "E" ? "Leucemias" :
+                     letter === "F" ? "Sistema matricial" :
+                     letter === "G" ? "Grado: mayor" :
+                     letter === "H" ? "Morfología + localiz." :
+                     letter === "J" ? "Diagnósticos comp." :
+                     letter === "K" ? "Múltiples térm." : ""}
+            </a>
+          ))}
+        </nav>
+      </aside>
+
+      {/* Main content */}
+      <div className="flex-1 pl-6 lg:pl-10">
+        <div className="mb-12 max-w-[720px]">
+          <p className="text-[11px] font-mono uppercase tracking-widest text-on-surface-variant mb-2">
             Directrices oficiales — §4.1 Tabla 14 del PDF
           </p>
 
-          <h2 className="section-title mb-6 font-heading font-semibold text-ink">
+          <h2 className="section-title mb-5 font-heading font-semibold text-on-surface">
             Reglas de codificación A–K
           </h2>
 
-          <p className="section-description text-body text-[18px] leading-relaxed text-muted/90">
+          <p className="text-[14.5px] leading-relaxed text-on-surface-variant max-w-[640px]">
             El sistema normativo establece 10 reglas fundamentales para garantizar la interoperabilidad de los datos oncológicos a nivel global.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
           {/* Topography rules - Span 5 */}
           <div className="lg:col-span-5 space-y-2">
-            <div className="flex items-center gap-4 mb-8">
-              <div className="h-px flex-1 bg-hairline" />
-              <h3 className="font-heading text-xl tracking-tight text-primary whitespace-nowrap">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="h-px flex-1 bg-outline-variant" />
+              <h3 className="font-heading text-lg tracking-tight text-primary whitespace-nowrap">
                 Eje Topográfico
               </h3>
-              <div className="h-px flex-1 bg-hairline" />
+              <div className="h-px flex-1 bg-outline-variant" />
             </div>
-            <div className="grid gap-2">
+            <div className="grid gap-3">
               {topoRules.map((rule) => (
-                <RuleItem key={rule.letter} {...rule} />
+                <div key={rule.letter} id={`regla-${rule.letter.toLowerCase()}`}>
+                  <RuleItem {...rule} />
+                </div>
               ))}
             </div>
           </div>
 
           {/* Morphology rules - Span 7 */}
           <div className="lg:col-span-7 space-y-2">
-            <div className="flex items-center gap-4 mb-8">
-              <div className="h-px flex-1 bg-hairline" />
-              <h3 className="font-heading text-xl tracking-tight text-error whitespace-nowrap">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="h-px flex-1 bg-outline-variant" />
+              <h3 className="font-heading text-lg tracking-tight text-error whitespace-nowrap">
                 Eje Morfológico
               </h3>
-              <div className="h-px flex-1 bg-hairline" />
+              <div className="h-px flex-1 bg-outline-variant" />
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-2">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {morfoRules.map((rule) => (
-                <RuleItem key={rule.letter} {...rule} />
+                <div key={rule.letter} id={`regla-${rule.letter.toLowerCase()}`}>
+                  <RuleItem {...rule} />
+                </div>
               ))}
             </div>
           </div>

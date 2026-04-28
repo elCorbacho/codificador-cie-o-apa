@@ -5,6 +5,6 @@ import { CodeBox } from '@/components/cieo/Arquitectura/code-box';
 describe('CodeBox Component', () => {
   it('renders correctly', () => {
     const { getByText } = render(<CodeBox />);
-    expect(getByText('Estructura del código completo')).toBeDefined();
+    expect(getByText('Estructura del código — CIE-O-3.1')).toBeDefined();
   });
 });
