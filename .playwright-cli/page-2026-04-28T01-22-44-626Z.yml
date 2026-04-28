@@ -1,0 +1,102 @@
+- generic [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - paragraph [ref=e4]: OMS · IARC · Min. Sanidad España 2021
+      - heading "CIE-O-3" [level=1] [ref=e5]:
+        - text: CIE-
+        - emphasis [ref=e6]: O
+        - text: "-3"
+      - paragraph [ref=e7]: Clasificación Internacional de Enfermedades para Oncología — Tercera Edición, Primera Revisión. Sistema de codificación anatomopatológica.
+      - generic [ref=e8]: CIE-O-3.1 · Versión normativa
+  - generic [ref=e9]:
+    - tablist [ref=e10]:
+      - generic [ref=e11]:
+        - tab "Arquitectura" [ref=e12] [cursor=pointer]
+        - tab "Entidad-Relación" [ref=e13] [cursor=pointer]
+        - tab "Reglas A-K" [ref=e14] [cursor=pointer]
+        - tab "Codificador" [selected] [ref=e15] [cursor=pointer]
+        - tab "Casos especiales" [ref=e16] [cursor=pointer]
+    - tabpanel "Codificador" [ref=e502]:
+      - generic [ref=e504]:
+        - paragraph [ref=e505]: Herramienta interactiva
+        - heading "Codificador paso a paso" [level=2] [ref=e506]
+        - paragraph [ref=e507]: Selecciona cada campo en orden. El sistema aplica automáticamente las reglas A–K del PDF.
+        - generic [ref=e508]:
+          - generic [ref=e509]:
+            - generic [ref=e510]:
+              - generic [ref=e511]:
+                - generic [ref=e512]: "0"
+                - generic [ref=e513]: Contexto de uso
+              - generic [ref=e514]:
+                - combobox [active] [ref=e516] [cursor=pointer]:
+                  - generic: Laboratorio de Anatomía Patológica (permite /6 y /9)
+                  - img [ref=e518]
+                - paragraph [ref=e520]: El contexto determina qué comportamientos están disponibles según §4.3.2 del PDF.
+            - generic [ref=e521]:
+              - generic [ref=e522]:
+                - generic [ref=e523]: "1"
+                - generic [ref=e524]: Topografía — ¿Dónde se origina el tumor?
+              - generic [ref=e525]:
+                - combobox [ref=e527] [cursor=pointer]:
+                  - generic: "-- Sistema orgánico --"
+                  - img [ref=e529]
+                - combobox [disabled] [ref=e532]:
+                  - generic: "-- Sitio anatómico --"
+                  - img [ref=e534]
+                - paragraph [ref=e536]: "Regla A: preferir sitio específico sobre SAI. Regla C: usar .8 si el tumor rebasa límites."
+            - generic [ref=e537]:
+              - generic [ref=e538]:
+                - generic [ref=e539]: "2"
+                - generic [ref=e540]: Tipo histológico — ¿Qué tipo celular?
+              - generic [ref=e541]:
+                - combobox [disabled] [ref=e543]:
+                  - generic: "-- Grupo histológico --"
+                  - img [ref=e545]
+                - combobox [disabled] [ref=e548]:
+                  - generic: "-- Tipo histológico --"
+                  - img [ref=e550]
+                - paragraph [ref=e552]: "Regla K: si hay dos adjetivos con códigos distintos, usar el mayor. Regla J: invertir raíces si el término no aparece."
+            - generic [ref=e553]:
+              - generic [ref=e554]:
+                - generic [ref=e555]: "3"
+                - generic [ref=e556]: Comportamiento — ¿Cómo actúa el tumor?
+              - generic [ref=e557]:
+                - combobox [disabled] [ref=e559]:
+                  - generic: "-- Comportamiento --"
+                  - img [ref=e561]
+                - paragraph [ref=e563]: "Regla F: el sistema matricial permite cualquier comportamiento. El patólogo tiene la última palabra."
+            - generic [ref=e564]:
+              - generic [ref=e565]:
+                - generic [ref=e566]: "4"
+                - generic [ref=e567]: Grado / Diferenciación
+              - generic [ref=e568]:
+                - combobox [disabled] [ref=e570]:
+                  - generic: "-- Grado --"
+                  - img [ref=e572]
+                - paragraph [ref=e574]: "Regla G: si el informe indica dos grados, usar el mayor. Si no se especifica grado → 9."
+          - generic [ref=e576]:
+            - paragraph [ref=e577]: Código CIE-O-3 generado
+            - generic [ref=e578]: __.__ + ____/__
+            - paragraph [ref=e579]: Complete los campos para generar el código.
+            - separator [ref=e580]
+            - generic [ref=e581]:
+              - generic [ref=e582]:
+                - generic [ref=e583]: Topografía
+                - generic [ref=e584]: —
+              - generic [ref=e585]:
+                - generic [ref=e586]: Histología
+                - generic [ref=e587]: —
+              - generic [ref=e588]:
+                - generic [ref=e589]: Comportamiento
+                - generic [ref=e590]: —
+                - generic [ref=e591]: Regla F
+              - generic [ref=e592]:
+                - generic [ref=e593]: Grado
+                - generic [ref=e594]: —
+                - generic [ref=e595]: Regla G
+            - button "Reiniciar codificación" [ref=e596] [cursor=pointer]:
+              - img [ref=e597]
+              - text: Reiniciar codificación
+  - button "Open Next.js Dev Tools" [ref=e175] [cursor=pointer]:
+    - img [ref=e176]
+  - alert [ref=e179]

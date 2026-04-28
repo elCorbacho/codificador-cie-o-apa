@@ -19,20 +19,20 @@ interface StepProps {
 function WizardStep({ number, title, children, isActive, isDone }: StepProps) {
   return (
     <div
-      className={`rounded-xl border p-6 mb-4 transition-all ${
+      className={`rounded-[20px] border p-7 mb-5 transition-colors ${
         isDone 
           ? "border-secondary bg-surface-soft" 
-          : isActive 
-            ? "border-primary shadow-[0_0_0_3px_var(--color-primary-disabled)]" 
+        : isActive 
+            ? "border-ink" 
             : "border-hairline bg-canvas"
       }`}
     >
       <div className="flex items-center mb-4">
         <span
-          className={`w-7 h-7 rounded-full flex items-center justify-center font-mono font-semibold text-sm mr-3 ${
+          className={`w-7 h-7 rounded-full flex items-center justify-center font-code font-semibold text-sm mr-3 ${
             isDone 
               ? "bg-secondary text-canvas" 
-              : isActive 
+            : isActive 
                 ? "bg-primary text-canvas" 
                 : "bg-surface-soft text-muted"
           }`}
@@ -50,7 +50,7 @@ function WizardStep({ number, title, children, isActive, isDone }: StepProps) {
         >
           {number}
         </span>
-        <span className="font-medium text-sm">
+        <span className="font-heading font-medium text-[14px]" style={{ letterSpacing: "-0.01em" }}>
           {title}
         </span>
       </div>

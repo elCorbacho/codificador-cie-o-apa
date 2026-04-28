@@ -36,14 +36,14 @@ export function AppTabs() {
               value={tab.value}
               className="
                 bg-transparent border-none text-muted
-                font-body font-medium text-[16px]
-                px-[22px] py-[28px] cursor-pointer whitespace-nowrap
+                font-heading font-medium text-[15px]
+                px-[22px] py-[22px] cursor-pointer whitespace-nowrap
                 border-b-[2px] border-b-transparent
-                transition-all duration-200
+                transition-[color,border-color] duration-200
                 hover:text-ink
                 data-[state=active]:text-ink data-[state=active]:border-b-ink
               "
-              style={{ fontFamily: "var(--font-body, 'DM Sans', sans-serif)" }}
+              style={{ letterSpacing: "-0.01em" }}
             >
               {tab.label}
             </Tabs.Trigger>

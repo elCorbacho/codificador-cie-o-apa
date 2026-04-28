@@ -1,0 +1,161 @@
+- generic [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - paragraph [ref=e4]: OMS · IARC · Min. Sanidad España 2021
+      - heading "CIE-O-3" [level=1] [ref=e5]:
+        - text: CIE-
+        - emphasis [ref=e6]: O
+        - text: "-3"
+      - paragraph [ref=e7]: Clasificación Internacional de Enfermedades para Oncología — Tercera Edición, Primera Revisión. Sistema de codificación anatomopatológica.
+      - generic [ref=e8]: CIE-O-3.1 · Versión normativa
+  - generic [ref=e9]:
+    - tablist [ref=e10]:
+      - generic [ref=e11]:
+        - tab "Arquitectura" [ref=e12] [cursor=pointer]
+        - tab "Entidad-Relación" [ref=e13] [cursor=pointer]
+        - tab "Reglas A-K" [ref=e14] [cursor=pointer]
+        - tab "Codificador" [ref=e15] [cursor=pointer]
+        - tab "Casos especiales" [active] [selected] [ref=e16] [cursor=pointer]
+    - tabpanel "Casos especiales" [ref=e535]:
+      - generic [ref=e537]:
+        - paragraph [ref=e538]: Excepciones normativas
+        - heading "Casos especiales" [level=2] [ref=e539]
+        - paragraph [ref=e540]: El PDF establece reglas específicas para situaciones que no siguen el patrón general.
+        - generic [ref=e541]:
+          - generic [ref=e542]:
+            - heading "Tumores del SNC — Grados OMS vs CIE-O (§4.6, Tabla 27)" [level=3] [ref=e545]
+            - paragraph [ref=e546]:
+              - text: Los grados OMS I–IV para tumores del SNC
+              - strong [ref=e547]: no son equivalentes
+              - text: al sexto dígito de CIE-O. El grado OMS estima pronóstico; el sexto dígito de CIE-O describe diferenciación. Si no hay descripción verbal del grado → usar 9.
+            - table [ref=e549]:
+              - rowgroup [ref=e550]:
+                - row "Tipo tumoral Grado OMS Código CIE-O Comportamiento Nota" [ref=e551]:
+                  - columnheader "Tipo tumoral" [ref=e552]
+                  - columnheader "Grado OMS" [ref=e553]
+                  - columnheader "Código CIE-O" [ref=e554]
+                  - columnheader "Comportamiento" [ref=e555]
+                  - columnheader "Nota" [ref=e556]
+              - rowgroup [ref=e557]:
+                - row "Astrocitoma pilocítico I 9421 /1 Comportamiento benigno/incierto pese a ser infiltrante" [ref=e558]:
+                  - cell "Astrocitoma pilocítico" [ref=e559]
+                  - cell "I" [ref=e560]
+                  - cell "9421" [ref=e561]
+                  - cell "/1" [ref=e562]
+                  - cell "Comportamiento benigno/incierto pese a ser infiltrante" [ref=e563]
+                - row "Astrocitoma difuso IDH-mutado II 9400 /3 Maligno pese a grado bajo" [ref=e564]:
+                  - cell "Astrocitoma difuso IDH-mutado" [ref=e565]
+                  - cell "II" [ref=e566]
+                  - cell "9400" [ref=e567]
+                  - cell "/3" [ref=e568]
+                  - cell "Maligno pese a grado bajo" [ref=e569]
+                - row "Astrocitoma anaplásico IDH-mutado III 9401 /3" [ref=e570]:
+                  - cell "Astrocitoma anaplásico IDH-mutado" [ref=e571]
+                  - cell "III" [ref=e572]
+                  - cell "9401" [ref=e573]
+                  - cell "/3" [ref=e574]
+                  - cell [ref=e575]
+                - row "Glioblastoma IDH wild-type IV 9440 /3 IDH wild-type implica grado IV automáticamente (WHO 2021)" [ref=e576]:
+                  - cell "Glioblastoma IDH wild-type" [ref=e577]
+                  - cell "IV" [ref=e578]
+                  - cell "9440" [ref=e579]
+                  - cell "/3" [ref=e580]
+                  - cell "IDH wild-type implica grado IV automáticamente (WHO 2021)" [ref=e581]
+                - row "Meduloblastoma IV 9470 /3 Siempre /3 aunque histológicamente sea \"diferenciado\"" [ref=e582]:
+                  - cell "Meduloblastoma" [ref=e583]
+                  - cell "IV" [ref=e584]
+                  - cell "9470" [ref=e585]
+                  - cell "/3" [ref=e586]
+                  - cell "Siempre /3 aunque histológicamente sea \"diferenciado\"" [ref=e587]
+                - row "Meningioma SAI I 9530 /0 Comportamiento benigno /0 (OMS grado I)" [ref=e588]:
+                  - cell "Meningioma SAI" [ref=e589]
+                  - cell "I" [ref=e590]
+                  - cell "9530" [ref=e591]
+                  - cell "/0" [ref=e592]
+                  - cell "Comportamiento benigno /0 (OMS grado I)" [ref=e593]
+                - row "Meningioma atípico II 9539 /1 Comportamiento incierto /1 (OMS grado II)" [ref=e594]:
+                  - cell "Meningioma atípico" [ref=e595]
+                  - cell "II" [ref=e596]
+                  - cell "9539" [ref=e597]
+                  - cell "/1" [ref=e598]
+                  - cell "Comportamiento incierto /1 (OMS grado II)" [ref=e599]
+                - row "Schwannoma I 9560 /0" [ref=e600]:
+                  - cell "Schwannoma" [ref=e601]
+                  - cell "I" [ref=e602]
+                  - cell "9560" [ref=e603]
+                  - cell "/0" [ref=e604]
+                  - cell [ref=e605]
+                - row "Ependimoma mixopapilar I 9394 /1" [ref=e606]:
+                  - cell "Ependimoma mixopapilar" [ref=e607]
+                  - cell "I" [ref=e608]
+                  - cell "9394" [ref=e609]
+                  - cell "/1" [ref=e610]
+                  - cell [ref=e611]
+                - row "Craneofaringioma I 9350 /1 Benigno histológicamente pero comportamiento incierto por localización" [ref=e612]:
+                  - cell "Craneofaringioma" [ref=e613]
+                  - cell "I" [ref=e614]
+                  - cell "9350" [ref=e615]
+                  - cell "/1" [ref=e616]
+                  - cell "Benigno histológicamente pero comportamiento incierto por localización" [ref=e617]
+          - generic [ref=e618]:
+            - generic [ref=e619]:
+              - heading "Laboratorio AP vs Registro de cáncer (§4.3.2)" [level=3] [ref=e622]
+              - paragraph [ref=e623]: "El PDF distingue dos contextos de uso con reglas diferentes para el comportamiento:"
+              - generic [ref=e624]:
+                - generic [ref=e625]:
+                  - strong [ref=e626]: Laboratorio AP
+                  - paragraph [ref=e627]: "Rastreo de muestras. Permite /6 (metástasis) y /9 (incierto). Ej: biopsia de ganglio con adenocarcinoma metastásico → C77.0, 8490/6"
+                - generic [ref=e628]:
+                  - strong [ref=e629]: Registro de cáncer
+                  - paragraph [ref=e630]: Solo registra el tumor primario. Usa únicamente /2 (in situ) y /3 (maligno). El /6 se deduce de la base del diagnóstico.
+              - generic [ref=e631]:
+                - strong [ref=e632]: "Ejemplo (Tabla 19 del PDF):"
+                - text: "a. Biopsia ganglio:"
+                - code [ref=e633]: C77.0 8490/6
+                - text: "b. ★ Primario gástrico:"
+                - code [ref=e634]: C16.1 8490/3
+                - text: ← solo este va al registro
+                - text: "c. Metástasis bronquial:"
+                - code [ref=e635]: C34.1 8490/6
+            - generic [ref=e636]:
+              - heading "NIC III / CIN III y displasias (§4.3.2)" [level=3] [ref=e639]
+              - paragraph [ref=e640]: "Uno de los errores más frecuentes en codificación anatomopatológica:"
+              - generic [ref=e641]:
+                - strong [ref=e642]: NIC III / CIN III → comportamiento /2 (in situ)
+                - paragraph [ref=e643]:
+                  - text: Se considera equivalente al carcinoma in situ. El PDF indica que el comportamiento correcto es /2,
+                  - strong [ref=e644]: no /3
+                  - text: .
+              - table [ref=e645]:
+                - rowgroup [ref=e646]:
+                  - row "8077/2 NIC III / CIN III cervical (C53._)" [ref=e647]:
+                    - cell "8077/2" [ref=e648]
+                    - cell "NIC III / CIN III cervical (C53._)" [ref=e649]
+                  - row "8077/2 NIVA III / VAIN III vaginal (C52._)" [ref=e650]:
+                    - cell "8077/2" [ref=e651]
+                    - cell "NIVA III / VAIN III vaginal (C52._)" [ref=e652]
+                  - row "8077/2 NIV III / VIN III vulvar (C51._)" [ref=e653]:
+                    - cell "8077/2" [ref=e654]
+                    - cell "NIV III / VIN III vulvar (C51._)" [ref=e655]
+                  - row "8077/2 NIA III / AIN III anal (C21.1)" [ref=e656]:
+                    - cell "8077/2" [ref=e657]
+                    - cell "NIA III / AIN III anal (C21.1)" [ref=e658]
+              - generic [ref=e659]: Si el anatomopatólogo considera que la NIC III no es equivalente a carcinoma in situ, puede cambiar a /1 (Regla F).
+          - generic [ref=e660]:
+            - heading "Neoplasias primarias múltiples (§4.4) — Reglas IARC/IACR 2004" [level=3] [ref=e663]
+            - generic [ref=e664]:
+              - generic [ref=e665]:
+                - strong [ref=e666]: Regla 1
+                - paragraph [ref=e667]: El reconocimiento de dos o más cánceres primarios no depende del tiempo transcurrido entre diagnósticos.
+              - generic [ref=e668]:
+                - strong [ref=e669]: Regla 2
+                - paragraph [ref=e670]: Un cáncer primario es el que se origina en una localización o tejido primario y no es extensión, recidiva ni metástasis.
+              - generic [ref=e671]:
+                - strong [ref=e672]: Excepciones sistémicas
+                - paragraph [ref=e673]:
+                  - text: Sarcoma de Kaposi (9140) y tumores hematopoyéticos se cuentan
+                  - strong [ref=e674]: una sola vez
+                  - text: por persona, independientemente de cuántos órganos afecten.
+  - button "Open Next.js Dev Tools" [ref=e175] [cursor=pointer]:
+    - img [ref=e176]
+  - alert [ref=e179]

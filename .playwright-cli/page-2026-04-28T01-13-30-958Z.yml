@@ -1,0 +1,91 @@
+- generic [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - paragraph [ref=e4]: OMS · IARC · Min. Sanidad España 2021
+      - heading "CIE-O-3" [level=1] [ref=e5]:
+        - text: CIE-
+        - emphasis [ref=e6]: O
+        - text: "-3"
+      - paragraph [ref=e7]: Clasificación Internacional de Enfermedades para Oncología — Tercera Edición, Primera Revisión. Sistema de codificación anatomopatológica.
+      - generic [ref=e8]: CIE-O-3.1 · Versión normativa
+  - generic [ref=e9]:
+    - tablist [ref=e10]:
+      - generic [ref=e11]:
+        - tab "Arquitectura" [ref=e12] [cursor=pointer]
+        - tab "Entidad-Relación" [ref=e13] [cursor=pointer]
+        - tab "Reglas A-K" [active] [selected] [ref=e14] [cursor=pointer]
+        - tab "Codificador" [ref=e15] [cursor=pointer]
+        - tab "Casos especiales" [ref=e16] [cursor=pointer]
+    - tabpanel "Reglas A-K" [ref=e362]:
+      - generic [ref=e364]:
+        - paragraph [ref=e365]: Directrices oficiales — §4.1 Tabla 14 del PDF
+        - heading "Reglas de codificación A–K" [level=2] [ref=e366]
+        - paragraph [ref=e367]: El PDF establece 10 reglas oficiales (no existe Regla I, intencionalmente). Cada regla aplica a situaciones específicas de codificación.
+        - generic [ref=e368]:
+          - generic [ref=e369]:
+            - heading "Reglas de topografía" [level=3] [ref=e372]
+            - generic [ref=e373]:
+              - generic [ref=e374]: A
+              - generic [ref=e375]:
+                - generic [ref=e376]: Localizaciones mal definidas
+                - generic [ref=e377]: Si el diagnóstico no especifica tejido de origen, usar el tejido específico del índice alfabético — no C76 (SAI).
+                - generic [ref=e378]: Carcinoma del brazo → C44.6 (piel), no C76.4
+            - generic [ref=e379]:
+              - generic [ref=e380]: B
+              - generic [ref=e381]:
+                - generic [ref=e382]: Prefijos (peri-, para-, pre-...)
+                - generic [ref=e383]: Localización modificada por prefijo no listado → C76 (mal definida), salvo que el tipo tumoral indique tejido específico.
+                - generic [ref=e384]: Tumor peripancreático → C48.0 (retroperitoneo)
+            - generic [ref=e385]:
+              - generic [ref=e386]: C
+              - generic [ref=e387]:
+                - generic [ref=e388]: Tumor que rebasa límites
+                - generic [ref=e389]: Tumor en dos o más subcategorías contiguas sin punto de origen determinable → subcategoría .8
+                - generic [ref=e390]: Carcinoma esofágico cervicotorácico → C15.8
+            - generic [ref=e391]:
+              - generic [ref=e392]: D
+              - generic [ref=e393]:
+                - generic [ref=e394]: Linfomas — código topográfico especial
+                - generic [ref=e395]: Ganglionares → C77._. Extraganglionares → sitio de origen. Múltiples regiones → C77.8. Sin localización → C80.9.
+                - generic [ref=e396]: Linfoma MALT gástrico → C16.9 · Linfoma ganglionar → C77.9
+            - generic [ref=e397]:
+              - generic [ref=e398]: E
+              - generic [ref=e399]:
+                - generic [ref=e400]: Leucemias — siempre C42.1
+                - generic [ref=e401]: "TODAS las leucemias → C42.1 (médula ósea). Excepción: sarcoma mieloide (9930/3) → localización del depósito."
+                - generic [ref=e402]: LMA → C42.1 · Sarcoma mieloide en ganglio → C77.9
+          - generic [ref=e403]:
+            - heading "Reglas de morfología" [level=3] [ref=e406]
+            - generic [ref=e407]:
+              - generic [ref=e408]: F
+              - generic [ref=e409]:
+                - generic [ref=e410]: Sistema matricial de comportamiento
+                - generic [ref=e411]: Usar comportamiento correcto aunque el término exacto no aparezca en CIE-O. La matriz permite cualquier combinación. El patólogo tiene la última palabra.
+                - generic [ref=e412]: Cordoma benigno → 9370/0 (aunque no esté listado)
+            - generic [ref=e413]:
+              - generic [ref=e414]: G
+              - generic [ref=e415]:
+                - generic [ref=e416]: "Grado: asignar el MAYOR"
+                - generic [ref=e417]: Si el diagnóstico indica dos niveles de grado, usar el mayor. Los dígitos de linaje 5–8 prevalecen sobre diferenciación 1–4.
+                - generic [ref=e418]: Mod. dif. con áreas pobremente dif. → grado 3
+            - generic [ref=e419]:
+              - generic [ref=e420]: H
+              - generic [ref=e421]:
+                - generic [ref=e422]: Morfología asociada a localización
+                - generic [ref=e423]: Usar código topo sugerido entre paréntesis si el diagnóstico no indica localización. Si hay localización indicada, usarla aunque difiera del código sugerido.
+                - generic [ref=e424]: Basocelular sin loc. → C44._ · Con loc. distinta → usar esa
+            - generic [ref=e425]:
+              - generic [ref=e426]: J
+              - generic [ref=e427]:
+                - generic [ref=e428]: Diagnósticos morfológicos compuestos
+                - generic [ref=e429]: Si el término compuesto no aparece, invertir el orden de las raíces de las palabras.
+                - generic [ref=e430]: Mixofibrosarcoma → buscar Fibromixosarcoma (8811/3)
+            - generic [ref=e431]:
+              - generic [ref=e432]: K
+              - generic [ref=e433]:
+                - generic [ref=e434]: Múltiples términos morfológicos
+                - generic [ref=e435]: Si un tumor tiene dos adjetivos con códigos distintos y no hay código único, usar el numéricamente mayor (generalmente más específico).
+                - generic [ref=e436]: Carcinoma escamoso de células transicionales → 8120/3
+  - button "Open Next.js Dev Tools" [ref=e175] [cursor=pointer]:
+    - img [ref=e176]
+  - alert [ref=e179]

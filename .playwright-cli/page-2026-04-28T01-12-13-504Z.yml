@@ -1,0 +1,123 @@
+- generic:
+  - banner:
+    - generic:
+      - paragraph: OMS · IARC · Min. Sanidad España 2021
+      - heading [level=1]:
+        - text: CIE-
+        - emphasis: O
+        - text: "-3"
+      - paragraph: Clasificación Internacional de Enfermedades para Oncología — Tercera Edición, Primera Revisión. Sistema de codificación anatomopatológica.
+      - generic: CIE-O-3.1 · Versión normativa
+  - generic:
+    - tablist:
+      - generic:
+        - tab: Arquitectura
+        - tab: Entidad-Relación
+        - tab: Reglas A-K
+        - tab [selected]: Codificador
+        - tab: Casos especiales
+    - tabpanel:
+      - generic:
+        - generic:
+          - paragraph: Herramienta interactiva
+          - heading [level=2]: Codificador paso a paso
+          - paragraph: Selecciona cada campo en orden. El sistema aplica automáticamente las reglas A–K del PDF.
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - generic: "0"
+                  - generic: Contexto de uso
+                - generic:
+                  - generic:
+                    - combobox [expanded]:
+                      - generic: "-- Seleccionar contexto --"
+                      - generic:
+                        - img
+                  - paragraph: El contexto determina qué comportamientos están disponibles según §4.3.2 del PDF.
+              - generic:
+                - generic:
+                  - generic: "1"
+                  - generic: Topografía — ¿Dónde se origina el tumor?
+                - generic:
+                  - generic:
+                    - combobox [disabled]:
+                      - generic: "-- Sistema orgánico --"
+                      - generic:
+                        - img
+                  - generic:
+                    - combobox [disabled]:
+                      - generic: "-- Sitio anatómico --"
+                      - generic:
+                        - img
+                  - paragraph: "Regla A: preferir sitio específico sobre SAI. Regla C: usar .8 si el tumor rebasa límites."
+              - generic:
+                - generic:
+                  - generic: "2"
+                  - generic: Tipo histológico — ¿Qué tipo celular?
+                - generic:
+                  - generic:
+                    - combobox [disabled]:
+                      - generic: "-- Grupo histológico --"
+                      - generic:
+                        - img
+                  - generic:
+                    - combobox [disabled]:
+                      - generic: "-- Tipo histológico --"
+                      - generic:
+                        - img
+                  - paragraph: "Regla K: si hay dos adjetivos con códigos distintos, usar el mayor. Regla J: invertir raíces si el término no aparece."
+              - generic:
+                - generic:
+                  - generic: "3"
+                  - generic: Comportamiento — ¿Cómo actúa el tumor?
+                - generic:
+                  - generic:
+                    - combobox [disabled]:
+                      - generic: "-- Comportamiento --"
+                      - generic:
+                        - img
+                  - paragraph: "Regla F: el sistema matricial permite cualquier comportamiento. El patólogo tiene la última palabra."
+              - generic:
+                - generic:
+                  - generic: "4"
+                  - generic: Grado / Diferenciación
+                - generic:
+                  - generic:
+                    - combobox [disabled]:
+                      - generic: "-- Grado --"
+                      - generic:
+                        - img
+                  - paragraph: "Regla G: si el informe indica dos grados, usar el mayor. Si no se especifica grado → 9."
+            - generic:
+              - generic:
+                - paragraph: Código CIE-O-3 generado
+                - generic: __.__ + ____/__
+                - paragraph: Complete los campos para generar el código.
+                - separator
+                - generic:
+                  - generic:
+                    - generic: Topografía
+                    - generic: —
+                  - generic:
+                    - generic: Histología
+                    - generic: —
+                  - generic:
+                    - generic: Comportamiento
+                    - generic: —
+                    - generic: Regla F
+                  - generic:
+                    - generic: Grado
+                    - generic: —
+                    - generic: Regla G
+                - button:
+                  - img
+                  - text: Reiniciar codificación
+  - button "Open Next.js Dev Tools" [ref=e175] [cursor=pointer]:
+    - img [ref=e176]
+  - alert
+  - listbox [ref=e278]:
+    - option "Laboratorio de Anatomía Patológica (permite /6 y /9)" [active] [ref=e279] [cursor=pointer]:
+      - generic [ref=e280]: Laboratorio de Anatomía Patológica (permite /6 y /9)
+    - option "Registro de cáncer / DEIS (solo /2 y /3)" [ref=e281] [cursor=pointer]:
+      - generic [ref=e282]: Registro de cáncer / DEIS (solo /2 y /3)

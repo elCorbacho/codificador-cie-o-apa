@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
-import { DM_Serif_Display, IBM_Plex_Mono, DM_Sans } from "next/font/google";
+import { IBM_Plex_Mono, Inter, Sora } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import "./globals.css";
 
-const dmSerifDisplay = DM_Serif_Display({
+const sora = Sora({
   variable: "--font-heading",
   subsets: ["latin"],
-  weight: "400",
-  style: ["normal", "italic"],
+  weight: ["400", "500"],
 });
 
 const ibmPlexMono = IBM_Plex_Mono({
@@ -16,10 +15,10 @@ const ibmPlexMono = IBM_Plex_Mono({
   weight: ["400", "600"],
 });
 
-const dmSans = DM_Sans({
+const inter = Inter({
   variable: "--font-body",
   subsets: ["latin"],
-  weight: ["300", "400", "500"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -35,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="es" suppressHydrationWarning>
       <body
-        className={`${dmSerifDisplay.variable} ${ibmPlexMono.variable} ${dmSans.variable} min-h-screen flex flex-col antialiased`}
+        className={`${sora.variable} ${ibmPlexMono.variable} ${inter.variable} min-h-screen flex flex-col antialiased bg-canvas text-ink`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}

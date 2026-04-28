@@ -1,0 +1,191 @@
+- generic [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - paragraph [ref=e4]: OMS · IARC · Min. Sanidad España 2021
+      - heading "CIE-O-3" [level=1] [ref=e5]:
+        - text: CIE-
+        - emphasis [ref=e6]: O
+        - text: "-3"
+      - paragraph [ref=e7]: Clasificación Internacional de Enfermedades para Oncología — Tercera Edición, Primera Revisión. Sistema de codificación anatomopatológica.
+      - generic [ref=e8]: CIE-O-3.1 · Versión normativa
+  - generic [ref=e9]:
+    - tablist [ref=e10]:
+      - generic [ref=e11]:
+        - tab "Arquitectura" [active] [selected] [ref=e12] [cursor=pointer]
+        - tab "Entidad-Relación" [ref=e13] [cursor=pointer]
+        - tab "Reglas A-K" [ref=e14] [cursor=pointer]
+        - tab "Codificador" [ref=e15] [cursor=pointer]
+        - tab "Casos especiales" [ref=e16] [cursor=pointer]
+    - tabpanel "Arquitectura" [ref=e17]:
+      - generic [ref=e19]:
+        - paragraph [ref=e20]: Estructura fundamental
+        - heading "Código de 10 caracteres" [level=2] [ref=e21]
+        - paragraph [ref=e22]: "Cada diagnóstico oncológico genera exactamente dos códigos simultáneos: un código de topografía y un código de morfología. Juntos suman 10 caracteres."
+        - generic [ref=e23]:
+          - generic [ref=e25]:
+            - paragraph [ref=e26]: Estructura del código completo
+            - generic [ref=e27]:
+              - generic [ref=e28]:
+                - generic [ref=e29]: C
+                - generic [ref=e30]:
+                  - text: Prefijo
+                  - text: topografía
+              - generic [ref=e31]:
+                - generic [ref=e32]: XX
+                - generic [ref=e33]:
+                  - text: Localización
+                  - text: (2 dígitos)
+              - generic [ref=e34]: .
+              - generic [ref=e35]:
+                - generic [ref=e36]: X
+                - generic [ref=e37]:
+                  - text: Sublocalización
+                  - text: (decimal)
+              - generic [ref=e38]: +
+              - generic [ref=e39]:
+                - generic [ref=e40]: XXXX
+                - generic [ref=e41]:
+                  - text: Tipo histológico
+                  - text: (4 dígitos)
+              - generic [ref=e42]: /
+              - generic [ref=e43]:
+                - generic [ref=e44]: X
+                - generic [ref=e45]:
+                  - text: Comporta-
+                  - text: miento
+              - generic [ref=e46]:
+                - generic [ref=e47]: X
+                - generic [ref=e48]:
+                  - text: Grado /
+                  - text: Linaje
+            - generic [ref=e49]:
+              - paragraph [ref=e50]: Ejemplo — Carcinoma escamoso pobremente diferenciado, lóbulo superior del pulmón
+              - generic [ref=e51]:
+                - generic [ref=e52]:
+                  - generic [ref=e53]: C34.1
+                  - generic [ref=e54]: Lóbulo superior del pulmón
+                - generic [ref=e55]: +
+                - generic [ref=e56]:
+                  - generic [ref=e57]: 8070/33
+                  - generic [ref=e58]: Carcinoide escamoso / maligno / pobre dif.
+          - generic [ref=e60]:
+            - generic [ref=e61]:
+              - heading "Eje 1 — Topografía" [level=3] [ref=e64]
+              - paragraph [ref=e65]:
+                - text: Indica el
+                - strong [ref=e66]: sitio de origen
+                - text: del tumor. Mismo conjunto C00–C80 que la CIE-10, pero para todas las neoplasias (no solo malignas).
+              - table [ref=e67]:
+                - rowgroup [ref=e68]:
+                  - row "C Prefijo fijo" [ref=e69]:
+                    - cell "C" [ref=e70]
+                    - cell "Prefijo fijo" [ref=e71]
+                  - row "XX Localización (órgano)" [ref=e72]:
+                    - cell "XX" [ref=e73]
+                    - cell "Localización (órgano)" [ref=e74]
+                  - row ".X Sublocalización" [ref=e75]:
+                    - cell ".X" [ref=e76]
+                    - cell "Sublocalización" [ref=e77]
+                  - row ".8 Lesión que rebasa límites (Regla C)" [ref=e78]:
+                    - cell ".8" [ref=e79]
+                    - cell "Lesión que rebasa límites (Regla C)" [ref=e80]
+                  - row ".9 SAI (sin otra indicación)" [ref=e81]:
+                    - cell ".9" [ref=e82]
+                    - cell "SAI (sin otra indicación)" [ref=e83]
+              - generic [ref=e84]:
+                - strong [ref=e85]: "Códigos especiales:"
+                - text: C42.1 = médula ósea (leucemias, Regla E)
+                - text: C77._ = ganglios linfáticos (linfomas, Regla D)
+            - generic [ref=e86]:
+              - heading "Tipo histológico (4 dígitos)" [level=3] [ref=e89]
+              - paragraph [ref=e90]: El tipo celular que se transformó en neoplásico. Rangos M8000–M9989.
+              - table [ref=e91]:
+                - rowgroup [ref=e92]:
+                  - row "8000–8004 Neoplasias SAI" [ref=e93]:
+                    - cell "8000–8004" [ref=e94]
+                    - cell "Neoplasias SAI" [ref=e95]
+                  - row "8010–8084 Carcinomas epiteliales" [ref=e96]:
+                    - cell "8010–8084" [ref=e97]
+                    - cell "Carcinomas epiteliales" [ref=e98]
+                  - row "8140–8389 Adenocarcinomas" [ref=e99]:
+                    - cell "8140–8389" [ref=e100]
+                    - cell "Adenocarcinomas" [ref=e101]
+                  - row "8720–8790 Melanocíticos" [ref=e102]:
+                    - cell "8720–8790" [ref=e103]
+                    - cell "Melanocíticos" [ref=e104]
+                  - row "8800–8990 Tejidos blandos" [ref=e105]:
+                    - cell "8800–8990" [ref=e106]
+                    - cell "Tejidos blandos" [ref=e107]
+                  - row "9590–9699 Linfomas" [ref=e108]:
+                    - cell "9590–9699" [ref=e109]
+                    - cell "Linfomas" [ref=e110]
+                  - row "9800–9931 Leucemias" [ref=e111]:
+                    - cell "9800–9931" [ref=e112]
+                    - cell "Leucemias" [ref=e113]
+            - generic [ref=e114]:
+              - heading "Comportamiento (/X)" [level=3] [ref=e117]
+              - table [ref=e118]:
+                - rowgroup [ref=e119]:
+                  - row "Dígito Significado Registro" [ref=e120]:
+                    - columnheader "Dígito" [ref=e121]
+                    - columnheader "Significado" [ref=e122]
+                    - columnheader "Registro" [ref=e123]
+                - rowgroup [ref=e124]:
+                  - row "/0 Benigno —" [ref=e125]:
+                    - cell "/0" [ref=e126]:
+                      - generic [ref=e127]: /0
+                    - cell "Benigno" [ref=e128]
+                    - cell "—" [ref=e129]
+                  - row "/1 Incierto / borderline —" [ref=e130]:
+                    - cell "/1" [ref=e131]:
+                      - generic [ref=e132]: /1
+                    - cell "Incierto / borderline" [ref=e133]
+                    - cell "—" [ref=e134]
+                  - row "/2 In situ / no invasor ✓" [ref=e135]:
+                    - cell "/2" [ref=e136]:
+                      - generic [ref=e137]: /2
+                    - cell "In situ / no invasor" [ref=e138]
+                    - cell "✓" [ref=e139]
+                  - row "/3 Maligno primario ✓" [ref=e140]:
+                    - cell "/3" [ref=e141]:
+                      - generic [ref=e142]: /3
+                    - cell "Maligno primario" [ref=e143]
+                    - cell "✓" [ref=e144]
+                  - row "/6 Maligno, metástasis Solo AP" [ref=e145]:
+                    - cell "/6" [ref=e146]:
+                      - generic [ref=e147]: /6
+                    - cell "Maligno, metástasis" [ref=e148]
+                    - cell "Solo AP" [ref=e149]
+                  - row "/9 Primario/metástasis incierto Solo AP" [ref=e150]:
+                    - cell "/9" [ref=e151]:
+                      - generic [ref=e152]: /9
+                    - cell "Primario/metástasis incierto" [ref=e153]
+                    - cell "Solo AP" [ref=e154]
+            - generic [ref=e155]:
+              - heading "Grado / Linaje (6.° dígito)" [level=3] [ref=e158]
+              - paragraph [ref=e159]: "Tumores sólidos: diferenciación. Hematología: linaje celular."
+              - generic [ref=e160]:
+                - generic [ref=e161]:
+                  - strong [ref=e162]: Diferenciación
+                  - generic [ref=e163]:
+                    - text: 1 → bien dif.
+                    - text: 2 → mod. dif.
+                    - text: 3 → pobre dif.
+                    - text: 4 → indiferenciado
+                    - text: 9 → no determinado
+                - generic [ref=e164]:
+                  - strong [ref=e165]: Linaje hematológico
+                  - generic [ref=e166]:
+                    - text: 5 → célula T
+                    - text: 6 → célula B
+                    - text: 7 → célula nula
+                    - text: 8 → célula NK
+                    - text: 9 → no det.
+              - generic [ref=e167]:
+                - strong [ref=e168]: "Regla G:"
+                - text: Si el diagnóstico indica dos grados, usar el
+                - strong [ref=e169]: mayor
+                - text: . Los dígitos 5–8 prevalecen sobre 1–4.
+  - button "Open Next.js Dev Tools" [ref=e175] [cursor=pointer]:
+    - img [ref=e176]
+  - alert [ref=e179]
