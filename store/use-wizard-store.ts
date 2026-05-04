@@ -66,32 +66,27 @@ export const useWizardStore = create<WizardState>((set) => ({
   setCtx: (ctx) => set({ ctx }),
 
   setTopo: (topo, topoDesc) =>
-    set((state) => {
-      const newState = { ...state, topo, topoDesc };
-      return {
-        ...newState,
-        completeCode: buildCode(newState),
-        completeDesc: topo && state.hist
-          ? `${state.histDesc} de ${topoDesc}`
-          : "",
-      };
-    }),
+    set((state) => ({
+      ...state,
+      topo,
+      topoDesc,
+      completeCode: buildCode({ ...state, topo, topoDesc }),
+      completeDesc: topo && state.hist ? `${state.histDesc} de ${topoDesc}` : "",
+    })),
 
   setHist: (hist, histDesc) =>
-    set((state) => {
-      const newState = { ...state, hist, histDesc };
-      return {
-        ...newState,
-        completeCode: buildCode(newState),
-        completeDesc: state.topo && hist
-          ? `${histDesc} de ${state.topoDesc}`
-          : "",
-      };
-    }),
+    set((state) => ({
+      ...state,
+      hist,
+      histDesc,
+      completeCode: buildCode({ ...state, hist, histDesc }),
+      completeDesc: state.topo && hist
+        ? `${histDesc} de ${state.topoDesc}`
+        : "",
+    })),
 
   setComp: (comp, compDesc) =>
     set((state) => {
-      const newState = { ...state, comp, compDesc };
       const compNames: Record<string, string> = {
         "0": "benigno",
         "1": "incierto",
@@ -101,8 +96,10 @@ export const useWizardStore = create<WizardState>((set) => ({
         "9": "incierto",
       };
       return {
-        ...newState,
-        completeCode: buildCode(newState),
+        ...state,
+        comp,
+        compDesc,
+        completeCode: buildCode({ ...state, comp, compDesc }),
         completeDesc:
           state.topo && state.hist && comp
             ? `${state.histDesc} de ${state.topoDesc} — ${compNames[comp] || ""}`
@@ -114,7 +111,6 @@ export const useWizardStore = create<WizardState>((set) => ({
 
   setGrado: (grado, gradoDesc, tipoGrado) =>
     set((state) => {
-      const newState = { ...state, grado, gradoDesc, tipoGrado };
       const compNames: Record<string, string> = {
         "0": "benigno",
         "1": "incierto",
@@ -124,8 +120,11 @@ export const useWizardStore = create<WizardState>((set) => ({
         "9": "incierto",
       };
       return {
-        ...newState,
-        completeCode: buildCode(newState),
+        ...state,
+        grado,
+        gradoDesc,
+        tipoGrado,
+        completeCode: buildCode({ ...state, grado, gradoDesc, tipoGrado }),
         completeDesc:
           state.topo && state.hist && state.comp
             ? `${state.histDesc} de ${state.topoDesc} — ${compNames[state.comp] || ""}`

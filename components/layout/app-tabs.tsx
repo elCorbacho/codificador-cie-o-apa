@@ -11,18 +11,28 @@ interface AppTabsProps {
 }
 
 export function AppTabs({ activeTab }: AppTabsProps) {
-  switch (activeTab) {
-    case "arquitectura":
-      return <ArquitecturaSection />;
-    case "entidad-relacion":
-      return <ErdDiagram />;
-    case "reglas":
-      return <ReglasGrid />;
-    case "codificador":
-      return <CodificadorWizard />;
-    case "casos-especiales":
-      return <CasosCards />;
-    default:
-      return <ArquitecturaSection />;
-  }
+  const renderContent = () => {
+    switch (activeTab) {
+      case "arquitectura":
+        return <ArquitecturaSection />;
+      case "entidad-relacion":
+        return <ErdDiagram />;
+      case "reglas":
+        return <ReglasGrid />;
+      case "codificador":
+        return <CodificadorWizard />;
+      case "casos-especiales":
+        return <CasosCards />;
+      default:
+        return <ArquitecturaSection />;
+    }
+  };
+
+  return (
+    <div role="tablist" aria-label="Secciones de la aplicación">
+      <section role="tabpanel" id={`tabpanel-${activeTab}`}>
+        {renderContent()}
+      </section>
+    </div>
+  );
 }

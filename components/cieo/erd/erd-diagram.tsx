@@ -2,12 +2,11 @@ export function ErdDiagram() {
   return (
     <div className="py-10">
       <div className="container mx-auto px-4">
-        <p className="font-mono uppercase text-on-surface-variant mb-1"
-           style={{ fontSize: "10.5px", letterSpacing: ".14em" }}>
+        <p className="eyebrow font-mono uppercase text-on-surface-variant mb-1">
           Modelo de datos
         </p>
 
-        <h2 className="section-title mb-3 font-heading text-on-surface">
+        <h2 id="erd-heading" className="section-title mb-3 font-heading text-on-surface">
           Entidad–Relación
         </h2>
 
@@ -15,7 +14,7 @@ export function ErdDiagram() {
           Estructura normalizada del sistema CIE-O-3. Las tablas catálogo son de solo lectura; las tablas pivote implementan la lógica de relaciones.
         </p>
 
-        <div className="overflow-x-auto">
+        <div className="erd-scroll overflow-x-auto" role="region" aria-labelledby="erd-heading">
           <div className="erd-wrap grid min-w-[900px] gap-5">
             {/* Column 1: Grupos */}
             <div className="flex flex-col gap-5">
@@ -117,7 +116,7 @@ export function ErdDiagram() {
                     int
                   </span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-gris">
+                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-surface-container-high">
                   <span className="flex-1" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)", fontSize: "11.5px" }}>
                     descripcion
                   </span>
@@ -125,7 +124,7 @@ export function ErdDiagram() {
                     varchar
                   </span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-gris">
+                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-surface-container-high">
                   <span className="flex-1" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)", fontSize: "11.5px" }}>
                     notas_reglas
                   </span>
@@ -168,7 +167,7 @@ export function ErdDiagram() {
                     int
                   </span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-gris">
+                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-surface-container-high">
                   <span className="flex-1" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)", fontSize: "11.5px" }}>
                     descripcion
                   </span>
@@ -176,7 +175,7 @@ export function ErdDiagram() {
                     varchar
                   </span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-gris">
+                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-surface-container-high">
                   <span className="flex-1" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)", fontSize: "11.5px" }}>
                     topo_restriccion_pdf
                   </span>
@@ -207,7 +206,7 @@ export function ErdDiagram() {
                     char(1)
                   </span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-gris">
+                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-surface-container-high">
                   <span className="flex-1" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)", fontSize: "11.5px" }}>
                     descripcion
                   </span>
@@ -215,7 +214,7 @@ export function ErdDiagram() {
                     varchar
                   </span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-gris">
+                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-surface-container-high">
                   <span className="flex-1" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)", fontSize: "11.5px" }}>
                     uso_registro_cancer
                   </span>
@@ -247,7 +246,7 @@ export function ErdDiagram() {
                     char(1)
                   </span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-gris">
+                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-surface-container-high">
                   <span className="flex-1" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)", fontSize: "11.5px" }}>
                     descripcion
                   </span>
@@ -255,7 +254,7 @@ export function ErdDiagram() {
                     varchar
                   </span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-gris">
+                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-surface-container-high">
                   <span className="flex-1" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)", fontSize: "11.5px" }}>
                     tipo
                   </span>
@@ -309,7 +308,7 @@ export function ErdDiagram() {
                     char(4)
                   </span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-gris">
+                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-surface-container-high">
                   <span className="flex-1" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)", fontSize: "11.5px" }}>
                     tipo_restriccion
                   </span>
@@ -317,7 +316,7 @@ export function ErdDiagram() {
                     enum
                   </span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-gris">
+                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-surface-container-high">
                   <span className="flex-1" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)", fontSize: "11.5px" }}>
                     descripcion_regla
                   </span>
@@ -359,7 +358,7 @@ export function ErdDiagram() {
                     char(1)
                   </span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-gris">
+                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-surface-container-high">
                   <span className="flex-1" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)", fontSize: "11.5px" }}>
                     es_habitual_pdf
                   </span>
@@ -367,7 +366,7 @@ export function ErdDiagram() {
                     bool
                   </span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-gris">
+                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-surface-container-high">
                   <span className="flex-1" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)", fontSize: "11.5px" }}>
                     es_defecto
                   </span>
@@ -406,7 +405,7 @@ export function ErdDiagram() {
                     char(1)
                   </span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-gris">
+                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-surface-container-high">
                   <span className="flex-1" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)", fontSize: "11.5px" }}>
                     es_defecto
                   </span>
@@ -485,7 +484,7 @@ export function ErdDiagram() {
                     char(1)
                   </span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-gris">
+                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-surface-container-high">
                   <span className="flex-1" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)", fontSize: "11.5px" }}>
                     codigo_topo_final
                   </span>
@@ -493,7 +492,7 @@ export function ErdDiagram() {
                     varchar
                   </span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-gris">
+                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-surface-container-high">
                   <span className="flex-1" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)", fontSize: "11.5px" }}>
                     codigo_morfo_final
                   </span>
@@ -501,7 +500,7 @@ export function ErdDiagram() {
                     varchar
                   </span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-gris">
+                <div className="flex items-center gap-2 px-4 py-1.5 border-t border-hairline bg-canvas hover:bg-surface-container-high">
                   <span className="flex-1" style={{ fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)", fontSize: "11.5px" }}>
                     patologo_anuló
                   </span>

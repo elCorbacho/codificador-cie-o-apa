@@ -2,24 +2,11 @@ export function CasosCards() {
   return (
     <div className="py-10">
       <div className="container mx-auto px-4">
-        <p
-          className="font-code uppercase text-muted"
-          style={{
-            fontSize: "10.5px",
-            letterSpacing: ".14em",
-            marginBottom: ".4rem",
-          }}
-        >
+        <p className="eyebrow font-code uppercase text-muted mb-[0.4rem]">
           Excepciones normativas
         </p>
 
-        <h2
-          className="font-heading mb-3 text-primary"
-          style={{
-            fontSize: "clamp(1.6rem, 3vw, 2.2rem)",
-            lineHeight: 1.15,
-          }}
-        >
+        <h2 className="section-title font-heading mb-3 text-primary">
           Casos especiales
         </h2>
 

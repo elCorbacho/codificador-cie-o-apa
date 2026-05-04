@@ -26,7 +26,7 @@ function WizardStep({ number, title, children, isActive, isDone }: StepProps) {
         isDone 
           ? "border-secondary bg-surface-soft/50" 
         : isActive 
-            ? "border-ink shadow-sm scale-[1.005]" 
+            ? "border-ink scale-[1.005]" 
             : "border-hairline bg-canvas opacity-70"
       }`}
     >
@@ -71,23 +71,11 @@ export function CodificadorWizard() {
   return (
     <div className="py-10">
       <div className="container mx-auto px-4">
-        <p
-          className="font-mono uppercase text-muted mb-[0.4rem]"
-          style={{
-            fontSize: "10.5px",
-            letterSpacing: ".14em",
-          }}
-        >
+        <p className="eyebrow font-mono uppercase text-muted mb-[0.4rem]">
           Herramienta interactiva
         </p>
 
-        <h2
-          className="font-heading mb-3 text-primary"
-          style={{
-            fontSize: "clamp(1.6rem, 3vw, 2.2rem)",
-            lineHeight: 1.15,
-          }}
-        >
+        <h2 className="section-title font-heading mb-3 text-primary">
           Codificador paso a paso
         </h2>
 

@@ -40,10 +40,12 @@ export function ResultPanel() {
       </p>
 
       {/* Code display */}
-      <div 
+      <div
         className={`result-panel-code min-h-[2.8rem] text-[2.2rem] font-semibold tracking-wide transition-all duration-normal ease-premium ${
           isComplete ? "scale-[1.02] drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]" : ""
         }`}
+        aria-live="polite"
+        aria-atomic="true"
       >
         {topo ? (
           <span style={{ color: "var(--color-topo-accent)" }}>{topo}</span>

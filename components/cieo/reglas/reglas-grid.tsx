@@ -127,7 +127,7 @@ export function ReglasGrid() {
         <p className="text-[11px] font-mono uppercase tracking-widest text-on-surface-variant mb-4">
           Índice — Reglas A–K
         </p>
-        <nav className="space-y-1">
+        <nav className="space-y-1" aria-label="Índice de reglas A-K">
           {["A", "B", "C", "D", "E", "F", "G", "H", "J", "K"].map((letter) => (
             <a
               key={letter}

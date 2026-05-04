@@ -26,7 +26,7 @@
   --color-canvas: #ffffff;
   --color-ink: #191c1f;
   --color-body: #505a63;
-  --color-muted: #8d969e;
+  --color-muted: #6b7280;
 
   /* Surfaces + borders — Tinted 0.01 chroma toward Revolut Blue (#494fdf) */
   --color-surface-soft: oklch(97% 0.01 260);
@@ -53,6 +53,12 @@
   --color-hist-accent: #7edba8;
   --color-comp-accent: #f4a573;
   --color-grad-accent: #f4d173;
+
+  /* ERD Badge Colors — PK/FK */
+  --color-pk-bg: #dbeafe;
+  --color-pk-text: #1e40af;
+  --color-fk-bg: #fef3c7;
+  --color-fk-text: #92400e;
 
   /* Premium Motion */
   --ease-premium: cubic-bezier(0.19, 1, 0.22, 1);
@@ -210,11 +216,6 @@ a:hover {
 }
 
 /* ERD Diagram — Clinical Precision */
-.erd-wrap {
-  position: relative;
-  grid-template-columns: repeat(4, minmax(200px, 1fr));
-  padding: 20px;
-}
 
 .erd-card {
   min-width: 200px;
@@ -264,6 +265,18 @@ a:hover {
   color: var(--color-on-surface-variant);
 }
 
+/* Custom scrollbar for ERD diagram */
+.erd-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+.erd-scroll::-webkit-scrollbar-track {
+  background: var(--color-surface-container);
+}
+.erd-scroll::-webkit-scrollbar-thumb {
+  background: var(--color-outline-variant);
+  border-radius: 3px;
+}
+
 /* Surface containers */
 .surface-card {
   background: var(--color-surface-container-lowest);
@@ -293,12 +306,6 @@ a:hover {
   padding: 11px 12px;
 }
 
-.erd-wrap {
-  position: relative;
-  grid-template-columns: repeat(4, minmax(200px, 1fr));
-  padding: 20px;
-}
-
 .erd-eyebrow {
   font-family: var(--font-code), IBM_Plex_Mono, monospace;
   font-size: 10.5px;
@@ -309,55 +316,6 @@ a:hover {
 .tabs-scroll {
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
-}
-
-.erd-card {
-  min-width: 200px;
-  box-shadow: 0 2px 8px rgba(0,0,0,.05);
-}
-
-.erd-card-strong {
-  border: 1.5px solid var(--color-hairline);
-}
-
-.erd-field {
-  font-family: var(--font-code), IBM_Plex_Mono, monospace;
-  font-size: 11.5px;
-}
-
-.erd-type {
-  font-size: 11px;
-  color: var(--color-muted);
-  font-family: var(--font-code), IBM_Plex_Mono, monospace;
-}
-
-.erd-rel {
-  font-size: 10px;
-  color: var(--color-muted);
-  font-family: var(--font-code), IBM_Plex_Mono, monospace;
-}
-
-.erd-badge {
-  border-radius: 0.25rem;
-  padding: 0.125rem 0.375rem;
-  font-size: 10px;
-  font-weight: 600;
-}
-
-.erd-badge-pk {
-  background: #FFF3CD;
-  color: #856404;
-}
-
-.erd-badge-fk {
-  background: #D1ECF1;
-  color: #0C5460;
-}
-
-.erd-legend {
-  border-top: 1px solid var(--color-hairline);
-  font-size: 12px;
-  color: var(--color-muted);
 }
 
 /* Revolut-inspired radii */
@@ -375,4 +333,45 @@ a:hover {
 .shadow-xl,
 .shadow-2xl {
   box-shadow: none !important;
+}
+
+/* Dark mode overrides */
+.dark {
+  --color-primary: #6366f1;
+  --color-primary-active: #818cf8;
+  --color-secondary: #64748b;
+  --color-surface-container-lowest: #0f1117;
+  --color-surface-container-low: #1a1d24;
+  --color-surface-container: #232730;
+  --color-surface-container-high: #2d323c;
+  --color-surface-container-highest: #383e4a;
+  --color-canvas: #0f1117;
+  --color-ink: #e8eaed;
+  --color-body: #9aa0a9;
+  --color-muted: #9ca3af;
+  --color-on-surface: #e8eaed;
+  --color-on-surface-variant: #9ca3af;
+  --color-outline: #4b5563;
+  --color-outline-variant: #374151;
+  --color-hairline: oklch(70% 0.01 260);
+  --color-hairline-soft: oklch(75% 0.01 260);
+  --color-border-strong: oklch(65% 0.01 260);
+  --color-surface-soft: oklch(25% 0.01 260);
+  --color-surface-strong: oklch(22% 0.01 260);
+  --color-accent: #818cf8;
+  --color-lila: #818cf8;
+  --color-error: #f87171;
+  --color-error-hover: #fca5a5;
+  --color-topo-accent: #5baecb;
+  --color-hist-accent: #5ab885;
+  --color-comp-accent: #d98e5e;
+  --color-grad-accent: #d9b55e;
+}
+
+/* Dark mode scrollbar fix for ERD diagram */
+.dark .erd-scroll::-webkit-scrollbar-track {
+  background: var(--color-surface-container);
+}
+.dark .erd-scroll::-webkit-scrollbar-thumb {
+  background: var(--color-outline-variant);
 }

@@ -34,7 +34,7 @@ export function CieoSelect({
         aria-label={ariaLabel}
         className={cn(
           "flex w-full items-center justify-between rounded-lg border border-hairline bg-surface-soft px-4 py-3 text-[14px] text-ink outline-none transition-colors data-[placeholder]:text-muted disabled:cursor-not-allowed disabled:opacity-45",
-          "focus-visible:border-lila focus-visible:ring-2 focus-visible:ring-[color-mix(in_oklab,var(--color-lila),white_65%)]",
+          "focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1",
           className
         )}
       >

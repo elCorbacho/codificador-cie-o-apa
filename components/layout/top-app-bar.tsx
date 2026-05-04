@@ -15,7 +15,7 @@ export function AppShell({ activeTab: initialTab }: AppShellProps) {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Top App Bar */}
-      <header className="h-14 shrink-0 border-b border-outline-variant bg-surface-container-lowest flex items-center px-4 gap-6">
+      <header className="h-14 shrink-0 border-b border-outline-variant bg-surface-container-lowest flex items-center px-4 gap-6" aria-label="Barra de navegación principal">
         {/* Wordmark */}
         <div className="flex items-center gap-2">
           <span className="font-heading text-base font-semibold tracking-tight text-on-surface">
@@ -39,28 +39,29 @@ export function AppShell({ activeTab: initialTab }: AppShellProps) {
 
         {/* Search Input */}
         <div className="relative">
-          <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">
+          <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg">
             search
           </span>
           <input
             type="text"
             placeholder="Buscar códigos o términos..."
+            aria-label="Buscar códigos o términos"
             value={searchValue}
             onChange={(e) => setSearchValue(e.target.value)}
-            className="h-9 pl-10 pr-4 rounded-lg bg-surface-container text-sm text-on-surface placeholder:text-slate-400 border border-transparent focus:border-indigo-500 focus:outline-none transition-colors w-64"
+            className="h-11 pl-10 pr-4 rounded-lg bg-surface-container text-sm text-on-surface placeholder:text-on-surface-variant border border-hairline focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-colors w-64"
           />
         </div>
 
         {/* Action Buttons */}
         <div className="flex items-center gap-1">
           <button
-            className="p-2 rounded-lg hover:bg-surface-container-high transition-colors"
+            className="p-3 rounded-lg hover:bg-surface-container-high transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-inset"
             aria-label="Notifications"
           >
             <span className="material-symbols-outlined text-xl text-on-surface-variant">notifications</span>
           </button>
           <button
-            className="p-2 rounded-lg hover:bg-surface-container-high transition-colors"
+            className="p-3 rounded-lg hover:bg-surface-container-high transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-inset"
             aria-label="Settings"
           >
             <span className="material-symbols-outlined text-xl text-on-surface-variant">settings</span>
