@@ -100,8 +100,20 @@ El proyecto publica un export estático en `out/` mediante GitHub Actions.
 ### Configuración clave
 
 - `output: 'export'`
-- `basePath: '/codificador-cie-o-apa'`
+- `basePath` se configura durante el build mediante `NEXT_PUBLIC_BASE_PATH`.
+  GitHub Actions usa `/${{ github.event.repository.name }}`; sin la variable,
+  el desarrollo y los builds locales mantienen la ruta raíz.
 - `images.unoptimized: true`
+
+Para reproducir el build de Pages localmente:
+
+```bash
+NEXT_PUBLIC_BASE_PATH=/codificador-cie-o-apa npm run build
+```
+
+El contenido de `out/` se debe servir bajo `/codificador-cie-o-apa/`, no desde la
+raíz. La ruta queda incorporada al HTML y a los bundles: cambiarla requiere
+generar un nuevo build.
 
 ## License
 
