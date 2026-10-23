@@ -22,30 +22,20 @@ function WizardStep({ number, title, children, isActive, isDone }: StepProps) {
       role="region"
       aria-labelledby={`step-title-${number}`}
       aria-current={isActive ? "step" : undefined}
-      className={`rounded-[20px] border p-6 md:p-8 mb-5 transition-all duration-normal ease-premium ${
-        isDone 
-          ? "border-secondary bg-surface-soft/50" 
-        : isActive 
-            ? "border-ink shadow-sm scale-[1.005]" 
-            : "border-hairline bg-canvas opacity-70"
-      }`}
+      data-active={isActive}
+      data-done={isDone}
+      className="wizard-step"
     >
-      <div className="flex items-center mb-6">
+      <div className="wizard-step-heading">
         <span
-          className={`w-8 h-8 rounded-full flex items-center justify-center font-code font-bold text-xs mr-4 ${
-            isDone 
-              ? "bg-secondary text-ink" 
-            : isActive 
-                ? "bg-primary text-canvas" 
-                : "bg-surface-soft text-muted"
-          }`}
+          className="wizard-step-number"
         >
           {number}
         </span>
-        <h3 id={`step-title-${number}`} className="font-heading font-semibold text-[15px] tracking-tight">
+        <h3 id={`step-title-${number}`} className="font-heading">
           {title}
         </h3>
-        {isDone && <span className="ml-auto text-[10px] font-bold uppercase tracking-widest text-secondary">Completado</span>}
+        {isDone && <span className="ml-auto text-xs text-primary">Completado</span>}
       </div>
       <div className={!isActive && !isDone ? "pointer-events-none" : ""}>
         {children}
@@ -69,7 +59,7 @@ export function CodificadorWizard() {
   const isStep3Done = step > 3;
 
   return (
-    <div className="py-10">
+    <div className="py-6">
       <div className="container mx-auto px-4">
         <p
           className="font-mono uppercase text-muted mb-[0.4rem]"
@@ -82,7 +72,7 @@ export function CodificadorWizard() {
         </p>
 
         <h2
-          className="font-heading mb-3 text-primary"
+          className="section-title font-heading mb-3 text-ink"
           style={{
             fontSize: "clamp(1.6rem, 3vw, 2.2rem)",
             lineHeight: 1.15,
@@ -101,9 +91,9 @@ export function CodificadorWizard() {
           Selecciona cada campo en orden. El sistema aplica automáticamente las reglas A–K del PDF.
         </p>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
+        <div className="coding-layout">
           {/* Steps column */}
-          <div className="lg:col-span-3">
+          <div>
             <WizardStep number={0} title="Contexto de uso" isActive={isStep0Active} isDone={isStep0Done}>
               <ContextSelector />
             </WizardStep>
@@ -126,7 +116,7 @@ export function CodificadorWizard() {
           </div>
 
           {/* Result panel column */}
-          <div className="lg:col-span-2 xl:col-span-2">
+          <div>
             <ResultPanel />
           </div>
         </div>

@@ -1,185 +1,81 @@
-# Design System Inspired by Revolut
+# Clinical desktop workspace
 
-## 1. Visual Theme & Atmosphere
+The CIE-O codifier uses a compact, dark application shell inspired by the supplied
+[1win visual reference](https://getdesign.md/1win/design-md), adapted to clinical
+coding rather than gaming. This is the project's visual source of truth.
 
-Revolut's website is fintech confidence distilled into pixels — a design system that communicates "your money is in capable hands" through massive typography, generous whitespace, and a disciplined neutral palette. The visual language is built on Aeonik Pro, a geometric grotesque that creates billboard-scale headlines at 136px with weight 500 and aggressive negative tracking (-2.72px). This isn't subtle branding; it's fintech at stadium scale.
+## Scope and invariants
 
-The color system is built on a comprehensive `--rui-*` (Revolut UI) token architecture with semantic naming for every state: danger (`#e23b4a`), warning (`#ec7e00`), teal (`#00a87e`), blue (`#494fdf`), deep-pink (`#e61e49`), and more. But the marketing surface itself is remarkably restrained — near-black (`#191c1f`) and pure white (`#ffffff`) dominate, with the colorful semantic tokens reserved for the product interface, not the marketing page.
+- Desktop first: verify 1024, 1280, 1440 and 1920px windows.
+- Preserve all five sections, the original Arquitectura default and the existing
+  cascading selectors. A new search feature is outside this visual adaptation.
+- Keep clinical datasets, coding rules, store actions and generated codes intact.
+- No casino branding, game artwork, promotions or decorative marketing heroes.
+- Existing Spanish clinical labels remain Spanish. Technical documentation is English.
 
-What distinguishes Revolut is its pill-everything button system. Every button uses 9999px radius — primary dark (`#191c1f`), secondary light (`#f4f4f4`), outlined (`transparent + 2px solid`), and ghost on dark (`rgba(244,244,244,0.1) + 2px solid`). The padding is generous (14px 32px–34px), creating large, confident touch targets. Combined with Inter for body text at various weights and positive letter-spacing (0.16px–0.24px), the result is a design that feels both premium and accessible — banking for the modern era.
+## Color roles
 
-**Key Characteristics:**
-- Aeonik Pro display at 136px weight 500 — billboard-scale fintech headlines
-- Near-black (`#191c1f`) + white binary with comprehensive `--rui-*` semantic tokens
-- Universal pill buttons (9999px radius) with generous padding (14px 32px)
-- Inter for body text with positive letter-spacing (0.16px–0.24px)
-- Rich semantic color system: blue, teal, pink, yellow, green, brown, danger, warning
-- Zero shadows detected — depth through color contrast only
-- Tight display line-heights (1.00) with relaxed body (1.50–1.56)
+| Role | Token | Value |
+| --- | --- | --- |
+| Canvas, header, rail | `--color-canvas` | `#141415` |
+| Panels and menus | `--color-surface-soft` | `#2e3035` |
+| Recessed controls | `--color-surface-strong` | `#25272b` |
+| Text | `--color-ink` | `#f0f2f5` |
+| Secondary text | `--color-muted` | `#9aa1b1` |
+| Dividers | `--color-hairline-soft` | `#2d2f33` |
+| Panel edges | `--color-hairline` | `#3d4048` |
+| Control outlines | `--color-border-strong` | `#757b88` |
+| Primary action | `--color-primary` | `#00b24b` |
+| Secondary action | `--color-secondary` | `#0075ff` |
+| Accessible links/focus | `--color-accent` | `#80b8ff` |
 
-## 2. Color Palette & Roles
+Green and blue are the only structural accents. Clinical error and warning
+messages retain explicit semantic colors and text; they must not become general
+decoration. Domain codes use blue, green and neutral foregrounds with explicit
+text labels, never color as the only identifier.
 
-### Primary
-- **Revolut Dark** (`#191c1f`): Primary dark surface, button background, near-black text
-- **Pure White** (`#ffffff`): `--rui-color-action-label`, primary light surface
-- **Light Surface** (`#f4f4f4`): Secondary button background, subtle surface
+### Accessibility adaptations
 
-### Brand / Interactive
-- **Revolut Blue** (`#494fdf`): `--rui-color-blue`, primary brand blue
-- **Action Blue** (`#4f55f1`): `--rui-color-action-photo-header-text`, header accent
-- **Blue Text** (`#376cd5`): `--website-color-blue-text`, link blue
+The source's white-on-green pairing has only 2.81:1 contrast. Use black text on
+green actions instead (7.47:1). Black on the blue fill is approximately 4.99:1;
+links and small selected text use the lighter blue foreground token. Muted text
+on the panel surface is approximately 5.10:1. Hairlines are decorative; interactive
+control boundaries and focus indicators use the stronger tokens.
 
-### Semantic
-- **Danger Red** (`#e23b4a`): `--rui-color-danger`, error/destructive
-- **Deep Pink** (`#e61e49`): `--rui-color-deep-pink`, critical accent
-- **Warning Orange** (`#ec7e00`): `--rui-color-warning`, warning states
-- **Yellow** (`#b09000`): `--rui-color-yellow`, attention
-- **Teal** (`#00a87e`): `--rui-color-teal`, success/positive
-- **Light Green** (`#428619`): `--rui-color-light-green`, secondary success
-- **Green Text** (`#006400`): `--website-color-green-text`, green text
-- **Light Blue** (`#007bc2`): `--rui-color-light-blue`, informational
-- **Brown** (`#936d62`): `--rui-color-brown`, warm neutral accent
-- **Red Text** (`#8b0000`): `--website-color-red-text`, dark red text
+Disabled content may be dimmed, but enabled clinical descriptions must remain
+readable. Do not truncate the selected histology description in the result panel.
 
-### Neutral Scale
-- **Mid Slate** (`#505a63`): Secondary text
-- **Cool Gray** (`#8d969e`): Muted text, tertiary
-- **Gray Tone** (`#c9c9cd`): `--rui-color-grey-tone-20`, borders/dividers
+## Typography, spacing and shape
 
-## 3. Typography Rules
+- Inter 600 for functional text; Inter 800 for headings. Body: 14px / 1.4.
+- Page titles: 33px / 1.1; panel headings: 20px / 1.2; step titles: 16px / 1.3.
+- Metadata: 12–13px. Clinical code strings may keep IBM Plex Mono.
+- Base spacing: 8px; controls: 8px × 12px; panels: 20–24px.
+- Cards/panels: 16px radius; inputs: 8px; action buttons: 10px; badges: pills.
+- Depth comes from surface and border changes, not heavy shadows or glowing text.
 
-### Font Families
-- **Display**: `Aeonik Pro` — geometric grotesque, no detected fallbacks
-- **Body / UI**: `Inter` — standard system sans
-- **Fallback**: `Arial` for specific button contexts
+## Desktop layout
 
-### Hierarchy
+The compact header retains CIE-O identification and official-source provenance.
+A sticky vertical icon rail exposes all five labeled sections. The main column
+is fluid and bounded for comfortable reading on wide monitors.
 
-| Role | Font | Size | Weight | Line Height | Letter Spacing | Notes |
-|------|------|------|--------|-------------|----------------|-------|
-| Display Mega | Aeonik Pro | 136px (8.50rem) | 500 | 1.00 (tight) | -2.72px | Stadium-scale hero |
-| Display Hero | Aeonik Pro | 80px (5.00rem) | 500 | 1.00 (tight) | -0.8px | Primary hero |
-| Section Heading | Aeonik Pro | 48px (3.00rem) | 500 | 1.21 (tight) | -0.48px | Feature sections |
-| Sub-heading | Aeonik Pro | 40px (2.50rem) | 500 | 1.20 (tight) | -0.4px | Sub-sections |
-| Card Title | Aeonik Pro | 32px (2.00rem) | 500 | 1.19 (tight) | -0.32px | Card headings |
-| Feature Title | Aeonik Pro | 24px (1.50rem) | 400 | 1.33 | normal | Light headings |
-| Nav / UI | Aeonik Pro | 20px (1.25rem) | 500 | 1.40 | normal | Navigation, buttons |
-| Body Large | Inter | 18px (1.13rem) | 400 | 1.56 | -0.09px | Introductions |
-| Body | Inter | 16px (1.00rem) | 400 | 1.50 | 0.24px | Standard reading |
-| Body Semibold | Inter | 16px (1.00rem) | 600 | 1.50 | 0.16px | Emphasized body |
-| Body Bold Link | Inter | 16px (1.00rem) | 700 | 1.50 | 0.24px | Bold links |
+The coding section keeps selectors on the left and a sticky summary on the right.
+At 1024px, both columns must fit without clipping dropdowns or clinical labels.
+At wider widths, increase breathing room rather than enlarging every control.
+Tables and the entity diagram may scroll inside their own containers; the page
+itself must not overflow horizontally. Below the desktop range, the existing
+content remains usable with a stacked coding summary; no separate mobile
+navigation or mobile-specific experience is introduced.
 
-### Principles
-- **Weight 500 as display default**: Aeonik Pro uses medium (500) for ALL headings — no bold. This creates authority through size and tracking, not weight.
-- **Billboard tracking**: -2.72px at 136px is extremely compressed — text designed to be read at a glance, like airport signage.
-- **Positive tracking on body**: Inter uses +0.16px to +0.24px, creating airy, well-spaced reading text that contrasts with the compressed headings.
+## Interaction and verification
 
-## 4. Component Stylings
-
-### Buttons
-
-**Primary Dark Pill**
-- Background: `#191c1f`
-- Text: `#ffffff`
-- Padding: 14px 32px
-- Radius: 9999px (full pill)
-- Hover: opacity 0.85
-- Focus: `0 0 0 0.125rem` ring
-
-**Secondary Light Pill**
-- Background: `#f4f4f4`
-- Text: `#000000`
-- Padding: 14px 34px
-- Radius: 9999px
-- Hover: opacity 0.85
-
-**Outlined Pill**
-- Background: transparent
-- Text: `#191c1f`
-- Border: `2px solid #191c1f`
-- Padding: 14px 32px
-- Radius: 9999px
-
-**Ghost on Dark**
-- Background: `rgba(244, 244, 244, 0.1)`
-- Text: `#f4f4f4`
-- Border: `2px solid #f4f4f4`
-- Padding: 14px 32px
-- Radius: 9999px
-
-### Cards & Containers
-- Radius: 12px (small), 20px (cards)
-- No shadows — flat surfaces with color contrast
-- Dark and light section alternation
-
-### Navigation
-- Aeonik Pro 20px weight 500
-- Clean header, hamburger toggle at 12px radius
-- Pill CTAs right-aligned
-
-## 5. Layout Principles
-
-### Spacing System
-- Base unit: 8px
-- Scale: 4px, 6px, 8px, 14px, 16px, 20px, 24px, 32px, 40px, 48px, 80px, 88px, 120px
-- Large section spacing: 80px–120px
-
-### Border Radius Scale
-- Standard (12px): Navigation, small buttons
-- Card (20px): Feature cards
-- Pill (9999px): All buttons
-
-## 6. Depth & Elevation
-
-| Level | Treatment | Use |
-|-------|-----------|-----|
-| Flat (Level 0) | No shadow | Everything — Revolut uses zero shadows |
-| Focus | `0 0 0 0.125rem` ring | Accessibility focus |
-
-**Shadow Philosophy**: Revolut uses ZERO shadows. Depth comes entirely from the dark/light section contrast and the generous whitespace between elements.
-
-## 7. Do's and Don'ts
-
-### Do
-- Use Aeonik Pro weight 500 for all display headings
-- Apply 9999px radius to all buttons — pill shape is universal
-- Use generous button padding (14px 32px)
-- Keep the palette to near-black + white for marketing surfaces
-- Apply positive letter-spacing on Inter body text
-
-### Don't
-- Don't use shadows — Revolut is flat by design
-- Don't use bold (700) for Aeonik Pro headings — 500 is the weight
-- Don't use small buttons — the generous padding is intentional
-- Don't apply semantic colors to marketing surfaces — they're for the product
-
-## 8. Responsive Behavior
-
-### Breakpoints
-| Name | Width | Key Changes |
-|------|-------|-------------|
-| Mobile Small | <400px | Compact, single column |
-| Mobile | 400–720px | Standard mobile |
-| Tablet | 720–1024px | 2-column layouts |
-| Desktop | 1024–1280px | Standard desktop |
-| Large | 1280–1920px | Full layout |
-
-## 9. Agent Prompt Guide
-
-### Quick Color Reference
-- Dark: Revolut Dark (`#191c1f`)
-- Light: White (`#ffffff`)
-- Surface: Light (`#f4f4f4`)
-- Blue: Revolut Blue (`#494fdf`)
-- Danger: Red (`#e23b4a`)
-- Success: Teal (`#00a87e`)
-
-### Example Component Prompts
-- "Create a hero: white background. Headline at 136px Aeonik Pro weight 500, line-height 1.00, letter-spacing -2.72px, #191c1f text. Dark pill CTA (#191c1f, 9999px, 14px 32px). Outlined pill secondary (transparent, 2px solid #191c1f)."
-- "Build a pill button: #191c1f background, white text, 9999px radius, 14px 32px padding, 20px Aeonik Pro weight 500. Hover: opacity 0.85."
-
-### Iteration Guide
-1. Aeonik Pro 500 for headings — never bold
-2. All buttons are pills (9999px) with generous padding
-3. Zero shadows — flat is the Revolut identity
-4. Near-black + white for marketing, semantic colors for product
+- Preserve Radix tabs/selects, accessible names, focus and keyboard behavior.
+- Vertical tabs use Up/Down arrows; controls remain reachable by Tab.
+- Dropdown portals must render above the header and rail and fit their viewport.
+- Keep visible selected, pressed, focus and disabled states; respect reduced motion.
+- Check all sections, long clinical terms, the coding cascade, lineage and reset.
+- Run `npm run lint`, `npm run typecheck`, `npm test` and `npm run build`.
+- Record screenshots at 1024/1280/1440/1920; automated unit tests alone do not
+  establish visual fidelity. The baseline `next lint` script failure is tracked
+  separately and must not be presented as a passing gate.

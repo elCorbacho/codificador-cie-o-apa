@@ -12,7 +12,7 @@ const ibmPlexMono = IBM_Plex_Mono({
 const inter = Inter({
   variable: "--font-body",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["600", "800"],
 });
 
 export const metadata: Metadata = {
@@ -30,7 +30,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${ibmPlexMono.variable} min-h-screen flex flex-col antialiased bg-canvas text-ink`}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider attribute="class" forcedTheme="dark" enableSystem={false}>
           {children}
         </ThemeProvider>
       </body>

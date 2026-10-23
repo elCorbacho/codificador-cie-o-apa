@@ -34,37 +34,38 @@ export function ResultPanel() {
   const isComplete = !!topo && !!hist && !!comp && !!grado;
 
   return (
-    <div className="result-panel-root sticky rounded-[14px] p-7 text-white transition-shadow duration-normal ease-premium">
-      <p className="eyebrow mb-5 text-white/40">
+    <div className="result-panel-root sticky rounded-[16px] p-6 text-ink" role="region" aria-label="Resumen de codificación">
+      <p className="eyebrow mb-5 text-muted">
         Código CIE-O-3 generado
       </p>
 
       {/* Code display */}
       <div 
-        className={`result-panel-code min-h-[2.8rem] text-[2.2rem] font-semibold tracking-wide transition-all duration-normal ease-premium ${
-          isComplete ? "scale-[1.02] drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]" : ""
-        }`}
+        className="result-panel-code min-h-[2.8rem] font-semibold"
+        aria-live="polite"
+        aria-atomic="true"
+        data-complete={isComplete}
       >
         {topo ? (
           <span style={{ color: "var(--color-topo-accent)" }}>{topo}</span>
         ) : (
-          <span className="text-white/15">__.__ </span>
+          <span className="text-muted">__.__ </span>
         )}
-        <span className="mx-2 text-white/25"> + </span>
+        <span className="mx-2 text-muted"> + </span>
         {hist ? (
           <span style={{ color: "var(--color-hist-accent)" }}>{hist}</span>
         ) : (
-          <span className="text-white/15">____</span>
+          <span className="text-muted">____</span>
         )}
         {comp ? (
           <span style={{ color: "var(--color-comp-accent)" }}>/{comp}</span>
         ) : (
-          <span className="text-white/15">/_</span>
+          <span className="text-muted">/_</span>
         )}
         {grado ? (
           <span style={{ color: "var(--color-grad-accent)" }}>{grado}</span>
         ) : (
-          <span className="text-white/15">_</span>
+          <span className="text-muted">_</span>
         )}
       </div>
 
@@ -77,8 +78,8 @@ export function ResultPanel() {
 
       {/* Parts breakdown */}
       <div className="flex flex-col gap-3">
-        <div className="flex items-center gap-3 text-sm">
-          <span className="result-panel-label w-[100px] shrink-0">
+        <div className="result-panel-row">
+          <span className="result-panel-label">
             Topografía
           </span>
           <span className="font-semibold" style={{ color: "var(--color-topo-accent)" }}>
@@ -91,8 +92,8 @@ export function ResultPanel() {
           )}
         </div>
 
-        <div className="flex items-center gap-3 text-sm">
-          <span className="result-panel-label w-[100px] shrink-0">
+        <div className="result-panel-row">
+          <span className="result-panel-label">
             Histología
           </span>
           <span className="font-semibold" style={{ color: "var(--color-hist-accent)" }}>
@@ -100,13 +101,13 @@ export function ResultPanel() {
           </span>
           {histDesc && (
             <span className="result-panel-detail">
-              {histDesc.length > 40 ? `${histDesc.substring(0, 40)}…` : histDesc}
+              {histDesc}
             </span>
           )}
         </div>
 
-        <div className="flex items-center gap-3 text-sm">
-          <span className="result-panel-label w-[100px] shrink-0">
+        <div className="result-panel-row">
+          <span className="result-panel-label">
             Comportamiento
           </span>
           <span className="font-semibold" style={{ color: "var(--color-comp-accent)" }}>
@@ -122,8 +123,8 @@ export function ResultPanel() {
           </span>
         </div>
 
-        <div className="flex items-center gap-3 text-sm">
-          <span className="result-panel-label w-[100px] shrink-0">
+        <div className="result-panel-row">
+          <span className="result-panel-label">
             {tipoGrado === "linaje" ? "Linaje" : "Grado"}
           </span>
           <span className="font-semibold" style={{ color: "var(--color-grad-accent)" }}>
@@ -142,7 +143,7 @@ export function ResultPanel() {
 
       <button
         onClick={resetAll}
-        className="result-panel-reset group mt-5 w-full cursor-pointer rounded-[8px] border px-4 py-[9px] text-sm transition-all duration-fast ease-premium hover:bg-white/10 hover:border-white/30 hover:scale-[1.01] active:scale-[0.98]"
+        className="result-panel-reset group mt-5 min-h-11 w-full cursor-pointer rounded-[10px] px-3 py-2 text-sm font-semibold transition-colors"
       >
         <RotateCcw className="inline w-4 h-4 mr-2 align-middle transition-transform duration-normal ease-premium group-hover:rotate-[-45deg]" />
         Reiniciar codificación

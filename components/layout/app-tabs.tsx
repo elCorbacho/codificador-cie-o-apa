@@ -1,6 +1,7 @@
 "use client";
 
 import * as Tabs from "@radix-ui/react-tabs";
+import { BookOpen, GitBranch, ListChecks, ScanLine, Layers } from "lucide-react";
 import { ArquitecturaSection } from "@/components/cieo/Arquitectura";
 import { ErdDiagram } from "@/components/cieo/erd/erd-diagram";
 import { ReglasGrid } from "@/components/cieo/reglas/reglas-grid";
@@ -8,44 +9,33 @@ import { CodificadorWizard } from "@/components/cieo/codificador/codificador-wiz
 import { CasosCards } from "@/components/cieo/casos-especiales/casos-cards";
 
 const TABS = [
-  { value: "arquitectura", label: "Arquitectura" },
-  { value: "entidad-relacion", label: "Entidad-Relación" },
-  { value: "reglas", label: "Reglas A-K" },
-  { value: "codificador", label: "Codificador" },
-  { value: "casos-especiales", label: "Casos especiales" },
+  { value: "arquitectura", label: "Arquitectura", icon: BookOpen },
+  { value: "entidad-relacion", label: "Entidad-Relación", icon: GitBranch },
+  { value: "reglas", label: "Reglas A-K", icon: ListChecks },
+  { value: "codificador", label: "Codificador", icon: ScanLine },
+  { value: "casos-especiales", label: "Casos especiales", icon: Layers },
 ];
 
 export function AppTabs() {
   return (
-    <Tabs.Root defaultValue="arquitectura" className="flex flex-col flex-1">
-      {/* Tab Navigation Bar — sticky dentro del Tabs.Root */}
+    <Tabs.Root defaultValue="arquitectura" orientation="vertical" className="workspace-shell">
       <Tabs.List
-        className="tabs-scroll sticky top-0 z-[100] m-0 flex list-none overflow-x-auto border-b border-hairline bg-canvas/80 backdrop-blur-md p-0"
+        aria-label="Secciones del codificador"
+        className="workspace-rail"
       >
-        <div className="container mx-auto px-4 flex">
           {TABS.map((tab) => (
             <Tabs.Trigger
               key={tab.value}
               value={tab.value}
-                className="
-                 bg-transparent border-none text-muted
-                 font-heading font-medium text-[14px]
-                 px-6 py-5 cursor-pointer whitespace-nowrap
-                 border-b-2 border-b-transparent
-                 tracking-tight
-                 transition-all duration-normal ease-premium
-                 hover:text-ink
-                 data-[state=active]:text-ink data-[state=active]:border-b-ink
-                 data-[state=active]:px-8
-               "
+              className="workspace-tab"
             >
-              {tab.label}
+              <tab.icon size={22} aria-hidden="true" />
+              <span>{tab.label}</span>
             </Tabs.Trigger>
           ))}
-        </div>
       </Tabs.List>
 
-      {/* Tab Content */}
+      <main className="workspace-content">
       <Tabs.Content value="arquitectura" className="flex-1">
         <ArquitecturaSection />
       </Tabs.Content>
@@ -61,6 +51,7 @@ export function AppTabs() {
       <Tabs.Content value="casos-especiales" className="flex-1">
         <CasosCards />
       </Tabs.Content>
+      </main>
     </Tabs.Root>
   );
 }

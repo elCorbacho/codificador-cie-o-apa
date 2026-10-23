@@ -1,45 +1,40 @@
 @import "tailwindcss";
 
-/* Design System — Revolut inspired (design.md)
-   Notes:
-   - Marketing surface: near-black + white, semantic colors reserved for UI accents.
-   - No shadows; depth through contrast + whitespace.
-   - Pills everywhere for buttons.
-*/
+/* Clinical desktop workspace. See design.md for palette and accessibility rules. */
 @theme inline {
   /* Core */
-  --color-canvas: #ffffff;
-  --color-ink: #191c1f;
-  --color-body: #505a63;
-  --color-muted: #8d969e;
+  --color-canvas: #141415;
+  --color-ink: #f0f2f5;
+  --color-body: #d0d4dd;
+  --color-muted: #9aa1b1;
 
-  /* Surfaces + borders — Tinted 0.01 chroma toward Revolut Blue (#494fdf) */
-  --color-surface-soft: oklch(97% 0.01 260);
-  --color-surface-strong: oklch(94% 0.01 260);
-  --color-hairline: oklch(85% 0.01 260);
-  --color-hairline-soft: oklch(90% 0.01 260);
-  --color-border-strong: oklch(80% 0.01 260);
+  --color-surface-soft: #2e3035;
+  --color-surface-strong: #25272b;
+  --color-hairline: #3d4048;
+  --color-hairline-soft: #2d2f33;
+  --color-border-strong: #757b88;
 
   /* Brand / interactive */
-  --color-primary: #191c1f;
-  --color-primary-active: #111315;
-  --color-primary-disabled: oklch(88% 0.005 260);
-  --color-secondary: oklch(97% 0.01 260);
-  --color-accent: #494fdf;
-  --color-lila: #494fdf;
+  --color-primary: #00b24b;
+  --color-primary-active: #24c968;
+  --color-primary-disabled: #25272b;
+  --color-secondary: #0075ff;
+  --color-accent: #80b8ff;
+  --color-lila: #80b8ff;
+  --color-on-primary: #000000;
 
   /* Semantic */
-  --color-error: #e23b4a;
-  --color-error-hover: #cf3140;
-  --color-ambar: #ec7e00;
-  --color-legal-link: #376cd5;
-  --color-scrim: rgba(25, 28, 31, 0.55);
+  --color-error: #ff8c98;
+  --color-error-hover: #ffacb5;
+  --color-ambar: #f3c47e;
+  --color-legal-link: #80b8ff;
+  --color-scrim: rgba(0, 0, 0, 0.6);
 
   /* CIE-O Domain Colors */
-  --color-topo-accent: #7ec8e3;
-  --color-hist-accent: #7edba8;
-  --color-comp-accent: #f4a573;
-  --color-grad-accent: #f4d173;
+  --color-topo-accent: #80b8ff;
+  --color-hist-accent: #43db83;
+  --color-comp-accent: #f0f2f5;
+  --color-grad-accent: #d0d4dd;
 
   /* Premium Motion */
   --ease-premium: cubic-bezier(0.19, 1, 0.22, 1);
@@ -49,6 +44,9 @@
   /* Fonts */
   --font-sans: var(--font-body);
   --font-mono: var(--font-code);
+  --font-weight-normal: 600;
+  --font-weight-medium: 600;
+  --font-weight-bold: 800;
 }
 
 /* Font families */
@@ -58,6 +56,7 @@
 
 /* Global typography + rendering */
 html {
+  color-scheme: dark;
   text-rendering: geometricPrecision;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -66,11 +65,16 @@ html {
 body {
   background: var(--color-canvas);
   color: var(--color-ink);
+  font-family: var(--font-body), Inter, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
 }
 
-/* Design.md: positive tracking on body, tighter headings */
-.font-body { letter-spacing: 0.016em; }
-.font-heading { letter-spacing: -0.02em; }
+.font-body { letter-spacing: 0; }
+.font-heading { letter-spacing: 0; }
+h1, h2, h3 { font-weight: 800; }
+:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 4px; }
 
 /* Links */
 a {
@@ -96,7 +100,7 @@ a:hover {
 }
 
 .text-secondary {
-  color: var(--color-secondary);
+  color: var(--color-legal-link);
 }
 
 .border-primary {
@@ -112,13 +116,13 @@ a:hover {
 }
 
 .bg-accent-soft {
-  background-color: color-mix(in oklab, var(--color-accent), white 88%);
+  background-color: color-mix(in oklab, var(--color-secondary) 14%, var(--color-canvas));
 }
 
 .alert-warn {
-  background: color-mix(in oklab, var(--color-ambar), white 82%);
-  border: 1px solid color-mix(in oklab, var(--color-ambar), white 35%);
-  color: color-mix(in oklab, var(--color-ink), var(--color-ambar) 45%);
+  background: color-mix(in oklab, var(--color-ambar) 10%, var(--color-canvas));
+  border: 1px solid color-mix(in oklab, var(--color-ambar) 50%, var(--color-canvas));
+  color: var(--color-ambar);
 }
 
 /* Shared typography helpers */
@@ -130,8 +134,8 @@ a:hover {
 }
 
 .section-title {
-  font-size: clamp(1.6rem, 3vw, 2.2rem);
-  line-height: 1.15;
+  font-size: 33px;
+  line-height: 1.1;
 }
 
 .section-description {
@@ -141,9 +145,11 @@ a:hover {
 
 /* Result panel */
 .result-panel-root {
-  background: var(--color-ink);
+  background: var(--color-surface-soft);
   font-family: var(--font-code), IBM_Plex_Mono, monospace;
-  top: 72px;
+  top: 132px;
+  border: 1px solid var(--color-hairline);
+  overflow-wrap: anywhere;
 }
 
 .result-panel-code {
@@ -154,7 +160,7 @@ a:hover {
 .result-panel-description {
   font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
   font-size: 13px;
-  color: rgba(255,255,255,.55);
+  color: var(--color-body);
   min-height: 2.5rem;
   line-height: 1.5;
 }
@@ -165,11 +171,11 @@ a:hover {
 }
 
 .result-panel-label {
-  color: rgba(255,255,255,.35);
+  color: var(--color-muted);
 }
 
 .result-panel-detail {
-  color: rgba(255,255,255,.5);
+  color: var(--color-body);
   font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
   font-size: 12px;
 }
@@ -177,20 +183,20 @@ a:hover {
 .result-panel-tag {
   font-size: 10px;
   background: rgba(255,255,255,.08);
-  color: rgba(255,255,255,.5);
+  color: var(--color-body);
 }
 
 .result-panel-reset {
-  background: rgba(255,255,255,.07);
-  border: 1px solid rgba(255,255,255,.12);
-  color: rgba(255,255,255,.65);
+  background: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  color: var(--color-on-primary);
   font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
   font-size: 13px;
 }
 
 /* Arquitectura + ERD */
 .code-surface {
-  background: var(--color-ink);
+  background: var(--color-surface-soft);
   font-family: var(--font-code), IBM_Plex_Mono, monospace;
 }
 
@@ -199,7 +205,7 @@ a:hover {
   font-size: 11px;
   letter-spacing: .12em;
   text-transform: uppercase;
-  color: rgba(255,255,255,.4);
+  color: var(--color-muted);
 }
 
 .code-cell-note {
@@ -212,13 +218,14 @@ a:hover {
 
 .code-example-detail {
   font-size: 12px;
-  color: rgba(255,255,255,.5);
+  color: var(--color-body);
   font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
 }
 
 .surface-card {
-  background: var(--color-canvas);
+  background: var(--color-surface-soft);
   border: 1px solid var(--color-hairline);
+  border-radius: 16px;
 }
 
 .table-code {
@@ -264,7 +271,6 @@ a:hover {
 
 .erd-card {
   min-width: 200px;
-  box-shadow: 0 2px 8px rgba(0,0,0,.05);
 }
 
 .erd-card-strong {
@@ -296,13 +302,13 @@ a:hover {
 }
 
 .erd-badge-pk {
-  background: #FFF3CD;
-  color: #856404;
+  background: var(--color-surface-strong);
+  color: var(--color-primary);
 }
 
 .erd-badge-fk {
-  background: #D1ECF1;
-  color: #0C5460;
+  background: var(--color-surface-strong);
+  color: var(--color-accent);
 }
 
 .erd-legend {
@@ -311,7 +317,7 @@ a:hover {
   color: var(--color-muted);
 }
 
-/* Revolut-inspired radii */
+/* Badges remain pills; action buttons use the compact 10px radius. */
 .radius-pill {
   border-radius: 9999px;
 }
@@ -326,4 +332,67 @@ a:hover {
 .shadow-xl,
 .shadow-2xl {
   box-shadow: none !important;
+}
+
+/* Desktop application shell; below 1024px it remains usable without a separate mobile UI. */
+.workspace-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  min-height: 112px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 16px 24px;
+  background: var(--color-canvas);
+  border-bottom: 1px solid var(--color-hairline-soft);
+}
+.workspace-header h1 { font-size: 24px; line-height: 1.2; }
+.workspace-brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.workspace-logo { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 12px; background: var(--color-primary); color: #000; }
+.workspace-description { max-width: 660px; margin-top: 4px; color: var(--color-muted); font-size: 12px; }
+.workspace-version { border: 1px solid var(--color-hairline); border-radius: 999px; padding: 8px 12px; font-size: 12px; color: var(--color-muted); white-space: nowrap; }
+.workspace-shell { display: grid; grid-template-columns: 100px minmax(0, 1fr); flex: 1; }
+.workspace-rail { position: sticky; top: 112px; align-self: start; height: calc(100dvh - 112px); display: flex; flex-direction: column; gap: 8px; padding: 20px 8px; border-right: 1px solid var(--color-hairline-soft); background: var(--color-canvas); }
+.workspace-tab { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; min-height: 76px; padding: 12px 4px; border-radius: 12px; color: var(--color-muted); font-size: 11px; font-weight: 600; cursor: pointer; overflow-wrap: anywhere; transition: background-color 150ms, color 150ms; }
+.workspace-tab:hover { background: var(--color-surface-strong); color: var(--color-ink); }
+.workspace-tab[data-state="active"] { background: var(--color-surface-soft); color: var(--color-primary); }
+.workspace-tab[data-state="active"]::before { content: ""; position: absolute; left: -8px; top: 18px; bottom: 18px; width: 3px; background: var(--color-primary); border-radius: 999px; }
+.workspace-content { min-width: 0; padding: 0 12px; }
+.workspace-content [role="tabpanel"] { min-width: 0; }
+.workspace-content [role="tabpanel"] > div { padding-top: 24px; padding-bottom: 24px; }
+.workspace-content .container { width: 100%; max-width: 1560px; }
+.workspace-content h2.section-title { font-size: 33px; }
+.workspace-content h3.font-heading { font-size: 20px; }
+.workspace-content .wizard-step-heading h3 { font-size: 16px; font-weight: 600; }
+.workspace-content .code-surface { border: 1px solid var(--color-hairline); border-radius: 16px; }
+.coding-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(340px, .75fr); align-items: start; gap: 24px; }
+.coding-layout > * { min-width: 0; }
+.wizard-step { border-radius: 16px; padding: 20px; margin-bottom: 16px; background: var(--color-surface-soft); border: 1px solid var(--color-hairline); }
+.wizard-step[data-active="true"] { border-color: var(--color-border-strong); }
+.wizard-step-heading { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.wizard-step-heading h3 { font-size: 16px; font-weight: 600; }
+.wizard-step-number { display: grid; place-items: center; flex-shrink: 0; width: 28px; height: 28px; background: var(--color-canvas); color: var(--color-muted); border-radius: 999px; font-family: var(--font-code), monospace; font-size: 12px; }
+.wizard-step[data-active="true"] .wizard-step-number { background: var(--color-secondary); color: #000; }
+.wizard-step[data-done="true"] .wizard-step-number { background: var(--color-primary); color: #000; }
+.result-panel-code { display: flex; flex-wrap: wrap; align-items: baseline; font-size: clamp(24px, 2.2vw, 34px); }
+.result-panel-row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 12px; font-size: 13px; }
+.result-panel-row .result-panel-label { flex-basis: 100%; font-size: 12px; }
+.result-panel-row .result-panel-detail { min-width: 0; overflow-wrap: anywhere; }
+.result-panel-reset:hover { background: var(--color-primary-active); }
+@media (min-width: 1440px) {
+  .workspace-shell { grid-template-columns: 112px minmax(0, 1fr); }
+  .workspace-content { padding-inline: 24px; }
+  .coding-layout { grid-template-columns: minmax(0, 1.25fr) minmax(400px, 1fr); gap: 32px; }
+}
+@media (max-width: 1023px) {
+  .workspace-header { position: relative; flex-wrap: wrap; }
+  .workspace-rail { top: 0; height: 100dvh; }
+  .workspace-version { white-space: normal; }
+  .coding-layout { grid-template-columns: minmax(0, 1fr); }
+  .result-panel-root { position: static; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
 }

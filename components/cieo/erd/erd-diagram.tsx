@@ -51,7 +51,7 @@ export function ErdDiagram() {
 
               <div className="erd-card inline-block overflow-hidden rounded-[10px] border border-hairline text-sm">
                 <div
-                  className="px-4 py-2.5 font-semibold text-white bg-lila"
+                  className="px-4 py-2.5 font-semibold text-on-primary bg-lila"
                 >
                   GRUPO_HISTOLOGICO
                 </div>
@@ -89,7 +89,7 @@ export function ErdDiagram() {
             <div className="flex flex-col gap-5">
               <div className="erd-card erd-card-strong inline-block overflow-hidden rounded-[10px] text-sm">
                 <div
-                  className="px-4 py-2.5 font-semibold text-white"
+                  className="px-4 py-2.5 font-semibold text-on-primary"
                   style={{ background: "var(--color-primary)" }}
                 >
                   TOPOGRAFIA
@@ -140,7 +140,7 @@ export function ErdDiagram() {
 
               <div className="erd-card erd-card-strong inline-block overflow-hidden rounded-[10px] text-sm">
                 <div
-                  className="px-4 py-2.5 font-semibold text-white"
+                  className="px-4 py-2.5 font-semibold text-on-primary"
                   style={{ background: "var(--color-lila)" }}
                 >
                   MORFOLOGIA
@@ -331,7 +331,7 @@ export function ErdDiagram() {
             <div className="flex flex-col gap-5">
               <div className="erd-card erd-card-strong inline-block overflow-hidden rounded-[10px] text-sm">
                 <div
-                  className="px-4 py-2.5 font-semibold text-white"
+                  className="px-4 py-2.5 font-semibold text-on-primary"
                   style={{ background: "var(--color-accent)" }}
                 >
                   MORFO_COMPORTAMIENTO
@@ -424,7 +424,7 @@ export function ErdDiagram() {
                 }}
               >
                 <div
-                  className="px-4 py-2.5 font-semibold text-white"
+                  className="px-4 py-2.5 font-semibold text-on-primary"
                   style={{ background: "var(--color-body)" }}
                 >
                   CODIGO_GENERADO

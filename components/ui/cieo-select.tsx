@@ -33,8 +33,8 @@ export function CieoSelect({
       <Select.Trigger
         aria-label={ariaLabel}
         className={cn(
-          "flex w-full items-center justify-between rounded-lg border border-hairline bg-surface-soft px-4 py-3 text-[14px] text-ink outline-none transition-colors data-[placeholder]:text-muted disabled:cursor-not-allowed disabled:opacity-45",
-          "focus-visible:border-lila focus-visible:ring-2 focus-visible:ring-[color-mix(in_oklab,var(--color-lila),white_65%)]",
+          "flex min-h-11 w-full min-w-0 items-center justify-between gap-2 rounded-lg border border-border-strong bg-surface-strong px-3 py-2 text-left text-[14px] font-semibold text-ink outline-none transition-colors data-[placeholder]:text-muted disabled:cursor-not-allowed disabled:opacity-45 [&>span:first-child]:min-w-0 [&>span:first-child]:whitespace-normal [&>span:first-child]:break-words",
+          "focus-visible:border-accent focus-visible:ring-2 focus-visible:ring-accent",
           className
         )}
       >
@@ -47,7 +47,7 @@ export function CieoSelect({
       <Select.Portal>
         <Select.Content
           position="popper"
-          className="z-50 max-h-[300px] w-[var(--radix-select-trigger-width)] overflow-hidden rounded-lg border border-hairline bg-canvas shadow-none"
+          className="z-50 max-h-[min(300px,var(--radix-select-content-available-height))] w-[var(--radix-select-trigger-width)] overflow-hidden rounded-lg border border-border-strong bg-surface-soft shadow-lg"
         >
           <Select.Viewport className="p-1">
             {options.map((option) => (
@@ -56,7 +56,7 @@ export function CieoSelect({
                 value={option.value}
                 className={cn(
                   "flex cursor-pointer items-center rounded-md px-3 py-2.5 text-sm outline-none transition-colors",
-                  "data-[highlighted]:bg-[color-mix(in_oklab,var(--color-lila),white_88%)] data-[highlighted]:text-ink"
+                  "break-words data-[highlighted]:bg-surface-strong data-[highlighted]:text-accent"
                 )}
               >
                 <Select.ItemText>{option.label}</Select.ItemText>
